@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 The Study | Exacerbation Platform in COPD (EPIC)</title>
+  <meta name="description" content="2 The Study | Exacerbation Platform in COPD (EPIC)" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 The Study | Exacerbation Platform in COPD (EPIC)" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 The Study | Exacerbation Platform in COPD (EPIC)" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="section-introduction.html">
+<link rel="next" href="section-packageinR.html">
+<script src="book_assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="pretty-styles.css" type="text/css" />
+<link rel="stylesheet" href="cayman.css" type="text/css" />
+<link rel="stylesheet" href="python.css" type="text/css" />
+<link rel="stylesheet" href="shadow.css" type="text/css" />
+<link rel="stylesheet" href="index.html" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="section-introduction.html"><a href="section-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="section-thestudy.html"><a href="section-thestudy.html"><i class="fa fa-check"></i><b>2</b> The Study</a></li>
+<li class="chapter" data-level="3" data-path="section-packageinR.html"><a href="section-packageinR.html"><i class="fa fa-check"></i><b>3</b> Using the Package in R</a><ul>
+<li class="chapter" data-level="3.1" data-path="section-packageinR.html"><a href="section-packageinR.html#section-installation"><i class="fa fa-check"></i><b>3.1</b> Installation</a><ul>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-windows-7-or-later"><i class="fa fa-check"></i>Windows 7 or Later</a></li>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-mac-os-sierra-and-later"><i class="fa fa-check"></i>Mac OS Sierra and Later</a></li>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-ubuntu-16.04-and-later"><i class="fa fa-check"></i>Ubuntu 16.04 and Later</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="section-webapp.html"><a href="section-webapp.html"><i class="fa fa-check"></i><b>4</b> Using the Web Application</a></li>
+<li class="chapter" data-level="5" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html"><i class="fa fa-check"></i><b>5</b> Using the Package as an API (PRISM)</a><ul>
+<li class="chapter" data-level="5.1" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-r-api"><i class="fa fa-check"></i><b>5.1</b> R API</a></li>
+<li class="chapter" data-level="5.2" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-shellbash-api"><i class="fa fa-check"></i><b>5.2</b> Shell/Bash API</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-linux"><i class="fa fa-check"></i><b>5.2.1</b> Linux</a></li>
+<li class="chapter" data-level="5.2.2" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-mac-os"><i class="fa fa-check"></i><b>5.2.2</b> Mac OS</a></li>
+<li class="chapter" data-level="5.2.3" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-windows-powershell"><i class="fa fa-check"></i><b>5.2.3</b> Windows PowerShell</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-python-api"><i class="fa fa-check"></i><b>5.3</b> Python API</a></li>
+<li class="chapter" data-level="5.4" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-javascript-api"><i class="fa fa-check"></i><b>5.4</b> Javascript API</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="section-appendix1.html"><a href="section-appendix1.html"><i class="fa fa-check"></i><b>6</b> Appendix 1: Installing R</a><ul>
+<li class="chapter" data-level="6.1" data-path="section-appendix1.html"><a href="section-appendix1.html#section-step-1-mirrors"><i class="fa fa-check"></i><b>6.1</b> Step 1: Mirrors</a></li>
+<li class="chapter" data-level="6.2" data-path="section-appendix1.html"><a href="section-appendix1.html#section-mac-os-x"><i class="fa fa-check"></i><b>6.2</b> Mac OS X</a></li>
+<li class="chapter" data-level="6.3" data-path="section-appendix1.html"><a href="section-appendix1.html#section-windows"><i class="fa fa-check"></i><b>6.3</b> Windows</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Exacerbation Platform in COPD (EPIC)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="section-thestudy" class="section level1">
+<h1><span class="header-section-number">2</span> The Study</h1>
+<!-- The **accept** package and application are based on the paper [Development and External Validation of the Acute COPD Exacerbation Prediction Tool (ACCEPT)](https://www.biorxiv.org/content/biorxiv/early/2019/06/04/651901.full.pdf), published in 2019. -->
+<!-- ## Background {#background} -->
+<!-- Chronic Obstructive Pulmonary Disease (COPD) affects 300 million people worldwide. Patients with COPD often experience what is called an **acute exacerbation**. -->
+<!-- **exacerbation**: acute worsening of COPD symptoms; acute means sudden onset, short in duration; COPD symptoms include shortness of breath, wheezing, coughing up mucus, etc. -->
+<!-- ### Exacerbation Causes {-} -->
+<!-- ```{r, eval=TRUE, echo=FALSE} -->
+<!-- library(htmltools) -->
+<!-- rawHTML <- paste(readLines("exacerbation-cause.html"), collapse="\n") -->
+<!-- HTML(rawHTML) -->
+<!-- ``` -->
+<!-- ### Exacerbation Severity {-} -->
+<!-- ```{r, eval=TRUE, echo=FALSE} -->
+<!-- library(htmltools) -->
+<!-- rawHTML <- paste(readLines("exacerbation-severity.html"), collapse="\n") -->
+<!-- HTML(rawHTML) -->
+<!-- ``` -->
+<!-- ### References {-} -->
+<!-- [COPD exacerbations: definitions and classifications](https://erj.ersjournals.com/content/erj/21/41_suppl/46s.full.pdf) -->
+<!-- [Toward a consensus definition for COPD exacerbations](https://www.ncbi.nlm.nih.gov/pubmed/10843984) -->
+<!-- ## The Study Population {#studyPopulation} -->
+<!-- The data for this study was taken from three different studies:  -->
+<!-- [MACRO Clinical Trial](https://clinicaltrials.gov/ct2/show/NCT00325897) -->
+<!-- [MACRO Paper](https://www.ncbi.nlm.nih.gov/pubmed/21864166) -->
+<!-- [STATCOPE Clinical Trial](https://clinicaltrials.gov/ct2/show/NCT01061671) -->
+<!-- [STATCOPE Paper](https://www.ncbi.nlm.nih.gov/pubmed/24836125?dopt=Abstract) -->
+<!-- [OPTIMAL Clinical Trial](https://www.ncbi.nlm.nih.gov/pubmed/15611808) -->
+<!-- [OPTIMAL Paper](https://annals.org/aim/fullarticle/734106) -->
+<!-- ### Clinical Trial 1: MACRO {-} -->
+<!-- Number of Participants: 1142 -->
+<!-- Type of Study: Clinical Randomized -->
+<!-- Masking: Triple (Participant, Investigator, Care-Provider) -->
+<!-- #### Criteria {-} -->
+<!-- - Age: > 40 years old -->
+<!-- - COPD diagnosis -->
+<!-- - Does not have asthma -->
+<!-- - 10 pack years or more of smoking -->
+<!-- #### Study Groups {-} -->
+<!-- ```{r diagram, eval = TRUE, echo = FALSE} -->
+<!-- library(DiagrammeR) -->
+<!-- nodes <- create_node_df(n=3, type = "character", -->
+<!--                         color = themeColors[1], -->
+<!--                         fontcolor = "white", -->
+<!--                         fillcolor = themeColors[1], -->
+<!--                         shape = "oval", -->
+<!--                         fontsize = 4, -->
+<!--                         label = c("All \n Participants","Placebo",  -->
+<!--                                   "Azithromycin \n Treatment")) -->
+<!-- edges <- create_edge_df(from = c(1, 1), -->
+<!--                         to = c(2, 3), -->
+<!--                        rel = "leading to", -->
+<!--                        color = themeColors[2]) -->
+<!-- graph <- create_graph(nodes_df = nodes,  -->
+<!--                       edges_df = edges)  -->
+<!-- render_graph(graph, layout="tree") -->
+<!-- ``` -->
+<!-- ```{r, eval=TRUE, echo=FALSE} -->
+<!-- library(htmltools) -->
+<!-- rawHTML <- paste(readLines("study1-arms.html"), collapse="\n") -->
+<!-- HTML(rawHTML) -->
+<!-- ``` -->
+<!-- #### Data Collection: Primary Metric {-} -->
+<!-- ```{r, eval=TRUE, echo=FALSE} -->
+<!-- library(htmltools) -->
+<!-- rawHTML <- paste(readLines("study1-primary-metric.html"), collapse="\n") -->
+<!-- HTML(rawHTML) -->
+<!-- ``` -->
+<!-- ### Clinical Trial 2: STATCOPE {-} -->
+<!-- Number of Participants: 885 -->
+<!-- Type of Study: Clinical Randomized -->
+<!-- Masking: Triple (Participant, Investigator, Care-Provider) -->
+<!-- #### Criteria {-} -->
+<!-- - Age: 40 - 80 years old -->
+<!-- - COPD diagnosis -->
+<!-- - Does not have asthma -->
+<!-- - 10 pack years or more of smoking -->
+<!-- #### Study Groups {-} -->
+<!-- ```{r diagram2, eval = TRUE, echo = FALSE} -->
+<!-- library(DiagrammeR) -->
+<!-- nodes <- create_node_df(n=3, type = "character", -->
+<!--                         color = themeColors[1], -->
+<!--                         fontcolor = "white", -->
+<!--                         fillcolor = themeColors[1], -->
+<!--                         shape = "oval", -->
+<!--                         fontsize = 4, -->
+<!--                         label = c("All \n Participants","Placebo",  -->
+<!--                                   "Simvastatin \n Treatment")) -->
+<!-- edges <- create_edge_df(from = c(1, 1), -->
+<!--                         to = c(2, 3), -->
+<!--                        rel = "leading to", -->
+<!--                        color = themeColors[2]) -->
+<!-- graph <- create_graph(nodes_df = nodes,  -->
+<!--                       edges_df = edges)  -->
+<!-- render_graph(graph, layout="tree") -->
+<!-- ``` -->
+<!-- ```{r, eval=TRUE, echo=FALSE} -->
+<!-- library(htmltools) -->
+<!-- rawHTML <- paste(readLines("study2-arms.html"), collapse="\n") -->
+<!-- HTML(rawHTML) -->
+<!-- ``` -->
+<!-- #### Data Collection: Primary Metric {-} -->
+<!-- ```{r, eval=TRUE, echo=FALSE} -->
+<!-- library(htmltools) -->
+<!-- rawHTML <- paste(readLines("study2-primary-metric.html"), collapse="\n") -->
+<!-- HTML(rawHTML) -->
+<!-- ``` -->
+<!-- ### Clinical Trial 3: OPTIMAL {-} -->
+<!-- Number of Participants: 432 -->
+<!-- Type of Study: Clinical Randomized -->
+<!-- Masking: Double (Participant, Investigator) -->
+<!-- #### Criteria {-} -->
+<!-- - Age: > 35 years old -->
+<!-- - COPD diagnosis -->
+<!-- - Does not have asthma -->
+<!-- - 10 pack years or more of smoking -->
+<!-- - at least 1 COPD exacerbation in the last year -->
+<!-- #### Study Groups {-} -->
+<!-- ```{r diagram3, eval = TRUE, echo = FALSE} -->
+<!-- library(DiagrammeR) -->
+<!-- nodes <- create_node_df(n=4, type = "character", -->
+<!--                         color = themeColors[1], -->
+<!--                         fontcolor = "white", -->
+<!--                         fillcolor = themeColors[1], -->
+<!--                         shape = "oval", -->
+<!--                         fontsize = 4, -->
+<!--                         label = c("All \n Participants","Placebo \n Inhaler",  -->
+<!--                                   "Salmeteral \n Inhaler", -->
+<!--                                   "Advair \n Inhaler")) -->
+<!-- edges <- create_edge_df(from = c(1, 1, 1), -->
+<!--                         to = c(2, 3, 4), -->
+<!--                        rel = "leading to", -->
+<!--                        color = themeColors[2]) -->
+<!-- graph <- create_graph(nodes_df = nodes,  -->
+<!--                       edges_df = edges)  -->
+<!-- render_graph(graph, layout="tree") -->
+<!-- ``` -->
+<!-- ```{r, eval=TRUE, echo=FALSE} -->
+<!-- library(htmltools) -->
+<!-- rawHTML <- paste(readLines("study3-arms.html"), collapse="\n") -->
+<!-- HTML(rawHTML) -->
+<!-- ``` -->
+<!-- #### Data Collection: Primary Metric {-} -->
+<!-- ```{r, eval=TRUE, echo=FALSE} -->
+<!-- library(htmltools) -->
+<!-- rawHTML <- paste(readLines("study3-primary-metric.html"), collapse="\n") -->
+<!-- HTML(rawHTML) -->
+<!-- ``` -->
+<!-- ## Data Collection: Combined Trials -->
+<!-- For our study, we combined the results from the three trials described above.  -->
+<!-- ### Primary Metric {-} -->
+<!-- ```{r, eval=TRUE, echo=FALSE} -->
+<!-- library(htmltools) -->
+<!-- rawHTML <- paste(readLines("primary-metric.html"), collapse="\n") -->
+<!-- HTML(rawHTML) -->
+<!-- ``` -->
+<!-- ### Secondary Metrics {-} -->
+<!-- ```{r, eval=TRUE, echo=FALSE} -->
+<!-- library(htmltools) -->
+<!-- rawHTML <- paste(readLines("secondary-metrics.html"), collapse="\n") -->
+<!-- HTML(rawHTML) -->
+<!-- ``` -->
+<!-- ## Validation -->
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="section-introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-packageinR.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+</body>
+
+</html>

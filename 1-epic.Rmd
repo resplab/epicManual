@@ -1,0 +1,59 @@
+---
+title: "Exacerbation Platform in COPD (EPIC)"
+site: "bookdown::bookdown_site"
+runtime: "shiny"
+output:
+  bookdown::gitbook:
+    lib_dir: "book_assets"
+    delete_merged_file: TRUE
+    table_css: FALSE
+    output_dir: "docs"
+    css: ["pretty-styles.css", "cayman.css", "python.css","shadow.css",  "index.html"]
+    js: ["js/list-group.js", "js/code-chunk.js", "js/code-chunk-components.js"]
+    config:
+      toc:
+        collapse: subsection
+        scroll_highlight: yes
+        before: null
+        after: null
+      toolbar:
+        position: fixed
+      edit : null
+      download: null
+      search: yes
+      fontsettings:
+        theme: white
+        family: sans
+        size: 2
+      sharing:
+        facebook: yes
+        twitter: yes
+        google: no
+        linkedin: no
+        weibo: no
+        instapaper: no
+        vk: no
+        all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
+  bookdown::pdf_book:
+    keep_tex: yes
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = ">"
+)
+```
+
+```{r, echo = FALSE, eval = TRUE}
+themeColors = c("#330033", "#8cf2f2", "#c51672", "#007bff")
+```
+# Introduction {#introduction}
+
+The Evaluation Platform In COPD (EPIC) was a nationally funded research project with the aim of
+creating an open-source, publicly available, population-based ‘Whole Disease’ COPD model for
+epidemiological projections and policy analyses in the Canadian context.
+
+It might be helpful to take a look at the EPIC web application before reading further, as this gives a visualization of the package: [EPIC Web Application](#webapp).
+
+
