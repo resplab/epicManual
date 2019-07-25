@@ -1,0 +1,38 @@
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<div class="row">
+  <div class="col-4">
+
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-exacerbation-list" data-toggle="list" href="#list-exacerbation" role="tab" aria-controls="exacerbation">percentFemale</a>
+      <a class="list-group-item list-group-item-action" id="list-fev1-list" data-toggle="list" href="#list-fev1" role="tab" aria-controls="fev1">timeHorizon</a>
+      <a class="list-group-item list-group-item-action" id="list-smoking-list" data-toggle="list" href="#list-smoking" role="tab" aria-controls="smoking">costDiscount</a>
+      <a class="list-group-item list-group-item-action" id="list-age-list" data-toggle="list" href="#list-age" role="tab" aria-controls="age">qalyDiscount</a>
+      <a class="list-group-item list-group-item-action" id="list-gender-list" data-toggle="list" href="#list-gender" role="tab" aria-controls="gender">baselineAge</a>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-exacerbation" role="tabpanel" aria-labelledby="list-exacerbation-list">
+        decimal: between 0 and 1, percentage of population that is female
+      </div>
+      <div class="tab-pane fade" id="list-fev1" role="tabpanel" aria-labelledby="list-fev1-list">
+        integer: time in years for model
+      </div>
+      <div class="tab-pane fade" id="list-smoking" role="tabpanel" aria-labelledby="list-smoking-list">
+        decimal: between 0 and 1, percentage which payoffs decrease every year
+      </div>
+      <div class="tab-pane fade" id="list-age" role="tabpanel" aria-labelledby="list-age-list">
+        decimal: between 0 and 1, percentage which QALYs decrease every year
+      </div>
+    <div class="tab-pane fade" id="list-gender" role="tabpanel" aria-labelledby="list-gender-list">
+      integer: mean age at baseline
+    </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>

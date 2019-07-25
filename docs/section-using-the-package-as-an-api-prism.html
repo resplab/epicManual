@@ -47,41 +47,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="pretty-styles.css" type="text/css" />
@@ -109,6 +134,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-mac-os-sierra-and-later"><i class="fa fa-check"></i>Mac OS Sierra and Later</a></li>
 <li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-ubuntu-16.04-and-later"><i class="fa fa-check"></i>Ubuntu 16.04 and Later</a></li>
 </ul></li>
+<li class="chapter" data-level="3.2" data-path="section-packageinR.html"><a href="section-packageinR.html#section-running-the-model"><i class="fa fa-check"></i><b>3.2</b> Running the Model</a><ul>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-step-1-initialize-the-session"><i class="fa fa-check"></i>Step 1: Initialize the Session</a></li>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-step-2-set-the-inputs"><i class="fa fa-check"></i>Step 2: Set the Inputs</a></li>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-step-3-run"><i class="fa fa-check"></i>Step 3: Run</a></li>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-step-4-results"><i class="fa fa-check"></i>Step 4: Results</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="section-webapp.html"><a href="section-webapp.html"><i class="fa fa-check"></i><b>4</b> Using the Web Application</a></li>
 <li class="chapter" data-level="5" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html"><i class="fa fa-check"></i><b>5</b> Using the Package as an API (PRISM)</a><ul>
@@ -125,6 +156,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.1" data-path="section-appendix1.html"><a href="section-appendix1.html#section-step-1-mirrors"><i class="fa fa-check"></i><b>6.1</b> Step 1: Mirrors</a></li>
 <li class="chapter" data-level="6.2" data-path="section-appendix1.html"><a href="section-appendix1.html#section-mac-os-x"><i class="fa fa-check"></i><b>6.2</b> Mac OS X</a></li>
 <li class="chapter" data-level="6.3" data-path="section-appendix1.html"><a href="section-appendix1.html#section-windows"><i class="fa fa-check"></i><b>6.3</b> Windows</a></li>
+<li class="chapter" data-level="6.4" data-path="section-appendix1.html"><a href="section-appendix1.html#section-ubuntu"><i class="fa fa-check"></i><b>6.4</b> Ubuntu</a></li>
 </ul></li>
 </ul>
 
@@ -150,69 +182,69 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="section-r-api" class="section level2">
 <h2><span class="header-section-number">5.1</span> R API</h2>
 <p>To install PRISM in R, you will need to install it from GitHub. In an R Console:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;resplab/prism&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="section-cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;resplab/prism&quot;</span>)</a></code></pre></div>
 <p>To use PRISM in R:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(prism)
-<span class="kw">connect_to_model</span>(<span class="st">&quot;acceptPrism&quot;</span>, <span class="dt">api_key =</span> your_api_key)
-patient1 &lt;-<span class="st"> </span>accept<span class="op">::</span>samplePatients[<span class="dv">1</span>,]
-<span class="kw">model_run</span>(patient1)
-res &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">model_run</span>(patient1))</code></pre></div>
+<div class="sourceCode" id="section-cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">library</span>(prism)</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="kw">connect_to_model</span>(<span class="st">&quot;acceptPrism&quot;</span>, <span class="dt">api_key =</span> your_api_key)</a>
+<a class="sourceLine" id="cb27-3" data-line-number="3">patient1 &lt;-<span class="st"> </span>accept<span class="op">::</span>samplePatients[<span class="dv">1</span>,]</a>
+<a class="sourceLine" id="cb27-4" data-line-number="4"><span class="kw">model_run</span>(patient1)</a>
+<a class="sourceLine" id="cb27-5" data-line-number="5">res &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">model_run</span>(patient1))</a></code></pre></div>
 </div>
 <div id="section-shellbash-api" class="section level2">
 <h2><span class="header-section-number">5.2</span> Shell/Bash API</h2>
 <div id="section-linux" class="section level3">
 <h3><span class="header-section-number">5.2.1</span> Linux</h3>
 <p>You will need curl installed to use the API. To check if you have curl:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">dpkg</span> -l curl</code></pre></div>
+<div class="sourceCode" id="section-cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="ex">dpkg</span> -l curl</a></code></pre></div>
 <p>If you do not have curl, you can install it by:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt install curl</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">
-<span class="ex">curl</span> -X POST -H <span class="st">&quot;Content-Type: application/json&quot;</span> -d <span class="st">&#39;{&quot;api_key&quot;:[&quot;YOUR_API_KEY&quot;],&quot;func&quot;:[&quot;prism_model_run&quot;],&quot;model_input&quot;:[{&quot;ID&quot;: &quot;10001&quot;,</span>
-<span class="st">    &quot;male&quot;: 1,</span>
-<span class="st">    &quot;age&quot;: 70,</span>
-<span class="st">    &quot;smoker&quot;: 1,</span>
-<span class="st">    &quot;oxygen&quot;: 1,</span>
-<span class="st">    &quot;statin&quot;: 1,</span>
-<span class="st">    &quot;LAMA&quot;: 1,</span>
-<span class="st">    &quot;LABA&quot;: 1,</span>
-<span class="st">    &quot;ICS&quot;: 1,</span>
-<span class="st">    &quot;FEV1&quot;: 33,</span>
-<span class="st">    &quot;BMI&quot;: 25,</span>
-<span class="st">    &quot;SGRQ&quot;: 50,</span>
-<span class="st">    &quot;LastYrExacCount&quot;: 2,</span>
-<span class="st">    &quot;LastYrSevExacCount&quot;: 1,</span>
-<span class="st">    &quot;randomized_azithromycin&quot;: 0,</span>
-<span class="st">    &quot;randomized_statin&quot;: 0,</span>
-<span class="st">    &quot;randomized_LAMA&quot;: 0,</span>
-<span class="st">    &quot;randomized_LABA&quot;: 0,</span>
-<span class="st">    &quot;randomized_ICS&quot;: 0}]}&#39;</span> http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json</code></pre></div>
+<div class="sourceCode" id="section-cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="fu">sudo</span> apt install curl</a></code></pre></div>
+<div class="sourceCode" id="section-cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb30-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="ex">curl</span> -X POST -H <span class="st">&quot;Content-Type: application/json&quot;</span> -d <span class="st">&#39;{&quot;api_key&quot;:[&quot;YOUR_API_KEY&quot;],&quot;func&quot;:[&quot;prism_model_run&quot;],&quot;model_input&quot;:[{&quot;ID&quot;: &quot;10001&quot;,</span></a>
+<a class="sourceLine" id="cb30-3" data-line-number="3"><span class="st">    &quot;male&quot;: 1,</span></a>
+<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="st">    &quot;age&quot;: 70,</span></a>
+<a class="sourceLine" id="cb30-5" data-line-number="5"><span class="st">    &quot;smoker&quot;: 1,</span></a>
+<a class="sourceLine" id="cb30-6" data-line-number="6"><span class="st">    &quot;oxygen&quot;: 1,</span></a>
+<a class="sourceLine" id="cb30-7" data-line-number="7"><span class="st">    &quot;statin&quot;: 1,</span></a>
+<a class="sourceLine" id="cb30-8" data-line-number="8"><span class="st">    &quot;LAMA&quot;: 1,</span></a>
+<a class="sourceLine" id="cb30-9" data-line-number="9"><span class="st">    &quot;LABA&quot;: 1,</span></a>
+<a class="sourceLine" id="cb30-10" data-line-number="10"><span class="st">    &quot;ICS&quot;: 1,</span></a>
+<a class="sourceLine" id="cb30-11" data-line-number="11"><span class="st">    &quot;FEV1&quot;: 33,</span></a>
+<a class="sourceLine" id="cb30-12" data-line-number="12"><span class="st">    &quot;BMI&quot;: 25,</span></a>
+<a class="sourceLine" id="cb30-13" data-line-number="13"><span class="st">    &quot;SGRQ&quot;: 50,</span></a>
+<a class="sourceLine" id="cb30-14" data-line-number="14"><span class="st">    &quot;LastYrExacCount&quot;: 2,</span></a>
+<a class="sourceLine" id="cb30-15" data-line-number="15"><span class="st">    &quot;LastYrSevExacCount&quot;: 1,</span></a>
+<a class="sourceLine" id="cb30-16" data-line-number="16"><span class="st">    &quot;randomized_azithromycin&quot;: 0,</span></a>
+<a class="sourceLine" id="cb30-17" data-line-number="17"><span class="st">    &quot;randomized_statin&quot;: 0,</span></a>
+<a class="sourceLine" id="cb30-18" data-line-number="18"><span class="st">    &quot;randomized_LAMA&quot;: 0,</span></a>
+<a class="sourceLine" id="cb30-19" data-line-number="19"><span class="st">    &quot;randomized_LABA&quot;: 0,</span></a>
+<a class="sourceLine" id="cb30-20" data-line-number="20"><span class="st">    &quot;randomized_ICS&quot;: 0}]}&#39;</span> http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json</a></code></pre></div>
 </div>
 <div id="section-mac-os" class="section level3">
 <h3><span class="header-section-number">5.2.2</span> Mac OS</h3>
 <p>You will need curl installed to use the API. To check if you have curl:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">brew</span> list curl</code></pre></div>
+<div class="sourceCode" id="section-cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="ex">brew</span> list curl</a></code></pre></div>
 <p>If you do not have curl, you can install it using HomeBrew:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">brew</span> install curl</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">
-<span class="ex">curl</span> -X POST -H <span class="st">&quot;Content-Type: application/json&quot;</span> -d <span class="st">&#39;{&quot;api_key&quot;:[&quot;YOUR_API_KEY&quot;],&quot;func&quot;:[&quot;prism_model_run&quot;],&quot;model_input&quot;:[{&quot;ID&quot;: &quot;10001&quot;,</span>
-<span class="st">    &quot;male&quot;: 1,</span>
-<span class="st">    &quot;age&quot;: 70,</span>
-<span class="st">    &quot;smoker&quot;: 1,</span>
-<span class="st">    &quot;oxygen&quot;: 1,</span>
-<span class="st">    &quot;statin&quot;: 1,</span>
-<span class="st">    &quot;LAMA&quot;: 1,</span>
-<span class="st">    &quot;LABA&quot;: 1,</span>
-<span class="st">    &quot;ICS&quot;: 1,</span>
-<span class="st">    &quot;FEV1&quot;: 33,</span>
-<span class="st">    &quot;BMI&quot;: 25,</span>
-<span class="st">    &quot;SGRQ&quot;: 50,</span>
-<span class="st">    &quot;LastYrExacCount&quot;: 2,</span>
-<span class="st">    &quot;LastYrSevExacCount&quot;: 1,</span>
-<span class="st">    &quot;randomized_azithromycin&quot;: 0,</span>
-<span class="st">    &quot;randomized_statin&quot;: 0,</span>
-<span class="st">    &quot;randomized_LAMA&quot;: 0,</span>
-<span class="st">    &quot;randomized_LABA&quot;: 0,</span>
-<span class="st">    &quot;randomized_ICS&quot;: 0}]}&#39;</span> http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json</code></pre></div>
+<div class="sourceCode" id="section-cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="ex">brew</span> install curl</a></code></pre></div>
+<div class="sourceCode" id="section-cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb33-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="ex">curl</span> -X POST -H <span class="st">&quot;Content-Type: application/json&quot;</span> -d <span class="st">&#39;{&quot;api_key&quot;:[&quot;YOUR_API_KEY&quot;],&quot;func&quot;:[&quot;prism_model_run&quot;],&quot;model_input&quot;:[{&quot;ID&quot;: &quot;10001&quot;,</span></a>
+<a class="sourceLine" id="cb33-3" data-line-number="3"><span class="st">    &quot;male&quot;: 1,</span></a>
+<a class="sourceLine" id="cb33-4" data-line-number="4"><span class="st">    &quot;age&quot;: 70,</span></a>
+<a class="sourceLine" id="cb33-5" data-line-number="5"><span class="st">    &quot;smoker&quot;: 1,</span></a>
+<a class="sourceLine" id="cb33-6" data-line-number="6"><span class="st">    &quot;oxygen&quot;: 1,</span></a>
+<a class="sourceLine" id="cb33-7" data-line-number="7"><span class="st">    &quot;statin&quot;: 1,</span></a>
+<a class="sourceLine" id="cb33-8" data-line-number="8"><span class="st">    &quot;LAMA&quot;: 1,</span></a>
+<a class="sourceLine" id="cb33-9" data-line-number="9"><span class="st">    &quot;LABA&quot;: 1,</span></a>
+<a class="sourceLine" id="cb33-10" data-line-number="10"><span class="st">    &quot;ICS&quot;: 1,</span></a>
+<a class="sourceLine" id="cb33-11" data-line-number="11"><span class="st">    &quot;FEV1&quot;: 33,</span></a>
+<a class="sourceLine" id="cb33-12" data-line-number="12"><span class="st">    &quot;BMI&quot;: 25,</span></a>
+<a class="sourceLine" id="cb33-13" data-line-number="13"><span class="st">    &quot;SGRQ&quot;: 50,</span></a>
+<a class="sourceLine" id="cb33-14" data-line-number="14"><span class="st">    &quot;LastYrExacCount&quot;: 2,</span></a>
+<a class="sourceLine" id="cb33-15" data-line-number="15"><span class="st">    &quot;LastYrSevExacCount&quot;: 1,</span></a>
+<a class="sourceLine" id="cb33-16" data-line-number="16"><span class="st">    &quot;randomized_azithromycin&quot;: 0,</span></a>
+<a class="sourceLine" id="cb33-17" data-line-number="17"><span class="st">    &quot;randomized_statin&quot;: 0,</span></a>
+<a class="sourceLine" id="cb33-18" data-line-number="18"><span class="st">    &quot;randomized_LAMA&quot;: 0,</span></a>
+<a class="sourceLine" id="cb33-19" data-line-number="19"><span class="st">    &quot;randomized_LABA&quot;: 0,</span></a>
+<a class="sourceLine" id="cb33-20" data-line-number="20"><span class="st">    &quot;randomized_ICS&quot;: 0}]}&#39;</span> http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json</a></code></pre></div>
 <!-- ```{bash prism-mac2, eval = TRUE, echo = FALSE} -->
 <!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"], -->
 <!-- "model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
@@ -221,67 +253,67 @@ res &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span cl
 <div id="section-windows-powershell" class="section level3">
 <h3><span class="header-section-number">5.2.3</span> Windows PowerShell</h3>
 <p>In PowerShell:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">curl</span> -Body <span class="st">&#39;{&quot;api_key&quot;:[&quot;YOUR_API_KEY&quot;],&quot;func&quot;:[&quot;prism_model_run&quot;],&quot;model_input&quot;:[{&quot;ID&quot;: &quot;10001&quot;,</span>
-<span class="st">    &quot;male&quot;: 1,</span>
-<span class="st">    &quot;age&quot;: 70,</span>
-<span class="st">    &quot;smoker&quot;: 1,</span>
-<span class="st">    &quot;oxygen&quot;: 1,</span>
-<span class="st">    &quot;statin&quot;: 1,</span>
-<span class="st">    &quot;LAMA&quot;: 1,</span>
-<span class="st">    &quot;LABA&quot;: 1,</span>
-<span class="st">    &quot;ICS&quot;: 1,</span>
-<span class="st">    &quot;FEV1&quot;: 33,</span>
-<span class="st">    &quot;BMI&quot;: 25,</span>
-<span class="st">    &quot;SGRQ&quot;: 50,</span>
-<span class="st">    &quot;LastYrExacCount&quot;: 2,</span>
-<span class="st">    &quot;LastYrSevExacCount&quot;: 1,</span>
-<span class="st">    &quot;randomized_azithromycin&quot;: 0,</span>
-<span class="st">    &quot;randomized_statin&quot;: 0,</span>
-<span class="st">    &quot;randomized_LAMA&quot;: 0,</span>
-<span class="st">    &quot;randomized_LABA&quot;: 0,</span>
-<span class="st">    &quot;randomized_ICS&quot;: 0}]}&#39;</span> -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -Headers @<span class="dt">{&quot;Content-type&quot;=&quot;application/json&quot;}</span></code></pre></div>
+<div class="sourceCode" id="section-cb34"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="ex">curl</span> -Body <span class="st">&#39;{&quot;api_key&quot;:[&quot;YOUR_API_KEY&quot;],&quot;func&quot;:[&quot;prism_model_run&quot;],&quot;model_input&quot;:[{&quot;ID&quot;: &quot;10001&quot;,</span></a>
+<a class="sourceLine" id="cb34-2" data-line-number="2"><span class="st">    &quot;male&quot;: 1,</span></a>
+<a class="sourceLine" id="cb34-3" data-line-number="3"><span class="st">    &quot;age&quot;: 70,</span></a>
+<a class="sourceLine" id="cb34-4" data-line-number="4"><span class="st">    &quot;smoker&quot;: 1,</span></a>
+<a class="sourceLine" id="cb34-5" data-line-number="5"><span class="st">    &quot;oxygen&quot;: 1,</span></a>
+<a class="sourceLine" id="cb34-6" data-line-number="6"><span class="st">    &quot;statin&quot;: 1,</span></a>
+<a class="sourceLine" id="cb34-7" data-line-number="7"><span class="st">    &quot;LAMA&quot;: 1,</span></a>
+<a class="sourceLine" id="cb34-8" data-line-number="8"><span class="st">    &quot;LABA&quot;: 1,</span></a>
+<a class="sourceLine" id="cb34-9" data-line-number="9"><span class="st">    &quot;ICS&quot;: 1,</span></a>
+<a class="sourceLine" id="cb34-10" data-line-number="10"><span class="st">    &quot;FEV1&quot;: 33,</span></a>
+<a class="sourceLine" id="cb34-11" data-line-number="11"><span class="st">    &quot;BMI&quot;: 25,</span></a>
+<a class="sourceLine" id="cb34-12" data-line-number="12"><span class="st">    &quot;SGRQ&quot;: 50,</span></a>
+<a class="sourceLine" id="cb34-13" data-line-number="13"><span class="st">    &quot;LastYrExacCount&quot;: 2,</span></a>
+<a class="sourceLine" id="cb34-14" data-line-number="14"><span class="st">    &quot;LastYrSevExacCount&quot;: 1,</span></a>
+<a class="sourceLine" id="cb34-15" data-line-number="15"><span class="st">    &quot;randomized_azithromycin&quot;: 0,</span></a>
+<a class="sourceLine" id="cb34-16" data-line-number="16"><span class="st">    &quot;randomized_statin&quot;: 0,</span></a>
+<a class="sourceLine" id="cb34-17" data-line-number="17"><span class="st">    &quot;randomized_LAMA&quot;: 0,</span></a>
+<a class="sourceLine" id="cb34-18" data-line-number="18"><span class="st">    &quot;randomized_LABA&quot;: 0,</span></a>
+<a class="sourceLine" id="cb34-19" data-line-number="19"><span class="st">    &quot;randomized_ICS&quot;: 0}]}&#39;</span> -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -Headers @<span class="dt">{&quot;Content-type&quot;=&quot;application/json&quot;}</span></a></code></pre></div>
 </div>
 </div>
 <div id="section-python-api" class="section level2">
 <h2><span class="header-section-number">5.3</span> Python API</h2>
 <p>For this, we are assuming the use of Python 3.</p>
 <p>To get started, you will need to import the <strong>json</strong> and <strong>requests</strong> libraries. To install, open a terminal:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">pip3</span> install requests</code></pre></div>
+<div class="sourceCode" id="section-cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="ex">pip3</span> install requests</a></code></pre></div>
 <p>We will start with the GET request. If everything is working, this should return 200 as a response.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> json
-<span class="im">import</span> requests
-response <span class="op">=</span> requests.get(<span class="st">&quot;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&quot;</span>)
-<span class="bu">print</span>(response)</code></pre></div>
+<div class="sourceCode" id="section-cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="im">import</span> json</a>
+<a class="sourceLine" id="cb36-2" data-line-number="2"><span class="im">import</span> requests</a>
+<a class="sourceLine" id="cb36-3" data-line-number="3">response <span class="op">=</span> requests.get(<span class="st">&quot;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&quot;</span>)</a>
+<a class="sourceLine" id="cb36-4" data-line-number="4"><span class="bu">print</span>(response)</a></code></pre></div>
 <p>For the POST request, we will send some patient data to the API, and should get a prediction back from the API.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">api_key <span class="op">=</span> <span class="st">&#39;YOUR_API_KEY&#39;</span>
-patientInput <span class="op">=</span> [{
-    <span class="st">&quot;ID&quot;</span>: <span class="st">&quot;10001&quot;</span>,
-    <span class="st">&quot;male&quot;</span>: <span class="dv">1</span>,
-    <span class="st">&quot;age&quot;</span>: <span class="dv">70</span>,
-    <span class="st">&quot;smoker&quot;</span>: <span class="dv">1</span>,
-    <span class="st">&quot;oxygen&quot;</span>: <span class="dv">1</span>,
-    <span class="st">&quot;statin&quot;</span>: <span class="dv">1</span>,
-    <span class="st">&quot;LAMA&quot;</span>: <span class="dv">1</span>,
-    <span class="st">&quot;LABA&quot;</span>: <span class="dv">1</span>,
-    <span class="st">&quot;ICS&quot;</span>: <span class="dv">1</span>,
-    <span class="st">&quot;FEV1&quot;</span>: <span class="dv">33</span>,
-    <span class="st">&quot;BMI&quot;</span>: <span class="dv">25</span>,
-    <span class="st">&quot;SGRQ&quot;</span>: <span class="dv">50</span>,
-    <span class="st">&quot;LastYrExacCount&quot;</span>: <span class="dv">2</span>,
-    <span class="st">&quot;LastYrSevExacCount&quot;</span>: <span class="dv">1</span>,
-    <span class="st">&quot;randomized_azithromycin&quot;</span>: <span class="dv">0</span>,
-    <span class="st">&quot;randomized_statin&quot;</span>: <span class="dv">0</span>,
-    <span class="st">&quot;randomized_LAMA&quot;</span>: <span class="dv">0</span>,
-    <span class="st">&#39;randomized_LABA&quot;: 0,</span>
-<span class="st">    &quot;randomized_ICS&quot;: 0</span>
-<span class="st">}]</span>
-<span class="st">response = requests.post(&quot;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&quot;,</span>
-<span class="st">  json = {&quot;api_key&quot;:[api_key],</span>
-<span class="st">  &quot;func&quot;: [&quot;prism_model_run&quot;],</span>
-<span class="st">  &quot;model_input&quot;: patientInput})</span>
-<span class="st">print(response)</span>
-<span class="st">results = json.loads(response.text)</span>
-<span class="st">print(results)</span></code></pre></div>
+<div class="sourceCode" id="section-cb37"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" data-line-number="1">api_key <span class="op">=</span> <span class="st">&#39;YOUR_API_KEY&#39;</span></a>
+<a class="sourceLine" id="cb37-2" data-line-number="2">patientInput <span class="op">=</span> [{</a>
+<a class="sourceLine" id="cb37-3" data-line-number="3">    <span class="st">&quot;ID&quot;</span>: <span class="st">&quot;10001&quot;</span>,</a>
+<a class="sourceLine" id="cb37-4" data-line-number="4">    <span class="st">&quot;male&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb37-5" data-line-number="5">    <span class="st">&quot;age&quot;</span>: <span class="dv">70</span>,</a>
+<a class="sourceLine" id="cb37-6" data-line-number="6">    <span class="st">&quot;smoker&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb37-7" data-line-number="7">    <span class="st">&quot;oxygen&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb37-8" data-line-number="8">    <span class="st">&quot;statin&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb37-9" data-line-number="9">    <span class="st">&quot;LAMA&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb37-10" data-line-number="10">    <span class="st">&quot;LABA&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb37-11" data-line-number="11">    <span class="st">&quot;ICS&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb37-12" data-line-number="12">    <span class="st">&quot;FEV1&quot;</span>: <span class="dv">33</span>,</a>
+<a class="sourceLine" id="cb37-13" data-line-number="13">    <span class="st">&quot;BMI&quot;</span>: <span class="dv">25</span>,</a>
+<a class="sourceLine" id="cb37-14" data-line-number="14">    <span class="st">&quot;SGRQ&quot;</span>: <span class="dv">50</span>,</a>
+<a class="sourceLine" id="cb37-15" data-line-number="15">    <span class="st">&quot;LastYrExacCount&quot;</span>: <span class="dv">2</span>,</a>
+<a class="sourceLine" id="cb37-16" data-line-number="16">    <span class="st">&quot;LastYrSevExacCount&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb37-17" data-line-number="17">    <span class="st">&quot;randomized_azithromycin&quot;</span>: <span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb37-18" data-line-number="18">    <span class="st">&quot;randomized_statin&quot;</span>: <span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb37-19" data-line-number="19">    <span class="st">&quot;randomized_LAMA&quot;</span>: <span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb37-20" data-line-number="20">    <span class="st">&#39;randomized_LABA&quot;: 0,</span></a>
+<a class="sourceLine" id="cb37-21" data-line-number="21"><span class="st">    &quot;randomized_ICS&quot;: 0</span></a>
+<a class="sourceLine" id="cb37-22" data-line-number="22"><span class="st">}]</span></a>
+<a class="sourceLine" id="cb37-23" data-line-number="23"><span class="st">response = requests.post(&quot;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&quot;,</span></a>
+<a class="sourceLine" id="cb37-24" data-line-number="24"><span class="st">  json = {&quot;api_key&quot;:[api_key],</span></a>
+<a class="sourceLine" id="cb37-25" data-line-number="25"><span class="st">  &quot;func&quot;: [&quot;prism_model_run&quot;],</span></a>
+<a class="sourceLine" id="cb37-26" data-line-number="26"><span class="st">  &quot;model_input&quot;: patientInput})</span></a>
+<a class="sourceLine" id="cb37-27" data-line-number="27"><span class="st">print(response)</span></a>
+<a class="sourceLine" id="cb37-28" data-line-number="28"><span class="st">results = json.loads(response.text)</span></a>
+<a class="sourceLine" id="cb37-29" data-line-number="29"><span class="st">print(results)</span></a></code></pre></div>
 <!-- ```{python prism-python3, eval = TRUE, echo = FALSE, engine.path = pythonEngine} -->
 <!-- response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json", json = {"api_key":[123456],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}) -->
 <!-- print(response) -->
@@ -311,9 +343,9 @@ patientInput <span class="op">=</span> [{
 <div id="section-javascript-api" class="section level2">
 <h2><span class="header-section-number">5.4</span> Javascript API</h2>
 <p>To use the PRISM API in Javascript, you will need to use the XMLHttpRequest module. We will start by sending a GET request:</p>
-<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript">request <span class="op">=</span> <span class="kw">new</span> <span class="at">XMLHttpRequest</span>()<span class="op">;</span>
-<span class="va">request</span>.<span class="at">open</span>(<span class="st">&#39;GET&#39;</span><span class="op">,</span> <span class="st">&#39;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&#39;</span>)<span class="op">;</span>
-<span class="va">request</span>.<span class="at">send</span>()<span class="op">;</span></code></pre></div>
+<div class="sourceCode" id="section-cb38"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb38-1" data-line-number="1">request <span class="op">=</span> <span class="kw">new</span> <span class="at">XMLHttpRequest</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="va">request</span>.<span class="at">open</span>(<span class="st">&#39;GET&#39;</span><span class="op">,</span> <span class="st">&#39;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb38-3" data-line-number="3"><span class="va">request</span>.<span class="at">send</span>()<span class="op">;</span></a></code></pre></div>
 <p>The <strong>onreadystatechange</strong> is an XMLHttpRequest event which updates when the ready state changes. The ready state can be either 1, 2, 3, or 4.</p>
 <pre><code>&gt; null device 
 &gt;           1</code></pre>
@@ -347,46 +379,46 @@ patientInput <span class="op">=</span> [{
 </tr>
 </tbody>
 </table>
-<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="va">request</span>.<span class="at">onreadystatechange</span> <span class="op">=</span> <span class="kw">function</span>() <span class="op">{</span>
-            <span class="cf">if</span>(<span class="va">request</span>.<span class="at">readyState</span> <span class="op">===</span> <span class="dv">4</span>) <span class="op">{</span> <span class="co">//</span>
-                <span class="cf">if</span>(<span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">200</span>) <span class="op">{</span>
-                    <span class="va">console</span>.<span class="at">log</span>(<span class="va">request</span>.<span class="at">responseText</span>)<span class="op">;</span>
-                <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span>
-                        <span class="va">console</span>.<span class="at">log</span>(<span class="va">request</span>.<span class="at">status</span>)<span class="op">;</span>
-                <span class="op">}</span>
-            <span class="op">}</span>
-        <span class="op">}</span></code></pre></div>
+<div class="sourceCode" id="section-cb40"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="va">request</span>.<span class="at">onreadystatechange</span> <span class="op">=</span> <span class="kw">function</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb40-2" data-line-number="2">            <span class="cf">if</span>(<span class="va">request</span>.<span class="at">readyState</span> <span class="op">===</span> <span class="dv">4</span>) <span class="op">{</span> <span class="co">//</span></a>
+<a class="sourceLine" id="cb40-3" data-line-number="3">                <span class="cf">if</span>(<span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">200</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb40-4" data-line-number="4">                    <span class="va">console</span>.<span class="at">log</span>(<span class="va">request</span>.<span class="at">responseText</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb40-5" data-line-number="5">                <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb40-6" data-line-number="6">                        <span class="va">console</span>.<span class="at">log</span>(<span class="va">request</span>.<span class="at">status</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb40-7" data-line-number="7">                <span class="op">}</span></a>
+<a class="sourceLine" id="cb40-8" data-line-number="8">            <span class="op">}</span></a>
+<a class="sourceLine" id="cb40-9" data-line-number="9">        <span class="op">}</span></a></code></pre></div>
 <p>To get a prediction, we can send a POST request. We will first create an example patient using json:</p>
-<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="kw">let</span> patient <span class="op">=</span> <span class="va">JSON</span>.<span class="at">stringify</span>(<span class="op">{</span>
-  <span class="dt">api_key</span><span class="op">:</span> YOUR_API_KEY<span class="op">,</span>
-  <span class="dt">func</span><span class="op">:</span> [<span class="st">&quot;prism_model_run&quot;</span>]<span class="op">,</span>
-  <span class="dt">model_input</span><span class="op">:</span> [<span class="op">{</span>
-    <span class="dt">ID</span><span class="op">:</span> <span class="dv">10001</span><span class="op">,</span>
-    <span class="dt">male</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
-    <span class="dt">age</span><span class="op">:</span> <span class="dv">70</span><span class="op">,</span>
-    <span class="dt">smoker</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
-    <span class="dt">oxygen</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
-    <span class="dt">statin</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
-    <span class="dt">LAMA</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
-    <span class="dt">LABA</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
-    <span class="dt">ICS</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
-    <span class="dt">FEV1</span><span class="op">:</span> <span class="dv">33</span><span class="op">,</span>
-    <span class="dt">BMI</span><span class="op">:</span> <span class="dv">25</span><span class="op">,</span>
-    <span class="dt">SGRQ</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span>
-    <span class="dt">LastYrExacCount</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span>
-    <span class="dt">LastYrSevExacCount</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span>
-    <span class="dt">randomized_azithromycin</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span>
-    <span class="dt">randomized_statin</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span>
-    <span class="dt">randomized_LAMA</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span>
-    <span class="dt">randomized_LABA</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span>
-    <span class="dt">randomized_ICS</span><span class="op">:</span> <span class="dv">0</span>
-  <span class="op">}</span>]
-<span class="op">}</span>)<span class="op">;</span></code></pre></div>
+<div class="sourceCode" id="section-cb41"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">let</span> patient <span class="op">=</span> <span class="va">JSON</span>.<span class="at">stringify</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb41-2" data-line-number="2">  <span class="dt">api_key</span><span class="op">:</span> YOUR_API_KEY<span class="op">,</span></a>
+<a class="sourceLine" id="cb41-3" data-line-number="3">  <span class="dt">func</span><span class="op">:</span> [<span class="st">&quot;prism_model_run&quot;</span>]<span class="op">,</span></a>
+<a class="sourceLine" id="cb41-4" data-line-number="4">  <span class="dt">model_input</span><span class="op">:</span> [<span class="op">{</span></a>
+<a class="sourceLine" id="cb41-5" data-line-number="5">    <span class="dt">ID</span><span class="op">:</span> <span class="dv">10001</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-6" data-line-number="6">    <span class="dt">male</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-7" data-line-number="7">    <span class="dt">age</span><span class="op">:</span> <span class="dv">70</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-8" data-line-number="8">    <span class="dt">smoker</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-9" data-line-number="9">    <span class="dt">oxygen</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-10" data-line-number="10">    <span class="dt">statin</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-11" data-line-number="11">    <span class="dt">LAMA</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-12" data-line-number="12">    <span class="dt">LABA</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-13" data-line-number="13">    <span class="dt">ICS</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-14" data-line-number="14">    <span class="dt">FEV1</span><span class="op">:</span> <span class="dv">33</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-15" data-line-number="15">    <span class="dt">BMI</span><span class="op">:</span> <span class="dv">25</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-16" data-line-number="16">    <span class="dt">SGRQ</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-17" data-line-number="17">    <span class="dt">LastYrExacCount</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-18" data-line-number="18">    <span class="dt">LastYrSevExacCount</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-19" data-line-number="19">    <span class="dt">randomized_azithromycin</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-20" data-line-number="20">    <span class="dt">randomized_statin</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-21" data-line-number="21">    <span class="dt">randomized_LAMA</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-22" data-line-number="22">    <span class="dt">randomized_LABA</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb41-23" data-line-number="23">    <span class="dt">randomized_ICS</span><span class="op">:</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb41-24" data-line-number="24">  <span class="op">}</span>]</a>
+<a class="sourceLine" id="cb41-25" data-line-number="25"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <p>We need to set the request header to json, and then send our patient json to the PRISM server using the <strong>request.send()</strong> function.</p>
-<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="va">request</span>.<span class="at">open</span>(<span class="st">&#39;POST&#39;</span><span class="op">,</span> <span class="st">&#39;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&#39;</span>)<span class="op">;</span>
-<span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;Content-Type&#39;</span><span class="op">,</span> <span class="st">&#39;application/json&#39;</span>)<span class="op">;</span>
-<span class="va">request</span>.<span class="at">send</span>(patient)<span class="op">;</span> <span class="co">// Send request</span>
-<span class="kw">let</span> results <span class="op">=</span> <span class="va">request</span>.<span class="at">response</span><span class="op">;</span></code></pre></div>
+<div class="sourceCode" id="section-cb42"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="va">request</span>.<span class="at">open</span>(<span class="st">&#39;POST&#39;</span><span class="op">,</span> <span class="st">&#39;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;Content-Type&#39;</span><span class="op">,</span> <span class="st">&#39;application/json&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="va">request</span>.<span class="at">send</span>(patient)<span class="op">;</span> <span class="co">// Send request</span></a>
+<a class="sourceLine" id="cb42-4" data-line-number="4"><span class="kw">let</span> results <span class="op">=</span> <span class="va">request</span>.<span class="at">response</span><span class="op">;</span></a></code></pre></div>
 
 </div>
 </div>

@@ -25,6 +25,9 @@ devtools::install_github('aminadibi/epicR')
 1. Download and Install the latest version of R from [https://cran.r-project.org/bin/macosx/](https://cran.r-project.org/bin/macosx/)
 2. Download and Install R Studio from [https://www.rstudio.com/products/rstudio/download/](https://www.rstudio.com/products/rstudio/download/)
 3. Install homebrew from [https://brew.sh](https://brew.sh) and [Xcode](https://developer.apple.com/xcode/) developer tools from the App store.
+
+Note: `Xcode` is quite a large file, and needs about 20 GB of storage space to install. The whole process takes about an hour.
+
 4. Open the Terminal and use brew to install `llvm`:
 
 ```{bash, eval=FALSE, echo=TRUE}
@@ -118,20 +121,8 @@ Once you have done this, save the file and close the text editor. You may need t
 
 
 ### Ubuntu 16.04 and Later {-}
-1. Install R by executing the following commands in Terminal:
 
-```{bash, eval=FALSE, echo=TRUE}
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-sudo add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/'
-sudo apt-get update
-sudo apt-get install r-base
-```
-
-If the installation is successful, you should be able to start R:
-
-```{bash, eval=FALSE, echo=TRUE}
-sudo -i R
-```
+1. Install R if you don't have it installed already. See [Appendix 1](#appendix1) for installation guide.
 
 2. Download and Install R Studio from [https://www.rstudio.com/products/rstudio/download/](https://www.rstudio.com/products/rstudio/download/)
 3. Install `libcurl` from Terminal: 
@@ -154,3 +145,68 @@ devtools::install_github('resplab/epicR')
 install.packages("devtools")
 devtools::install_github("resplab/epicR")
 ```
+
+## Running the Model
+
+Now that you have installed `epicR`, you can load the library:
+
+```{r, eval = FALSE, echo = TRUE}
+library(epicR)
+```
+
+### Step 1: Initialize the Session {-}
+
+The backend of this package is in C++. In other languages such as R/Python, memory allocation is taken care of for you. However, in C/C++, you need to allocate memory yourself. You also need to deallocate memory when the program is done. Because of this, we have the function `init_session()`.
+
+`init_session()` is in the **core.R** file, and calls 3 C functions: `Cdeallocate_resources()`,
+`Callocate_resources()`, and `Cinit_session()`. You don't really need to know how these work, but basically they allocate/deallocate memory.
+
+You need to call this before you run anything:
+
+```{r, eval = FALSE, echo = TRUE}
+init_session()
+```
+
+In C++, a program that is successful returns `0`, so you should see this in the R console.
+
+### Step 2: Set the Inputs {-}
+
+If you want to set your own input parameters, I will explain how to do so in this section. If you want to use the defaults, you can skip to the next step.
+
+The default input values are created in the file **input.R**. To set your own input values, you can use the function `createInput()` in the file **createInput.R**. Below is a list of the parameters you can set:
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("input-parameters.html"), collapse="\n")
+HTML(rawHTML)
+```
+
+To create the inputs:
+
+```{r, eval=FALSE, echo=TRUE}
+input = createInput(percentFemale = 0.5,
+                        timeHorizon = 20,
+                        costDiscount = 0.03,
+                        qalyDiscount = 0.03,
+                        baselineAge = 40)
+```
+
+### Step 3: Run {-}
+
+The `run()` function has two arguments: **max_n_agents** and **input**. If you created your own input in **Step 2**, you can put it in here; otherwise, you can leave the **input** argument blank. The **max_n_agents** argument is how many people you want in your model. The default is set to the maximum integer your computer will allow. On my computer that is `2147483647`. You can set this to a lower number if you like (it might run faster).
+
+If you want to change the arguments:
+
+```{r, eval=FALSE, echo=TRUE}
+run(max_n_agents = 1000, input = input)
+```
+
+Otherwise:
+
+```{r, eval=FALSE, echo=TRUE}
+run()
+```
+
+### Step 4: Results {-}
+
+

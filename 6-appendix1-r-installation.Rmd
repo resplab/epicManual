@@ -19,3 +19,39 @@ If your operating system is older, you might want to scroll down to "Legacy Rele
 
 If you are using Windows, click on the link for Windows. You will be redirected to a page that says "R for Windows." To install R, click on the link "base," and on the next page, "Download R 3.X.Y for Windows," where X and Y are the version numbers for the latest release. R should begin downloading.
 
+## Ubuntu
+
+1. First, check which Ubuntu version you are using in Terminal:
+
+```{bash, eval=FALSE, echo=TRUE}
+lsb_release -a
+```
+
+{YOUR_UBUNTU_VERSION} is the Codename given. For example, on my computer it would be `bionic`.
+
+2. Open the `/etc/apt/sources.list` file:
+
+```{bash, eval=FALSE, echo=TRUE}
+sudo gedit /etc/apt/sources.list
+```
+
+For R 3.6 paste the following in the file:
+
+```
+deb https://cloud.r-project.org/bin/linux/ubuntu {YOUR_UBUNTU_VERSION}-cran35/
+```
+
+On my computer, this would be:
+
+```
+deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/
+```
+
+3. Install R:
+
+```{bash, eval=FALSE, echo=TRUE}
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+sudo apt-get update
+sudo apt-get install r-base
+```
+

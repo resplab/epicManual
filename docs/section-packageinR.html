@@ -47,41 +47,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="pretty-styles.css" type="text/css" />
@@ -109,6 +134,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-mac-os-sierra-and-later"><i class="fa fa-check"></i>Mac OS Sierra and Later</a></li>
 <li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-ubuntu-16.04-and-later"><i class="fa fa-check"></i>Ubuntu 16.04 and Later</a></li>
 </ul></li>
+<li class="chapter" data-level="3.2" data-path="section-packageinR.html"><a href="section-packageinR.html#section-running-the-model"><i class="fa fa-check"></i><b>3.2</b> Running the Model</a><ul>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-step-1-initialize-the-session"><i class="fa fa-check"></i>Step 1: Initialize the Session</a></li>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-step-2-set-the-inputs"><i class="fa fa-check"></i>Step 2: Set the Inputs</a></li>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-step-3-run"><i class="fa fa-check"></i>Step 3: Run</a></li>
+<li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-step-4-results"><i class="fa fa-check"></i>Step 4: Results</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="section-webapp.html"><a href="section-webapp.html"><i class="fa fa-check"></i><b>4</b> Using the Web Application</a></li>
 <li class="chapter" data-level="5" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html"><i class="fa fa-check"></i><b>5</b> Using the Package as an API (PRISM)</a><ul>
@@ -125,6 +156,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.1" data-path="section-appendix1.html"><a href="section-appendix1.html#section-step-1-mirrors"><i class="fa fa-check"></i><b>6.1</b> Step 1: Mirrors</a></li>
 <li class="chapter" data-level="6.2" data-path="section-appendix1.html"><a href="section-appendix1.html#section-mac-os-x"><i class="fa fa-check"></i><b>6.2</b> Mac OS X</a></li>
 <li class="chapter" data-level="6.3" data-path="section-appendix1.html"><a href="section-appendix1.html#section-windows"><i class="fa fa-check"></i><b>6.3</b> Windows</a></li>
+<li class="chapter" data-level="6.4" data-path="section-appendix1.html"><a href="section-appendix1.html#section-ubuntu"><i class="fa fa-check"></i><b>6.4</b> Ubuntu</a></li>
 </ul></li>
 </ul>
 
@@ -147,58 +179,62 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">3</span> Using the Package in R</h1>
 <div id="section-installation" class="section level2">
 <h2><span class="header-section-number">3.1</span> Installation</h2>
-<p>If you do not have R installed on your computer, please go to <a href="#appendix1">Appendix 1</a>. Once you have R installed, you can install the <strong>epicR</strong> package as per the instructions below:</p>
+<p>If you do not have R installed on your computer, please go to <a href="section-appendix1.html#section-appendix1">Appendix 1</a>. Once you have R installed, you can install the <strong>epicR</strong> package as per the instructions below:</p>
 <div id="section-windows-7-or-later" class="section level3 unnumbered">
 <h3>Windows 7 or Later</h3>
 <ol style="list-style-type: decimal">
-<li>Download and Install the latest version of R from <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a></li>
-<li>Download and Install R Studio from <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a></li>
-<li>Download and Install the latest version of Rtools from <a href="https://cran.r-project.org/bin/windows/Rtools/" class="uri">https://cran.r-project.org/bin/windows/Rtools/</a></li>
+<li>Download and Install the latest version of R from <a href="https://cran.r-project.org/bin/windows/base/">https://cran.r-project.org/bin/windows/base/</a></li>
+<li>Download and Install R Studio from <a href="https://www.rstudio.com/products/rstudio/download/">https://www.rstudio.com/products/rstudio/download/</a></li>
+<li>Download and Install the latest version of Rtools from <a href="https://cran.r-project.org/bin/windows/Rtools/">https://cran.r-project.org/bin/windows/Rtools/</a></li>
 <li>Using either an R session in Terminal or in R Studio, install the package <code>devtools</code>:</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;devtools&#39;</span>)</code></pre></div>
+<div class="sourceCode" id="section-cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&#39;devtools&#39;</span>)</a></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>Install epicR from GitHub:</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&#39;aminadibi/epicR&#39;</span>)</code></pre></div>
+<div class="sourceCode" id="section-cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&#39;aminadibi/epicR&#39;</span>)</a></code></pre></div>
 </div>
 <div id="section-mac-os-sierra-and-later" class="section level3 unnumbered">
 <h3>Mac OS Sierra and Later</h3>
 <ol style="list-style-type: decimal">
-<li>Download and Install the latest version of R from <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a></li>
-<li>Download and Install R Studio from <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a></li>
-<li>Install homebrew from <a href="https://brew.sh" class="uri">https://brew.sh</a> and <a href="https://developer.apple.com/xcode/">Xcode</a> developer tools from the App store.</li>
+<li>Download and Install the latest version of R from <a href="https://cran.r-project.org/bin/macosx/">https://cran.r-project.org/bin/macosx/</a></li>
+<li>Download and Install R Studio from <a href="https://www.rstudio.com/products/rstudio/download/">https://www.rstudio.com/products/rstudio/download/</a></li>
+<li>Install homebrew from <a href="https://brew.sh">https://brew.sh</a> and <a href="https://developer.apple.com/xcode/">Xcode</a> developer tools from the App store.</li>
+</ol>
+<p>Note: <code>Xcode</code> is quite a large file, and needs about 20 GB of storage space to install. The whole process takes about an hour.</p>
+<ol start="4" style="list-style-type: decimal">
 <li>Open the Terminal and use brew to install <code>llvm</code>:</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">brew</span> install llvm</code></pre></div>
+<div class="sourceCode" id="section-cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="ex">brew</span> install llvm</a></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>Add the following to your <code>~/.bash_profile</code>:</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">export</span> <span class="va">PATH=</span><span class="st">&quot;/usr/local/opt/llvm/bin:</span><span class="va">$PATH</span><span class="st">&quot;</span></code></pre></div>
+<div class="sourceCode" id="section-cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="bu">export</span> <span class="va">PATH=</span><span class="st">&quot;/usr/local/opt/llvm/bin:</span><span class="va">$PATH</span><span class="st">&quot;</span></a></code></pre></div>
 <p>And this to your <code>~/.Rprofile</code>:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Sys.setenv</span>(PATH=paste(<span class="st">&quot;/usr/local/opt/llvm/bin&quot;</span>, Sys.getenv(<span class="st">&quot;PATH&quot;</span>), <span class="va">sep=</span><span class="st">&quot;:&quot;</span>))</code></pre></div>
+<div class="sourceCode" id="section-cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">Sys.setenv</span>(PATH=paste(<span class="st">&quot;/usr/local/opt/llvm/bin&quot;</span>, Sys.getenv(<span class="st">&quot;PATH&quot;</span>), <span class="va">sep=</span><span class="st">&quot;:&quot;</span>))</a></code></pre></div>
 <ol start="6" style="list-style-type: decimal">
 <li>Using either an R session in Terminal or in R Studio, install the package <code>devtools</code>:</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;devtools&#39;</span>)</code></pre></div>
+<div class="sourceCode" id="section-cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&#39;devtools&#39;</span>)</a></code></pre></div>
 <ol start="7" style="list-style-type: decimal">
 <li>Install epicR from GitHub:</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&#39;resplab/epicR&#39;</span>)</code></pre></div>
+<div class="sourceCode" id="section-cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&#39;resplab/epicR&#39;</span>)</a></code></pre></div>
 <p>Note: If epicR is still not compiling correctly, <code>gfortran</code> needs to be installed separately. In the terminal:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">brew</span> install gcc</code></pre></div>
-<p>Now, by default, R does not look for the HomeBrew version of gcc, so you will need to change this as well. First, you need to find the version of gcc you are using:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">brew</span> list --versions gcc</code></pre></div>
+<div class="sourceCode" id="section-cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="ex">brew</span> install gcc</a></code></pre></div>
+<p>Now, by default, R does not look for the HomeBrew version of gcc, so you will need to change this as well. First, you need to find the version of gcc you
+are using:</p>
+<div class="sourceCode" id="section-cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="ex">brew</span> list --versions gcc</a></code></pre></div>
 <p>The first number is {YOUR_GCC_MAIN_VERSION}, and the whole name is {YOUR_GCC_FULL_VERSION}. For example, on my computer, it is:</p>
 <pre><code>9.1.0</code></pre>
 <p>You will also need the folder name for your gcc, which you will need to log in as sudo to do:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> cd </code></pre></div>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> ~/usr/local/lib/gcc/<span class="dt">{YOUR_GCC_MAIN_VERSION}</span>/gcc
-<span class="fu">ls</span></code></pre></div>
+<div class="sourceCode" id="section-cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="fu">sudo</span> cd </a></code></pre></div>
+<div class="sourceCode" id="section-cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="bu">cd</span> ~/usr/local/lib/gcc/<span class="dt">{YOUR_GCC_MAIN_VERSION}</span>/gcc</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="fu">ls</span></a></code></pre></div>
 <p>The folder name printed out is {YOUR_GCC_TARGET}. For example, on my computer, it is:</p>
 <pre><code>x86_64-apple-darwin18</code></pre>
 <p>In terminal, use your favourite text editor to open the file “~/.R/Makevars”:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">open</span> ~/.R/Makevars</code></pre></div>
+<div class="sourceCode" id="section-cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="ex">open</span> ~/.R/Makevars</a></code></pre></div>
 <p>This may open a blank file, or it might have some content already. Somewhere in the file, add the following:</p>
 <pre><code>CC = gcc-{YOUR_GCC_MAIN_VERSION}
 CXX = g++-{YOUR_GCC_MAIN_VERSION}
@@ -214,29 +250,95 @@ FLIBS = -L/usr/local/lib/gcc/9/gcc/x86_64-apple-darwin18/9.1.0
 <div id="section-ubuntu-16.04-and-later" class="section level3 unnumbered">
 <h3>Ubuntu 16.04 and Later</h3>
 <ol style="list-style-type: decimal">
-<li>Install R by executing the following commands in Terminal:</li>
+<li><p>Install R if you don’t have it installed already. See <a href="section-appendix1.html#section-appendix1">Appendix 1</a> for installation guide.</p></li>
+<li>Download and Install R Studio from <a href="https://www.rstudio.com/products/rstudio/download/">https://www.rstudio.com/products/rstudio/download/</a></li>
+<li><p>Install <code>libcurl</code> from Terminal:</p></li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-<span class="fu">sudo</span> add-apt-repository <span class="st">&#39;deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/&#39;</span>
-<span class="fu">sudo</span> apt-get update
-<span class="fu">sudo</span> apt-get install r-base</code></pre></div>
-<p>If the installation is successful, you should be able to start R:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> -i R</code></pre></div>
-<ol start="2" style="list-style-type: decimal">
-<li>Download and Install R Studio from <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a></li>
-<li>Install <code>libcurl</code> from Terminal:</li>
-</ol>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">sudo</span> apt-get install libcurl4-openssl-dev libssl-dev</code></pre></div>
+<div class="sourceCode" id="section-cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="fu">sudo</span> apt-get install libcurl4-openssl-dev libssl-dev</a></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>Using either an R session in Terminal or in R Studio, install the package <code>devtools</code>:</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span> (<span class="st">&#39;devtools&#39;</span>)</code></pre></div>
+<div class="sourceCode" id="section-cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">install.packages</span> (<span class="st">&#39;devtools&#39;</span>)</a></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>Install epicR from GitHub:</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&#39;resplab/epicR&#39;</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)
-devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;resplab/epicR&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="section-cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&#39;resplab/epicR&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="section-cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</a>
+<a class="sourceLine" id="cb20-2" data-line-number="2">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;resplab/epicR&quot;</span>)</a></code></pre></div>
+</div>
+</div>
+<div id="section-running-the-model" class="section level2">
+<h2><span class="header-section-number">3.2</span> Running the Model</h2>
+<p>Now that you have installed <code>epicR</code>, you can load the library:</p>
+<div class="sourceCode" id="section-cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">library</span>(epicR)</a></code></pre></div>
+<div id="section-step-1-initialize-the-session" class="section level3 unnumbered">
+<h3>Step 1: Initialize the Session</h3>
+<p>The backend of this package is in C++. In other languages such as R/Python, memory allocation is taken care of for you. However, in C/C++, you need to allocate memory yourself. You also need to deallocate memory when the program is done. Because of this, we have the function <code>init_session()</code>.</p>
+<p><code>init_session()</code> is in the <strong>core.R</strong> file, and calls 3 C functions: <code>Cdeallocate_resources()</code>,
+<code>Callocate_resources()</code>, and <code>Cinit_session()</code>. You don’t really need to know how these work, but basically they allocate/deallocate memory.</p>
+<p>You need to call this before you run anything:</p>
+<div class="sourceCode" id="section-cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">init_session</span>()</a></code></pre></div>
+<p>In C++, a program that is successful returns <code>0</code>, so you should see this in the R console.</p>
+</div>
+<div id="section-step-2-set-the-inputs" class="section level3 unnumbered">
+<h3>Step 2: Set the Inputs</h3>
+<p>If you want to set your own input parameters, I will explain how to do so in this section. If you want to use the defaults, you can skip to the next step.</p>
+<p>The default input values are created in the file <strong>input.R</strong>. To set your own input values, you can use the function <code>createInput()</code> in the file <strong>createInput.R</strong>. Below is a list of the parameters you can set:</p>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<div class="row">
+  <div class="col-4">
+
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-exacerbation-list" data-toggle="list" href="#list-exacerbation" role="tab" aria-controls="exacerbation">percentFemale</a>
+      <a class="list-group-item list-group-item-action" id="list-fev1-list" data-toggle="list" href="#list-fev1" role="tab" aria-controls="fev1">timeHorizon</a>
+      <a class="list-group-item list-group-item-action" id="list-smoking-list" data-toggle="list" href="#list-smoking" role="tab" aria-controls="smoking">costDiscount</a>
+      <a class="list-group-item list-group-item-action" id="list-age-list" data-toggle="list" href="#list-age" role="tab" aria-controls="age">qalyDiscount</a>
+      <a class="list-group-item list-group-item-action" id="list-gender-list" data-toggle="list" href="#list-gender" role="tab" aria-controls="gender">baselineAge</a>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-exacerbation" role="tabpanel" aria-labelledby="list-exacerbation-list">
+        decimal: between 0 and 1, percentage of population that is female
+      </div>
+      <div class="tab-pane fade" id="list-fev1" role="tabpanel" aria-labelledby="list-fev1-list">
+        integer: time in years for model
+      </div>
+      <div class="tab-pane fade" id="list-smoking" role="tabpanel" aria-labelledby="list-smoking-list">
+        decimal: between 0 and 1, percentage which payoffs decrease every year
+      </div>
+      <div class="tab-pane fade" id="list-age" role="tabpanel" aria-labelledby="list-age-list">
+        decimal: between 0 and 1, percentage which QALYs decrease every year
+      </div>
+    <div class="tab-pane fade" id="list-gender" role="tabpanel" aria-labelledby="list-gender-list">
+      integer: mean age at baseline
+    </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<p>To create the inputs:</p>
+<div class="sourceCode" id="section-cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">input =<span class="st"> </span><span class="kw">createInput</span>(<span class="dt">percentFemale =</span> <span class="fl">0.5</span>,</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">                        <span class="dt">timeHorizon =</span> <span class="dv">20</span>,</a>
+<a class="sourceLine" id="cb23-3" data-line-number="3">                        <span class="dt">costDiscount =</span> <span class="fl">0.03</span>,</a>
+<a class="sourceLine" id="cb23-4" data-line-number="4">                        <span class="dt">qalyDiscount =</span> <span class="fl">0.03</span>,</a>
+<a class="sourceLine" id="cb23-5" data-line-number="5">                        <span class="dt">baselineAge =</span> <span class="dv">40</span>)</a></code></pre></div>
+</div>
+<div id="section-step-3-run" class="section level3 unnumbered">
+<h3>Step 3: Run</h3>
+<p>The <code>run()</code> function has two arguments: <strong>max_n_agents</strong> and <strong>input</strong>. If you created your own input in <strong>Step 2</strong>, you can put it in here; otherwise, you can leave the <strong>input</strong> argument blank. The <strong>max_n_agents</strong> argument is how many people you want in your model. The default is set to the maximum integer your computer will allow. On my computer that is <code>2147483647</code>. You can set this to a lower number if you like (it might run faster).</p>
+<p>If you want to change the arguments:</p>
+<div class="sourceCode" id="section-cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">run</span>(<span class="dt">max_n_agents =</span> <span class="dv">1000</span>, <span class="dt">input =</span> input)</a></code></pre></div>
+<p>Otherwise:</p>
+<div class="sourceCode" id="section-cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">run</span>()</a></code></pre></div>
+</div>
+<div id="section-step-4-results" class="section level3 unnumbered">
+<h3>Step 4: Results</h3>
 
 </div>
 </div>
