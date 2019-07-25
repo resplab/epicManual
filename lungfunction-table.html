@@ -1,0 +1,129 @@
+<div>
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr>
+  <td style="text-align: left;"><b>Parameters</b></td>
+  <td><b>Description</b></td>
+  <td class="col-2"><b>Values</b></td>
+  <td><b>References</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    $FEV_1$ for prevalent cases
+  </td>
+  <td style="text-align: left;">
+    Baseline $FEV_1$ value for individuals who have
+    COPD at the time of creation
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lungfunctionMath-1" aria-expanded="false" aria-controls="lungfunctionMath-1">
+    Show Math
+  </button>
+  </td>
+  <td>
+  Regression on <a href="#">COLD data</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="lungfunctionMath-1">
+    \begin{equation}
+      \\ \mu = \beta_{0,sex} + \beta_{1,sex} * age + \beta_{2,sex} * packYears +
+      \beta_{3,sex} * height^2
+      \\ FEV_1 | sex \sim Normal(\mu, e)
+    \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    $FEV_1$ at incidence
+  </td>
+  <td style="text-align: left;">
+    Baseline $FEV_1$ value for individuals who develop
+    COPD during the time in the model
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lungfunctionMath-2" aria-expanded="false" aria-controls="lungfunctionMath-2">
+    Show Math
+  </button>
+  </td>
+<td>
+  Regression on <a href="#">COLD data</a>
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="lungfunctionMath-2">
+    \begin{equation}
+      \\ \mu = \beta_{0,sex} + \beta_{1,sex} * age + \beta_{2,sex} * packYears +
+      \beta_{3,sex} * height^2 +
+      \\ \beta_{4,sex}*\dfrac{FEV_1}{FVC*LLN}
+      \\ FEV_1 | sex \sim Normal(\mu, e)
+      \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    $FEV_1$ decline over time
+  </td>
+  <td style="text-align: left;">
+    Models $FEV_1$ at time $t$ (in years)
+    in the future based on a random-intercept, random-slope model
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lungfunctionMath-3" aria-expanded="false" aria-controls="lungfunctionMath-3">
+    Show Math
+  </button>
+  </td>
+<td>
+  From the <a href="#">Lung Health Study</a>
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="lungfunctionMath-3">
+    \begin{equation}
+      \\ Y_0 = \beta_0 + \beta_1 * age + \beta_2 * sex + \beta_3 * weight
+      + \beta_4 * height + \beta_5 * height^2 +
+      \\ \beta_6 * smokingStatus + \beta_7 * age * height^2
+      \\ Y_1 = \beta_0' + \beta_1' * age + \beta_2' * sex + \beta_3' * weight
+      + \beta_4' * height + \beta_5' * height^2 +
+      \\ \beta_6' * smokingStatus
+      + \beta_7' * age * height^2
+      \\ Y_2 = \beta_0''
+      \\ \mu = Y_0 + Y_1 * t + Y_2 * t^2
+      \\ FEV_1 | sex \sim Normal(\mu, e)
+      \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Predicted $FEV_1$
+  </td>
+  <td style="text-align: left;">
+    Calculates predicted $FEV_1$ value, required for
+    determining GOLD severity grades
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lungfunctionMath-4" aria-expanded="false" aria-controls="lungfunctionMath-4">
+    Show Math
+  </button>
+  </td>
+<td>
+  From <a href="#">NHANES III</a>
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="lungfunctionMath-4">
+    \begin{equation}
+      \\ FEV_1Predicted = \beta_0 + \beta_1 * sex + \beta_2 * age + \beta_3 * height^2
+      \end{equation}
+
+  </div>
+  </td>
+</tr>
+</tbody>
+</table></div>

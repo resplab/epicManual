@@ -1,5 +1,5 @@
 ---
-title: "Exacerbation Platform in COPD (EPIC)"
+title: "Evaluation Platform in COPD (EPIC)"
 site: "bookdown::bookdown_site"
 runtime: "shiny"
 output:

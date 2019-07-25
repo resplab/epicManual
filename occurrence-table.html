@@ -1,0 +1,63 @@
+<div>
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr>
+  <td style="text-align: left;"><b>Parameters</b></td>
+  <td><b>Description</b></td>
+  <td class="col-2"><b>Values</b></td>
+  <td><b>References</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    COPD prevalence equation
+  </td>
+  <td style="text-align: left;">
+    Assigns COPD status to simulated individuals at the time of creation
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#occurrenceMath-1" aria-expanded="false" aria-controls="occurrenceMath-1">
+    Show Math
+  </button>
+  </td>
+  <td>
+  Regression on <a href="#">COLD data</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="occurrenceMath-1">
+    \begin{equation}
+      \\ logit(p | sex) = \beta_{0,sex} +
+      \beta_{1,sex} * age + \beta_{2,sex} * packYears
+      \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    COPD incidence equations
+  </td>
+  <td style="text-align: left;">
+    Assigns COPD status to simulated individuals who did not have COPD at the
+    time of creation during their time in the model
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#occurrenceMath-2" aria-expanded="false" aria-controls="occurrenceMath-2">
+    Show Math
+  </button>
+  </td>
+<td>
+  Stochastic calibration based on <a href="#">COPD prevalence equations</a>
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="occurrenceMath-2">
+    \begin{equation}
+      \\ log(hazard | sex) = \beta_{0,sex} +
+      \beta_{1,sex} * age + \beta_{2,sex} * packYears
+      \end{equation}
+  </div>
+  </td>
+</tr>
+</tbody>
+</table></div>

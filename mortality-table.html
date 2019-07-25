@@ -1,0 +1,61 @@
+<div>
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr>
+  <td style="text-align: left;"><b>Parameters</b></td>
+  <td><b>Description</b></td>
+  <td class="col-2"><b>Values</b></td>
+  <td><b>References</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Background mortality rate
+  </td>
+  <td style="text-align: left;">
+     Death due to non-COPD reasons
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#mortalityMath-1" aria-expanded="false" aria-controls="mortalityMath-1">
+    Show Math
+  </button>
+  </td>
+  <td>
+  Modification of the <a href="#">Canadian life tables</a>; such that the combined
+  sources of mortality match the life table values
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="mortalityMath-1">
+    Canadian life tables with calibration to remove COPD-specific mortality
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Mortality due to COPD exacerbations
+  </td>
+  <td style="text-align: left;">
+    Short-term mortality due to severe exacerbations
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#mortalityMath-2" aria-expanded="false" aria-controls="mortalityMath-2">
+    Show Math
+  </button>
+  </td>
+<td>
+  From <a href="#">Aaron et al.</a> and <a href="#">Flattet et al.</a>. Severe
+  and very severe are dummy-coded variables
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="mortalityMath-2">
+    \begin{equation}
+      \\ logit( p) = \beta_{0} + \beta_1 * age + \beta_2 * severe + \beta_3 * verySevere
+
+      \end{equation}
+  </div>
+  </td>
+</tr>
+</tbody>
+</table></div>

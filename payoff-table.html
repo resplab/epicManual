@@ -1,0 +1,115 @@
+<div>
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr>
+  <td style="text-align: left;"><b>Parameters</b></td>
+  <td><b>Description</b></td>
+  <td class="col-2"><b>Values</b></td>
+  <td><b>References</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Direct maintenance costs of COPD
+  </td>
+  <td style="text-align: left;">
+    Annual direct medical costs not associated with exacerbations (in 2015 $CAD)
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#payoffMath-1" aria-expanded="false" aria-controls="payoffMath-1">
+    Show Math
+  </button>
+  </td>
+  <td>
+  <a href="#">Spencer et al.</a> and <a href="#">Chapman et al.</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="payoffMath-1">
+    \begin{equation}
+      \\ cost = \beta_1 * GOLD_1 + \beta_2 * GOLD_2 + \beta_3 * GOLD_3 + \beta_4 * GOLD_4
+      \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Direct costs associated with exacerbations
+  </td>
+  <td style="text-align: left;">
+    Direct medical costs pertaining to an episode of exacerbation according
+    to its level of severity (in 2015 $CAD)
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#payoffMath-2" aria-expanded="false" aria-controls="payoffMath-2">
+    Show Math
+  </button>
+  </td>
+<td>
+  <a href="#">Mittmann et al.</a> and <a href="#">Canadian Institute of Health Information</a>
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="payoffMath-2">
+    \begin{equation}
+      \\ cost = \beta_1 * mild + \beta_2 * moderate + \beta_3 * severe +
+      \\ \beta_4 * verySevere
+      \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Background utility values in COPD
+  </td>
+  <td style="text-align: left;">
+    Health state utility values in patients with COPD according to GOLD grades
+    outside of an exacerbation episode
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#payoffMath-3" aria-expanded="false" aria-controls="payoffMath-3">
+    Show Math
+  </button>
+  </td>
+  <td>
+    <a href="#">Spencer et al.</a> and <a href="#">Rutten-van Molken et al.</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="payoffMath-3">
+    \begin{equation}
+      \\ utility = \beta_1 * GOLD_1 + \beta_2 * GOLD_2 + \beta_3 * GOLD_3 + \beta_4 * GOLD_4
+      \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Reduction in QALY due to exacerbations
+  </td>
+  <td style="text-align: left;">
+     Two sets of regression coefficients (s=0 and s=1) separately modelled
+     reduction in QALY values for mild/moderate and severe/very severe
+     exacerbations that were dependent on the underlying GOLD grade
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#payoffMath-4" aria-expanded="false" aria-controls="payoffMath-4">
+    Show Math
+  </button>
+  </td>
+  <td>
+    <a href="#">Spencer et al.</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="payoffMath-4">
+    \begin{equation}
+      \\ \Delta_Q = \beta_{1,s} * GOLD_1 + \beta_{2,s} * GOLD_2 + \beta_{3,s} * GOLD_3 + \beta_{4,s} * GOLD_4
+      \end{equation}
+  </div>
+  </td>
+</tr>
+</tbody>
+</table></div>

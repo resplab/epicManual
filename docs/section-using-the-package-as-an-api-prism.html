@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Using the Package as an API (PRISM) | Exacerbation Platform in COPD (EPIC)</title>
-  <meta name="description" content="5 Using the Package as an API (PRISM) | Exacerbation Platform in COPD (EPIC)" />
+  <title>5 Using the Package as an API (PRISM) | Evaluation Platform in COPD (EPIC)</title>
+  <meta name="description" content="5 Using the Package as an API (PRISM) | Evaluation Platform in COPD (EPIC)" />
   <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Using the Package as an API (PRISM) | Exacerbation Platform in COPD (EPIC)" />
+  <meta property="og:title" content="5 Using the Package as an API (PRISM) | Evaluation Platform in COPD (EPIC)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Using the Package as an API (PRISM) | Exacerbation Platform in COPD (EPIC)" />
+  <meta name="twitter:title" content="5 Using the Package as an API (PRISM) | Evaluation Platform in COPD (EPIC)" />
   
   
   
@@ -127,7 +127,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="section-introduction.html"><a href="section-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="section-thestudy.html"><a href="section-thestudy.html"><i class="fa fa-check"></i><b>2</b> The Study</a></li>
+<li class="chapter" data-level="2" data-path="section-thestudy.html"><a href="section-thestudy.html"><i class="fa fa-check"></i><b>2</b> The Study</a><ul>
+<li class="chapter" data-level="2.1" data-path="section-thestudy.html"><a href="section-thestudy.html#section-background"><i class="fa fa-check"></i><b>2.1</b> Background</a><ul>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-demographic"><i class="fa fa-check"></i>Demographic and Risk Factor Module</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-occurence"><i class="fa fa-check"></i>COPD Occurrence Module</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-lungfunction"><i class="fa fa-check"></i>Lung Function Module</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-exacerbation"><i class="fa fa-check"></i>Exacerbation Module</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-mortality"><i class="fa fa-check"></i>Mortality Module</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-payoff"><i class="fa fa-check"></i>Payoff Module</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="section-packageinR.html"><a href="section-packageinR.html"><i class="fa fa-check"></i><b>3</b> Using the Package in R</a><ul>
 <li class="chapter" data-level="3.1" data-path="section-packageinR.html"><a href="section-packageinR.html#section-installation"><i class="fa fa-check"></i><b>3.1</b> Installation</a><ul>
 <li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-windows-7-or-later"><i class="fa fa-check"></i>Windows 7 or Later</a></li>
@@ -167,7 +176,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Exacerbation Platform in COPD (EPIC)</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Evaluation Platform in COPD (EPIC)</a>
           </h1>
         </div>
 
@@ -347,8 +356,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb38-2" data-line-number="2"><span class="va">request</span>.<span class="at">open</span>(<span class="st">&#39;GET&#39;</span><span class="op">,</span> <span class="st">&#39;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&#39;</span>)<span class="op">;</span></a>
 <a class="sourceLine" id="cb38-3" data-line-number="3"><span class="va">request</span>.<span class="at">send</span>()<span class="op">;</span></a></code></pre></div>
 <p>The <strong>onreadystatechange</strong> is an XMLHttpRequest event which updates when the ready state changes. The ready state can be either 1, 2, 3, or 4.</p>
-<pre><code>&gt; null device 
-&gt;           1</code></pre>
+<pre><code>&gt; RStudioGD 
+&gt;         2</code></pre>
+<p><img src="_main_files/figure-html/javascript1-1.png" width="672" /></p>
 <table>
 <thead>
 <tr class="header">

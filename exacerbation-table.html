@@ -1,0 +1,70 @@
+
+<div>
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr>
+  <td style="text-align: left;"><b>Parameters</b></td>
+  <td><b>Description</b></td>
+  <td class="col-2"><b>Values</b></td>
+  <td><b>References</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Exacerbation Rate
+
+  </td>
+  <td style="text-align: left;">
+    Hazard of exacerbation for the $i^{th}$ individual
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#exacerbationMath-1" aria-expanded="false" aria-controls="exacerbationMath-1">
+    Show Math
+  </button>
+  </td>
+  <td>
+  Pooled estimates from <a href="#">Hoogendoorn et al.</a>; variability estimated from
+  <a href="#">MACRO study</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="exacerbationMath-1">
+    \begin{equation}
+      \\ log(hazard) = \alpha_i + \beta_0 + \beta_1 * age + \beta_2 * GOLD + \beta_3 * GOLD_3 + \beta_4 * GOLD_4
+      \\ \alpha_i \sim Normal(0, \nu)
+      \end{equation}
+    </div>
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Severity of exacerbation
+  </td>
+  <td style="text-align: left;">
+    Probability that once an exacerbation occurs for the $i^{th}$ individual, it is at a given
+    level of severity
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#exacerbationMath-2" aria-expanded="false" aria-controls="exacerbationMath-2">
+    Show Math
+  </button>
+  </td>
+<td>
+  From <a href="#">Hoogendoorn et al.</a>; and
+  <a href="#">MACRO study</a>
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="exacerbationMath-2">
+    \begin{equation}
+      \\ logit( \pi (S_i &lt k)) = \alpha_i + \beta_{0,k} + \beta_1 * age + \beta_2 * sex + \beta_3 * FEV_1 +
+      \\  \beta_4 * smokingStatus + \beta_5 * packYears + \beta_6 * BMI
+      \\ \alpha_i \sim Normal(0, \nu)
+    \end{equation}
+    $S_i = $ severity level (0-3) for the $i^{th}$ individual
+  </div>
+  </td>
+</tr>
+</tbody>
+</table></div>

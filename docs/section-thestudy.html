@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 The Study | Exacerbation Platform in COPD (EPIC)</title>
-  <meta name="description" content="2 The Study | Exacerbation Platform in COPD (EPIC)" />
+  <title>2 The Study | Evaluation Platform in COPD (EPIC)</title>
+  <meta name="description" content="2 The Study | Evaluation Platform in COPD (EPIC)" />
   <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 The Study | Exacerbation Platform in COPD (EPIC)" />
+  <meta property="og:title" content="2 The Study | Evaluation Platform in COPD (EPIC)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 The Study | Exacerbation Platform in COPD (EPIC)" />
+  <meta name="twitter:title" content="2 The Study | Evaluation Platform in COPD (EPIC)" />
   
   
   
@@ -127,7 +127,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="section-introduction.html"><a href="section-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="section-thestudy.html"><a href="section-thestudy.html"><i class="fa fa-check"></i><b>2</b> The Study</a></li>
+<li class="chapter" data-level="2" data-path="section-thestudy.html"><a href="section-thestudy.html"><i class="fa fa-check"></i><b>2</b> The Study</a><ul>
+<li class="chapter" data-level="2.1" data-path="section-thestudy.html"><a href="section-thestudy.html#section-background"><i class="fa fa-check"></i><b>2.1</b> Background</a><ul>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-demographic"><i class="fa fa-check"></i>Demographic and Risk Factor Module</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-occurence"><i class="fa fa-check"></i>COPD Occurrence Module</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-lungfunction"><i class="fa fa-check"></i>Lung Function Module</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-exacerbation"><i class="fa fa-check"></i>Exacerbation Module</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-mortality"><i class="fa fa-check"></i>Mortality Module</a></li>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-payoff"><i class="fa fa-check"></i>Payoff Module</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="section-packageinR.html"><a href="section-packageinR.html"><i class="fa fa-check"></i><b>3</b> Using the Package in R</a><ul>
 <li class="chapter" data-level="3.1" data-path="section-packageinR.html"><a href="section-packageinR.html#section-installation"><i class="fa fa-check"></i><b>3.1</b> Installation</a><ul>
 <li class="chapter" data-level="" data-path="section-packageinR.html"><a href="section-packageinR.html#section-windows-7-or-later"><i class="fa fa-check"></i>Windows 7 or Later</a></li>
@@ -167,7 +176,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Exacerbation Platform in COPD (EPIC)</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Evaluation Platform in COPD (EPIC)</a>
           </h1>
         </div>
 
@@ -177,22 +186,601 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="section-thestudy" class="section level1">
 <h1><span class="header-section-number">2</span> The Study</h1>
-<!-- The **accept** package and application are based on the paper [Development and External Validation of the Acute COPD Exacerbation Prediction Tool (ACCEPT)](https://www.biorxiv.org/content/biorxiv/early/2019/06/04/651901.full.pdf), published in 2019. -->
-<!-- ## Background {#background} -->
-<!-- Chronic Obstructive Pulmonary Disease (COPD) affects 300 million people worldwide. Patients with COPD often experience what is called an **acute exacerbation**. -->
-<!-- **exacerbation**: acute worsening of COPD symptoms; acute means sudden onset, short in duration; COPD symptoms include shortness of breath, wheezing, coughing up mucus, etc. -->
-<!-- ### Exacerbation Causes {-} -->
+<p>The <strong>epicR</strong> package and application are based on the paper <a href="https://journals.sagepub.com/doi/pdf/10.1177/0272989X18824098">Development and Validation of theEvaluation Platform in COPD (EPIC):A Population-Based Outcomes Modelof COPD for Canada</a>, published in 2019.</p>
+<div id="section-background" class="section level2">
+<h2><span class="header-section-number">2.1</span> Background</h2>
+<p>The purpose of this study is to model how COPD (Chronic Obstructive Pulmonary Disease) affects a whole population. We combined 12 different studies to look at 6 different aspects of COPD:</p>
+<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/list-group.js"></script>
+
+</head>
+<div class="row">
+<div class="col-6">
+<button type="button" class="btn btn-primary btn-lg btn-block">
+  <a href="./section-thestudy.html#section-demographic">Demographic and Risk Factor Module</a>
+</button>
+<button type="button" class="btn btn-primary btn-lg btn-block">
+  <a href="./section-thestudy.html#section-occurrence">COPD Occurrence Module</a>
+</button>
+<button type="button" class="btn btn-primary btn-lg btn-block">
+  <a href="./section-thestudy.html#section-lungfunction">Lung Function Module</a>
+</button>
+<button type="button" class="btn btn-primary btn-lg btn-block">
+  <a href="./section-thestudy.html#section-exacerbation">Exacerbation Module</a>
+</button>
+<button type="button" class="btn btn-primary btn-lg btn-block">
+  <a href="./section-thestudy.html#section-mortality">Mortality Module</a>
+</button>
+<button type="button" class="btn btn-primary btn-lg btn-block">
+  <a href="./section-thestudy.html#section-payoff">Payoff Module</a>
+</button>
+</div>
+</div>
+<div id="section-demographic" class="section level3 unnumbered">
+<h3>Demographic and Risk Factor Module</h3>
+<div id="section-study-summary" class="section level4 unnumbered">
+<h4>Study Summary</h4>
+<div>
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr>
+  <td style="text-align: left;"><b>Parameters</b></td>
+  <td><b>Description</b></td>
+  <td class="col-2"><b>Values</b></td>
+  <td><b>References</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Demographic variables and risk factors
+  </td>
+  <td style="text-align: left;">
+    Sex, age, smoking status, height, weight
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#demographicMath-1" aria-expanded="false" aria-controls="demographicMath-1">
+    Show Math
+  </button>
+  </td>
+  <td>
+  Based on <a href="#">Population Health Model</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="demographicMath-1">
+    Various equations representing baseline 2001 Canadian population (&gt 20 years old)
+    from 2001 CCHS. See <a href="#">Appendix 2</a>.
+  </div>
+  </td>
+</tr>
+
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="section-occurence" class="section level3 unnumbered">
+<h3>COPD Occurrence Module</h3>
+<div id="section-study-summary-1" class="section level4 unnumbered">
+<h4>Study Summary</h4>
+<div>
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr>
+  <td style="text-align: left;"><b>Parameters</b></td>
+  <td><b>Description</b></td>
+  <td class="col-2"><b>Values</b></td>
+  <td><b>References</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    COPD prevalence equation
+  </td>
+  <td style="text-align: left;">
+    Assigns COPD status to simulated individuals at the time of creation
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#occurrenceMath-1" aria-expanded="false" aria-controls="occurrenceMath-1">
+    Show Math
+  </button>
+  </td>
+  <td>
+  Regression on <a href="#">COLD data</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="occurrenceMath-1">
+    \begin{equation}
+      \\ logit(p | sex) = \beta_{0,sex} +
+      \beta_{1,sex} * age + \beta_{2,sex} * packYears
+      \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    COPD incidence equations
+  </td>
+  <td style="text-align: left;">
+    Assigns COPD status to simulated individuals who did not have COPD at the
+    time of creation during their time in the model
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#occurrenceMath-2" aria-expanded="false" aria-controls="occurrenceMath-2">
+    Show Math
+  </button>
+  </td>
+<td>
+  Stochastic calibration based on <a href="#">COPD prevalence equations</a>
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="occurrenceMath-2">
+    \begin{equation}
+      \\ log(hazard | sex) = \beta_{0,sex} +
+      \beta_{1,sex} * age + \beta_{2,sex} * packYears
+      \end{equation}
+  </div>
+  </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="section-lungfunction" class="section level3 unnumbered">
+<h3>Lung Function Module</h3>
+<div id="section-study-summary-2" class="section level4 unnumbered">
+<h4>Study Summary</h4>
+<div>
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr>
+  <td style="text-align: left;"><b>Parameters</b></td>
+  <td><b>Description</b></td>
+  <td class="col-2"><b>Values</b></td>
+  <td><b>References</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    $FEV_1$ for prevalent cases
+  </td>
+  <td style="text-align: left;">
+    Baseline $FEV_1$ value for individuals who have
+    COPD at the time of creation
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lungfunctionMath-1" aria-expanded="false" aria-controls="lungfunctionMath-1">
+    Show Math
+  </button>
+  </td>
+  <td>
+  Regression on <a href="#">COLD data</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="lungfunctionMath-1">
+    \begin{equation}
+      \\ \mu = \beta_{0,sex} + \beta_{1,sex} * age + \beta_{2,sex} * packYears +
+      \beta_{3,sex} * height^2
+      \\ FEV_1 | sex \sim Normal(\mu, e)
+    \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    $FEV_1$ at incidence
+  </td>
+  <td style="text-align: left;">
+    Baseline $FEV_1$ value for individuals who develop
+    COPD during the time in the model
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lungfunctionMath-2" aria-expanded="false" aria-controls="lungfunctionMath-2">
+    Show Math
+  </button>
+  </td>
+<td>
+  Regression on <a href="#">COLD data</a>
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="lungfunctionMath-2">
+    \begin{equation}
+      \\ \mu = \beta_{0,sex} + \beta_{1,sex} * age + \beta_{2,sex} * packYears +
+      \beta_{3,sex} * height^2 +
+      \\ \beta_{4,sex}*\dfrac{FEV_1}{FVC*LLN}
+      \\ FEV_1 | sex \sim Normal(\mu, e)
+      \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    $FEV_1$ decline over time
+  </td>
+  <td style="text-align: left;">
+    Models $FEV_1$ at time $t$ (in years)
+    in the future based on a random-intercept, random-slope model
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lungfunctionMath-3" aria-expanded="false" aria-controls="lungfunctionMath-3">
+    Show Math
+  </button>
+  </td>
+<td>
+  From the <a href="#">Lung Health Study</a>
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="lungfunctionMath-3">
+    \begin{equation}
+      \\ Y_0 = \beta_0 + \beta_1 * age + \beta_2 * sex + \beta_3 * weight
+      + \beta_4 * height + \beta_5 * height^2 +
+      \\ \beta_6 * smokingStatus + \beta_7 * age * height^2
+      \\ Y_1 = \beta_0' + \beta_1' * age + \beta_2' * sex + \beta_3' * weight
+      + \beta_4' * height + \beta_5' * height^2 +
+      \\ \beta_6' * smokingStatus
+      + \beta_7' * age * height^2
+      \\ Y_2 = \beta_0''
+      \\ \mu = Y_0 + Y_1 * t + Y_2 * t^2
+      \\ FEV_1 | sex \sim Normal(\mu, e)
+      \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Predicted $FEV_1$
+  </td>
+  <td style="text-align: left;">
+    Calculates predicted $FEV_1$ value, required for
+    determining GOLD severity grades
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lungfunctionMath-4" aria-expanded="false" aria-controls="lungfunctionMath-4">
+    Show Math
+  </button>
+  </td>
+<td>
+  From <a href="#">NHANES III</a>
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="lungfunctionMath-4">
+    \begin{equation}
+      \\ FEV_1Predicted = \beta_0 + \beta_1 * sex + \beta_2 * age + \beta_3 * height^2
+      \end{equation}
+
+  </div>
+  </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="section-exacerbation" class="section level3 unnumbered">
+<h3>Exacerbation Module</h3>
+<p>In COPD, patients can sometimes experience what are called exacerbations.</p>
+<p><strong>exacerbation</strong>: acute worsening of COPD symptoms; acute means sudden onset, short in duration; COPD symptoms include shortness of breath, wheezing, coughing up mucus, etc.</p>
+<!-- #### Exacerbation Causes {-} -->
 <!-- ```{r, eval=TRUE, echo=FALSE} -->
 <!-- library(htmltools) -->
 <!-- rawHTML <- paste(readLines("exacerbation-cause.html"), collapse="\n") -->
 <!-- HTML(rawHTML) -->
 <!-- ``` -->
-<!-- ### Exacerbation Severity {-} -->
-<!-- ```{r, eval=TRUE, echo=FALSE} -->
-<!-- library(htmltools) -->
-<!-- rawHTML <- paste(readLines("exacerbation-severity.html"), collapse="\n") -->
-<!-- HTML(rawHTML) -->
-<!-- ``` -->
+<div id="section-exacerbation-severity" class="section level4 unnumbered">
+<h4>Exacerbation Severity</h4>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      CommonHTML: { linebreaks: { automatic: true } },
+      "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } },
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+      }
+    });
+  </script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+<div class="row">
+  <div class="col-4">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-mild-list" data-toggle="list" href="#list-mild" role="tab" aria-controls="mild">Mild</a>
+      <a class="list-group-item list-group-item-action" id="list-moderate-list" data-toggle="list" href="#list-moderate" role="tab" aria-controls="moderate">Moderate</a>
+      <a class="list-group-item list-group-item-action" id="list-severe-list" data-toggle="list" href="#list-severe" role="tab" aria-controls="severe">Severe</a>
+            <a class="list-group-item list-group-item-action" id="list-very-severe-list" data-toggle="list" href="#list-very-severe" role="tab" aria-controls="very-severe">Very Severe</a>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-mild" role="tabpanel" aria-labelledby="list-mild-list">
+        Patient has an intensificationof symptoms but do not require an encounter with the health care system.
+      </div>
+      <div class="tab-pane fade" id="list-moderate" role="tabpanel" aria-labelledby="list-moderate-list">
+        Patient visits a physician or emergency depart-ment but is not hospitalized.
+      </div>
+      <div class="tab-pane fade" id="list-severe" role="tabpanel" aria-labelledby="list-severe-list">
+        Patient (caregiver) recongizes rapid deterioration in condition, requiring hospitalization.
+    </div>
+          <div class="tab-pane fade" id="list-very-severe" role="tabpanel" aria-labelledby="list-very-severe-list">
+        Patient (caregiver) recongizes rapid deterioration in condition, requiring hospitalization in the Intensive Care Unit (ICU).
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<div id="section-study-summary-3" class="section level4 unnumbered">
+<h4>Study Summary</h4>
+
+<div>
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr>
+  <td style="text-align: left;"><b>Parameters</b></td>
+  <td><b>Description</b></td>
+  <td class="col-2"><b>Values</b></td>
+  <td><b>References</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Exacerbation Rate
+
+  </td>
+  <td style="text-align: left;">
+    Hazard of exacerbation for the $i^{th}$ individual
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#exacerbationMath-1" aria-expanded="false" aria-controls="exacerbationMath-1">
+    Show Math
+  </button>
+  </td>
+  <td>
+  Pooled estimates from <a href="#">Hoogendoorn et al.</a>; variability estimated from
+  <a href="#">MACRO study</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="exacerbationMath-1">
+    \begin{equation}
+      \\ log(hazard) = \alpha_i + \beta_0 + \beta_1 * age + \beta_2 * GOLD + \beta_3 * GOLD_3 + \beta_4 * GOLD_4
+      \\ \alpha_i \sim Normal(0, \nu)
+      \end{equation}
+    </div>
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Severity of exacerbation
+  </td>
+  <td style="text-align: left;">
+    Probability that once an exacerbation occurs for the $i^{th}$ individual, it is at a given
+    level of severity
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#exacerbationMath-2" aria-expanded="false" aria-controls="exacerbationMath-2">
+    Show Math
+  </button>
+  </td>
+<td>
+  From <a href="#">Hoogendoorn et al.</a>; and
+  <a href="#">MACRO study</a>
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="exacerbationMath-2">
+    \begin{equation}
+      \\ logit( \pi (S_i &lt k)) = \alpha_i + \beta_{0,k} + \beta_1 * age + \beta_2 * sex + \beta_3 * FEV_1 +
+      \\  \beta_4 * smokingStatus + \beta_5 * packYears + \beta_6 * BMI
+      \\ \alpha_i \sim Normal(0, \nu)
+    \end{equation}
+    $S_i = $ severity level (0-3) for the $i^{th}$ individual
+  </div>
+  </td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>hazard</strong>: instantaneous exacerbation rate</p>
+</div>
+</div>
+<div id="section-mortality" class="section level3 unnumbered">
+<h3>Mortality Module</h3>
+<div id="section-study-summary-4" class="section level4 unnumbered">
+<h4>Study Summary</h4>
+<div>
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr>
+  <td style="text-align: left;"><b>Parameters</b></td>
+  <td><b>Description</b></td>
+  <td class="col-2"><b>Values</b></td>
+  <td><b>References</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Background mortality rate
+  </td>
+  <td style="text-align: left;">
+     Death due to non-COPD reasons
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#mortalityMath-1" aria-expanded="false" aria-controls="mortalityMath-1">
+    Show Math
+  </button>
+  </td>
+  <td>
+  Modification of the <a href="#">Canadian life tables</a>; such that the combined
+  sources of mortality match the life table values
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="mortalityMath-1">
+    Canadian life tables with calibration to remove COPD-specific mortality
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Mortality due to COPD exacerbations
+  </td>
+  <td style="text-align: left;">
+    Short-term mortality due to severe exacerbations
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#mortalityMath-2" aria-expanded="false" aria-controls="mortalityMath-2">
+    Show Math
+  </button>
+  </td>
+<td>
+  From <a href="#">Aaron et al.</a> and <a href="#">Flattet et al.</a>. Severe
+  and very severe are dummy-coded variables
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="mortalityMath-2">
+    \begin{equation}
+      \\ logit( p) = \beta_{0} + \beta_1 * age + \beta_2 * severe + \beta_3 * verySevere
+
+      \end{equation}
+  </div>
+  </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="section-payoff" class="section level3 unnumbered">
+<h3>Payoff Module</h3>
+<div id="section-study-summary-5" class="section level4 unnumbered">
+<h4>Study Summary</h4>
+<div>
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr>
+  <td style="text-align: left;"><b>Parameters</b></td>
+  <td><b>Description</b></td>
+  <td class="col-2"><b>Values</b></td>
+  <td><b>References</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Direct maintenance costs of COPD
+  </td>
+  <td style="text-align: left;">
+    Annual direct medical costs not associated with exacerbations (in 2015 $CAD)
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#payoffMath-1" aria-expanded="false" aria-controls="payoffMath-1">
+    Show Math
+  </button>
+  </td>
+  <td>
+  <a href="#">Spencer et al.</a> and <a href="#">Chapman et al.</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="payoffMath-1">
+    \begin{equation}
+      \\ cost = \beta_1 * GOLD_1 + \beta_2 * GOLD_2 + \beta_3 * GOLD_3 + \beta_4 * GOLD_4
+      \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Direct costs associated with exacerbations
+  </td>
+  <td style="text-align: left;">
+    Direct medical costs pertaining to an episode of exacerbation according
+    to its level of severity (in 2015 $CAD)
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#payoffMath-2" aria-expanded="false" aria-controls="payoffMath-2">
+    Show Math
+  </button>
+  </td>
+<td>
+  <a href="#">Mittmann et al.</a> and <a href="#">Canadian Institute of Health Information</a>
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="payoffMath-2">
+    \begin{equation}
+      \\ cost = \beta_1 * mild + \beta_2 * moderate + \beta_3 * severe +
+      \\ \beta_4 * verySevere
+      \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Background utility values in COPD
+  </td>
+  <td style="text-align: left;">
+    Health state utility values in patients with COPD according to GOLD grades
+    outside of an exacerbation episode
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#payoffMath-3" aria-expanded="false" aria-controls="payoffMath-3">
+    Show Math
+  </button>
+  </td>
+  <td>
+    <a href="#">Spencer et al.</a> and <a href="#">Rutten-van Molken et al.</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="payoffMath-3">
+    \begin{equation}
+      \\ utility = \beta_1 * GOLD_1 + \beta_2 * GOLD_2 + \beta_3 * GOLD_3 + \beta_4 * GOLD_4
+      \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Reduction in QALY due to exacerbations
+  </td>
+  <td style="text-align: left;">
+     Two sets of regression coefficients (s=0 and s=1) separately modelled
+     reduction in QALY values for mild/moderate and severe/very severe
+     exacerbations that were dependent on the underlying GOLD grade
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#payoffMath-4" aria-expanded="false" aria-controls="payoffMath-4">
+    Show Math
+  </button>
+  </td>
+  <td>
+    <a href="#">Spencer et al.</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="payoffMath-4">
+    \begin{equation}
+      \\ \Delta_Q = \beta_{1,s} * GOLD_1 + \beta_{2,s} * GOLD_2 + \beta_{3,s} * GOLD_3 + \beta_{4,s} * GOLD_4
+      \end{equation}
+  </div>
+  </td>
+</tr>
+</tbody>
+</table></div>
+<!-- Chronic Obstructive Pulmonary Disease (COPD) affects 300 million people worldwide. Patients with COPD often experience what is called an **acute exacerbation**. -->
 <!-- ### References {-} -->
 <!-- [COPD exacerbations: definitions and classifications](https://erj.ersjournals.com/content/erj/21/41_suppl/46s.full.pdf) -->
 <!-- [Toward a consensus definition for COPD exacerbations](https://www.ncbi.nlm.nih.gov/pubmed/10843984) -->
@@ -339,6 +927,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- ``` -->
 <!-- ## Validation -->
 
+</div>
+</div>
+</div>
 </div>
             </section>
 
