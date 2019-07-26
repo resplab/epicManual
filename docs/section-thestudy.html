@@ -228,10 +228,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div>
 <table cellpadding="1" cellspacing="0" border="1">
 <tbody><tr>
-  <td style="text-align: left;"><b>Parameters</b></td>
-  <td><b>Description</b></td>
+  <td class="col-2" style="text-align: left;"><b>Parameters</b></td>
+  <td class="col-5"><b>Description</b></td>
   <td class="col-2"><b>Values</b></td>
-  <td><b>References</b></td>
+  <td class="col-3"><b>References</b></td>
 </tr>
 <tr>
   <td style="text-align: left;">
@@ -269,10 +269,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div>
 <table cellpadding="1" cellspacing="0" border="1">
 <tbody><tr>
-  <td style="text-align: left;"><b>Parameters</b></td>
-  <td><b>Description</b></td>
+  <td class="col-2" style="text-align: left;"><b>Parameters</b></td>
+  <td class="col-5"><b>Description</b></td>
   <td class="col-2"><b>Values</b></td>
-  <td><b>References</b></td>
+  <td class="col-3"><b>References</b></td>
 </tr>
 <tr>
   <td style="text-align: left;">
@@ -338,10 +338,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div>
 <table cellpadding="1" cellspacing="0" border="1">
 <tbody><tr>
-  <td style="text-align: left;"><b>Parameters</b></td>
-  <td><b>Description</b></td>
+  <td class="col-2" style="text-align: left;"><b>Parameters</b></td>
+  <td class="col-5"><b>Description</b></td>
   <td class="col-2"><b>Values</b></td>
-  <td><b>References</b></td>
+  <td class="col-3"><b>References</b></td>
 </tr>
 <tr>
   <td style="text-align: left;">
@@ -525,10 +525,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div>
 <table cellpadding="1" cellspacing="0" border="1">
 <tbody><tr>
-  <td style="text-align: left;"><b>Parameters</b></td>
-  <td><b>Description</b></td>
+  <td class="col-2" style="text-align: left;"><b>Parameters</b></td>
+  <td class="col-5"><b>Description</b></td>
   <td class="col-2"><b>Values</b></td>
-  <td><b>References</b></td>
+  <td class="col-3"><b>References</b></td>
 </tr>
 <tr>
   <td style="text-align: left;">
@@ -596,15 +596,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="section-mortality" class="section level3 unnumbered">
 <h3>Mortality Module</h3>
+<p>We categorized death into two categories: death from COPD, and death not from COPD. More formally:</p>
+<p><strong>COPD-related mortality</strong>: Death due to a severe or very severe COPD exacerbation.</p>
+<p><strong>Background mortality</strong>: Death from all other causes (excluding COPD).</p>
 <div id="section-study-summary-4" class="section level4 unnumbered">
 <h4>Study Summary</h4>
 <div>
 <table cellpadding="1" cellspacing="0" border="1">
 <tbody><tr>
-  <td style="text-align: left;"><b>Parameters</b></td>
-  <td><b>Description</b></td>
+  <td class="col-2" style="text-align: left;"><b>Parameters</b></td>
+  <td class="col-5"><b>Description</b></td>
   <td class="col-2"><b>Values</b></td>
-  <td><b>References</b></td>
+  <td class="col-3"><b>References</b></td>
 </tr>
 <tr>
   <td style="text-align: left;">
@@ -663,15 +666,127 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="section-payoff" class="section level3 unnumbered">
 <h3>Payoff Module</h3>
+<p>Like any disease, COPD costs money to treat, and is a cost on the healthcare system. Additionally, having COPD can reduce quality of life, which depends on the severity of the diagnosis and number of exacerbations. We define cost and utility, below, and divided each into 2 categories:</p>
+<div>
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr>
+  <td class = "col-2" style="text-align: left;"><b>Parameter</b></td>
+  <td><b>Description</b></td>
+  <td class="col-3"><b>Sub-Parameters</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Cost
+  </td>
+  <td style="text-align: left;">
+    Amount of money required for medical treatment of COPD, in 2015 $CAD. For this study,
+    we only included direct medical costs, e.g. doctor's visits, medication, hospitalization, etc.
+    Indirect costs such as sick days, loss of work, etc. were not included.
+  </td>
+  <td>
+  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#payoffCost-1" aria-expanded="false" aria-controls="payoffCost-1">
+    Maintenance Costs
+  </button>
+  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#payoffCost-2" aria-expanded="false" aria-controls="payoffCost-2">
+    Exacerbation Costs
+  </button>
+  </td>
+</tr>
+<tr>
+  <td colspan="1" class="td-collapse">
+  <div class="collapse" id="payoffCost-1" style="padding: 0;">
+    <div style="padding: 10px;">Maintenance</div>
+  </div>
+  </td>
+  <td colspan="2" class="td-collapse">
+  <div class="collapse" id="payoffCost-1" style="padding: 0;">
+    <div style="padding: 10px;"> These include costs relating to drug acquisition, oxygen therapy, laboratory and diagnostic tests, and clinic visits.
+      All hospital and emergency department visits were assumed to be exacerbation related and were not included in maintenance costs.
+      Costs associated with laboratory and diagnostic tests, drug therapy and clinic visits were assumed to arise during both
+      routine care and the treatment of exacerbations; however, costs were calculated separately. </div>
+  </div>
+  </td>
+</tr>
+<tr>
+  <td colspan="1" class="td-collapse">
+  <div class="collapse" id="payoffCost-2" style="padding: 0;">
+    <div style="padding: 10px;">Exacerbation</div>
+  </div>
+  </td>
+  <td colspan="2" class="td-collapse">
+  <div class="collapse" id="payoffCost-2" style="padding: 0;">
+    <div style="padding: 10px;"> It was assumed that all hospitalisations were due to exacerbations.
+      The overall cost of hospitalisation due to acute exacerbation of COPD was
+      obtained from the Ontario Case Costing Project 2000/2001. This cost included laboratory tests and procedures;
+      physician-related costs and the costs of additional medications at discharge (antibacterials and prednisone) were added separately.
+    </div>
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Utility
+  </td>
+  <td style="text-align: left;">
+    Quality of life, with respect to a healthy individual.
+  </td>
+    <td>
+      <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#payoffUtility-1" aria-expanded="false" aria-controls="payoffUtility-1">
+    Health State Utility
+  </button>
+  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#payoffUtility-2" aria-expanded="false" aria-controls="payoffUtility-2">
+    QALY
+</button>
+  </td>
+</tr>
+<tr>
+  <td colspan="1" class="td-collapse">
+  <div class="collapse" id="payoffUtility-1" style="padding: 0;">
+    <div style="padding: 10px;">
+      Health State Utility
+    </div>
+  </div>
+  </td>
+  <td colspan="2" class="td-collapse">
+  <div class="collapse" id="payoffUtility-1" style="padding: 0;">
+    <div style="padding: 10px;">
+      Health status utility is a way of measuring value of health. It is a number between 0 and 1,
+      with 1 = perfect health and 0 = death. We looked at health utility based on GOLD grades I-IV
+      (we had to pool III/IV due to small sample size).
+    </div>
+  </div>
+  </td>
+</tr>
+<tr>
+  <td colspan="1" class="td-collapse">
+  <div class="collapse" id="payoffUtility-2" style="padding: 0;">
+    <div style="padding: 10px;">
+      Quality Adjusted Life Year
+    </div>
+  </div>
+  </td>
+  <td colspan="2" class="td-collapse">
+  <div class="collapse" id="payoffUtility-2" style="padding: 0;">
+    <div style="padding: 10px;">
+      A QALY is a unit of measuring quality of life in one year based on health.<br>
+      1 QALY = 1 year in perfect health <br>
+      0.5 QALY = 0.5 years in perfect health, or 1 year in 50% of perfect health<br>
+      For this study, we looked at direct reduction in QALY due to exacerbations.
+    </div>
+  </div>
+  </td>
+</tr>
+</tbody>
+</table></div>
 <div id="section-study-summary-5" class="section level4 unnumbered">
 <h4>Study Summary</h4>
 <div>
 <table cellpadding="1" cellspacing="0" border="1">
 <tbody><tr>
-  <td style="text-align: left;"><b>Parameters</b></td>
-  <td><b>Description</b></td>
+  <td class="col-2" style="text-align: left;"><b>Parameters</b></td>
+  <td class="col-5"><b>Description</b></td>
   <td class="col-2"><b>Values</b></td>
-  <td><b>References</b></td>
+  <td class="col-3"><b>References</b></td>
 </tr>
 <tr>
   <td style="text-align: left;">

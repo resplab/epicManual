@@ -452,6 +452,11 @@ code span.dt {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+.book .book-body .page-wrapper .page-inner .btn-group .btn-block,
+.book .book-body .page-wrapper .page-inner .btn-block {
+  margin: 2px;
+}
+
 /* Code Chunk */
 
 .code-chunk {
@@ -556,6 +561,11 @@ code span.dt {
 .book .book-body .page-wrapper .page-inner section.normal table td {
   border-color: var(--border-grey);
 }
+
+.book .book-body .page-wrapper .page-inner section.normal table td.td-collapse {
+  padding: 0px;
+}
+
 
 /* MathJax */
 

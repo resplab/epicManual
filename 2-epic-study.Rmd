@@ -76,6 +76,12 @@ HTML(rawHTML)
 
 ### Mortality Module {-#mortality}
 
+We categorized death into two categories: death from COPD, and death not from COPD. More formally:
+
+**COPD-related mortality**: Death due to a severe or very severe COPD exacerbation.
+
+**Background mortality**: Death from all other causes (excluding COPD).
+
 #### Study Summary {-}
 
 ```{r, eval=TRUE, echo=FALSE}
@@ -85,6 +91,15 @@ HTML(rawHTML)
 ```
 
 ### Payoff Module {-#payoff}
+
+Like any disease, COPD costs money to treat, and is a cost on the healthcare system. Additionally, having COPD can reduce quality of life, which depends on the severity of the diagnosis and number of exacerbations. We define cost and utility, below, and divided each into 2 categories:
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("payoff-breakdown.html"), collapse="\n")
+HTML(rawHTML)
+```
+
 
 #### Study Summary {-}
 
