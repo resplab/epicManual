@@ -4,7 +4,24 @@ The **epicR** package and application are based on the paper [Development and Va
 
 ## Background {#background}
 
-The purpose of this study is to model how COPD (Chronic Obstructive Pulmonary Disease) affects a whole population. We combined 12 different studies to look at 6 different aspects of COPD: 
+The purpose of this study is to model how COPD (Chronic Obstructive Pulmonary Disease) affects a whole population. In social sciences and population health, we often use a **dynamic microsimulation** model to look at how a disease might affect a population over a period of time. 
+
+### What is a Dynamic Microsimulation? {-}
+
+A dynamic microsimulation is a computer model which makes predictions about how a population will be affected by say, a disease, over a set period of time. 
+
+In the case of **EPIC**, we wanted to look at the affects of COPD on the Canadian population. To start with, the computer model uses data from the [2001 Canadian Community Health Survey 1.1](http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&Id=3359) to create simulated, or "artificial" people. The survey included information from 105 908 Canadians. The model uses this to create ~ 22.5 million community-dwelling Canadians. 
+
+As with any real population, the simulated population is constantly changing. We define a change in a simulated individual as an **event**. 
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("event-table.html"), collapse="\n")
+HTML(rawHTML)
+```
+
+
+We combined 12 different studies to look at 6 different aspects of COPD: 
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
@@ -13,6 +30,8 @@ HTML(rawHTML)
 ```
 
 ### Demographic and Risk Factor Module {-#demographic}
+
+The Demographic and Risk Factor Module is based on the results from [POHEM](https://pophealthmetrics.biomedcentral.com/track/pdf/10.1186/s12963-015-0057-x), which is the dynamic microsimulation model we described previously. This is basically the background data for the simulation.
 
 #### Study Summary {-}
 
@@ -23,6 +42,8 @@ HTML(rawHTML)
 ```
 
 ### COPD Occurrence Module {-#occurence}
+
+We used data from the Canadian Cohort of Obstructive Lung Disease (COLD) to assign a binary COPD status to individuals upon their creation.
 
 #### Study Summary {-}
 

@@ -129,6 +129,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="section-introduction.html"><a href="section-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="section-thestudy.html"><a href="section-thestudy.html"><i class="fa fa-check"></i><b>2</b> The Study</a><ul>
 <li class="chapter" data-level="2.1" data-path="section-thestudy.html"><a href="section-thestudy.html#section-background"><i class="fa fa-check"></i><b>2.1</b> Background</a><ul>
+<li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-what-is-a-dynamic-microsimulation"><i class="fa fa-check"></i>What is a Dynamic Microsimulation?</a></li>
 <li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-demographic"><i class="fa fa-check"></i>Demographic and Risk Factor Module</a></li>
 <li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-occurence"><i class="fa fa-check"></i>COPD Occurrence Module</a></li>
 <li class="chapter" data-level="" data-path="section-thestudy.html"><a href="section-thestudy.html#section-lungfunction"><i class="fa fa-check"></i>Lung Function Module</a></li>
@@ -189,7 +190,81 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The <strong>epicR</strong> package and application are based on the paper <a href="https://journals.sagepub.com/doi/pdf/10.1177/0272989X18824098">Development and Validation of theEvaluation Platform in COPD (EPIC):A Population-Based Outcomes Modelof COPD for Canada</a>, published in 2019.</p>
 <div id="section-background" class="section level2">
 <h2><span class="header-section-number">2.1</span> Background</h2>
-<p>The purpose of this study is to model how COPD (Chronic Obstructive Pulmonary Disease) affects a whole population. We combined 12 different studies to look at 6 different aspects of COPD:</p>
+<p>The purpose of this study is to model how COPD (Chronic Obstructive Pulmonary Disease) affects a whole population. In social sciences and population health, we often use a <strong>dynamic microsimulation</strong> model to look at how a disease might affect a population over a period of time.</p>
+<div id="section-what-is-a-dynamic-microsimulation" class="section level3 unnumbered">
+<h3>What is a Dynamic Microsimulation?</h3>
+<p>A dynamic microsimulation is a computer model which makes predictions about how a population will be affected by say, a disease, over a set period of time.</p>
+<p>In the case of <strong>EPIC</strong>, we wanted to look at the affects of COPD on the Canadian population. To start with, the computer model uses data from the <a href="http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&amp;Id=3359">2001 Canadian Community Health Survey 1.1</a> to create simulated, or “artificial” people. The survey included information from 105 908 Canadians. The model uses this to create ~ 22.5 million community-dwelling Canadians.</p>
+<p>As with any real population, the simulated population is constantly changing. We define a change in a simulated individual as an <strong>event</strong>.</p>
+<div>
+<table cellpadding="3" cellspacing="0" border="1">
+<tbody><tr>
+  <td class = "col-4" style="text-align: left;"><b>Event</b></td>
+  <td><b>Afftected By</b></td>
+  <td class="col-5"><b>Affects</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Birth Date
+  </td>
+  <td style="text-align: left;">
+    None
+  </td>
+  <td style="text-align: left;">
+    Updates the following parameters: FEV1, Predicted FEV1, weight, pack years
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    COPD Occurrence
+  </td>
+  <td style="text-align: left;">
+    age, sex, smoking history
+  </td>
+  <td style="text-align: left;">
+    When COPD occurs, baseline FEV1 value is assigned, as well as an
+    individual-specific FEV1 slope, exacerbation rate, and exacerbation severity
+    probabilities.
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    COPD Exacerbation Start
+  </td>
+  <td style="text-align: left;">
+    COPD status, age, sex, smoking status
+  </td>
+  <td style="text-align: left;">
+    Sets the exacerbation status to 1 and assigns an exacerbation-related mortality
+    probability.
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    COPD Exacerbation End
+  </td>
+  <td style="text-align: left;">
+    exacerbation status
+  </td>
+  <td style="text-align: left;">
+    Sets the exacerbation status to 0.
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Death (Background)
+  </td>
+  <td style="text-align: left;">
+    age, sex, year
+  </td>
+  <td style="text-align: left;">
+    Removes the individual from the simulation.
+  </td>
+</tr>
+
+</tbody>
+</table></div>
+<p>We combined 12 different studies to look at 6 different aspects of COPD:</p>
 <head>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -221,8 +296,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </button>
 </div>
 </div>
+</div>
 <div id="section-demographic" class="section level3 unnumbered">
 <h3>Demographic and Risk Factor Module</h3>
+<p>The Demographic and Risk Factor Module is based on the results from <a href="https://pophealthmetrics.biomedcentral.com/track/pdf/10.1186/s12963-015-0057-x">POHEM</a>, which is the dynamic microsimulation model we described previously. This is basically the background data for the simulation.</p>
 <div id="section-study-summary" class="section level4 unnumbered">
 <h4>Study Summary</h4>
 <div>
@@ -264,6 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="section-occurence" class="section level3 unnumbered">
 <h3>COPD Occurrence Module</h3>
+<p>We used data from the Canadian Cohort of Obstructive Lung Disease (COLD) to assign a binary COPD status to individuals upon their creation.</p>
 <div id="section-study-summary-1" class="section level4 unnumbered">
 <h4>Study Summary</h4>
 <div>

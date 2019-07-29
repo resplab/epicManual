@@ -552,7 +552,7 @@ code span.dt {
     padding: .85em 1em;
     background: #f7f7f7;
     overflow: scroll;
-    height: 400px;
+    max-height: 400px;
 }
 
 /* Tables */

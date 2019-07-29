@@ -52,7 +52,7 @@
   padding: 15px;
   border-radius: .25rem;
   overflow: scroll;
-  height: 200px;
+  max-height: 200px;
 }
 
 .code-chunk-bar {

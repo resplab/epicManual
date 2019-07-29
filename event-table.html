@@ -1,0 +1,68 @@
+<div>
+<table cellpadding="3" cellspacing="0" border="1">
+<tbody><tr>
+  <td class = "col-4" style="text-align: left;"><b>Event</b></td>
+  <td><b>Afftected By</b></td>
+  <td class="col-5"><b>Affects</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Birth Date
+  </td>
+  <td style="text-align: left;">
+    None
+  </td>
+  <td style="text-align: left;">
+    Updates the following parameters: FEV1, Predicted FEV1, weight, pack years
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    COPD Occurrence
+  </td>
+  <td style="text-align: left;">
+    age, sex, smoking history
+  </td>
+  <td style="text-align: left;">
+    When COPD occurs, baseline FEV1 value is assigned, as well as an
+    individual-specific FEV1 slope, exacerbation rate, and exacerbation severity
+    probabilities.
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    COPD Exacerbation Start
+  </td>
+  <td style="text-align: left;">
+    COPD status, age, sex, smoking status
+  </td>
+  <td style="text-align: left;">
+    Sets the exacerbation status to 1 and assigns an exacerbation-related mortality
+    probability.
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    COPD Exacerbation End
+  </td>
+  <td style="text-align: left;">
+    exacerbation status
+  </td>
+  <td style="text-align: left;">
+    Sets the exacerbation status to 0.
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Death (Background)
+  </td>
+  <td style="text-align: left;">
+    age, sex, year
+  </td>
+  <td style="text-align: left;">
+    Removes the individual from the simulation.
+  </td>
+</tr>
+
+</tbody>
+</table></div>
