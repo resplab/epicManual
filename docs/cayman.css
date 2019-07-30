@@ -137,28 +137,7 @@ a:hover {
 .main-content blockquote>:last-child {
   margin-bottom: 0;
 }
-.main-content table {
-  width: 100%;
-  overflow: auto;
-  word-break: normal;
-  word-break: keep-all;
-  border-collapse: collapse;
-  border-spacing: 0;
-  margin: 1rem 0;
-}
-.main-content table th {
-  font-weight: bold;
-  background-color: #4CAF50;
-  color: white;
-}
-.main-content table th, .main-content table td {
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #e9ebec;
-  text-align: left;
-}
-.main-content table tr:nth-child(odd) {
-  background-color: #f2f2f2;
-}
+
 .main-content dl {
   padding: 0;
 }
@@ -564,6 +543,63 @@ code span.dt {
 
 .book .book-body .page-wrapper .page-inner section.normal table td.td-collapse {
   padding: 0px;
+}
+
+.main-content table {
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 1rem 0;
+}
+.main-content table th {
+  font-weight: bold;
+  background-color: #4CAF50;
+  color: white;
+}
+.main-content table th, .main-content table td {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e9ebec;
+  text-align: left;
+}
+.main-content table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-1 {
+  width: 8.33%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-2 {
+  width: 16.66%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-3 {
+  width: 25%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-4 {
+  width: 33.33%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-5 {
+  width: 41.66%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-6 {
+  width: 50%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-7 {
+  width: 58.33%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-8 {
+  width: 66.66%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-9 {
+  width: 75%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-10 {
+  width: 83.33%
+}
+.book .book-body .page-wrapper .page-inner section.normal table .td-col-11 {
+  width: 91.66%
 }
 
 

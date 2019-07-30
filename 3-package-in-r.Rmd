@@ -209,4 +209,56 @@ run()
 
 ### Step 4: Results {-}
 
+Once you have run the model simulation, there are several functions to access the results. The first function is the
+`get_all_events()` function. This function returns the events matrix, with every event for every patient. As you may guess,
+this matrix can be quite large, depending on how many patients you ran the model with.
+
+```{r, eval=FALSE, echo=TRUE}
+eventsMatrix = get_all_events()
+```
+
+## Figures
+
+We have created some figures and charts for users, although they are not exhaustive, so you may want to create your own figures as well. 
+
+### Exacerbation Charts {-}
+
+To look at total number of exacerbations and exacerbation rate, we have the function `plotExacerbations()`.
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("plot-exacerbations.html"), collapse="\n")
+HTML(rawHTML)
+```
+
+We can look at total number of exacerbations by age group:
+
+```{r, eval=TRUE, echo=TRUE}
+plotExacerbations(nPatients = 1e4,
+                  argX = "year",
+                  argY = "number_of_exacerbations",
+                  groupBy = "age",
+                  exacType = "all", 
+                  perCapita = NULL)
+```
+
+We can also look at the exacerbation rate by sex:
+
+```{r, eval=TRUE, echo=TRUE}
+plotExacerbations(nPatients = 1e4,
+                  argX = "year",
+                  argY = "exacerbation_rate",
+                  groupBy = "sex",
+                  exacType = "all", 
+                  perCapita = NULL)
+```
+
+```{r, eval=TRUE, echo=TRUE}
+plotExacerbations(nPatients = 1e4,
+                  argX = "year",
+                  argY = "exacerbation_rate",
+                  groupBy = "sex",
+                  exacType = "severe", 
+                  perCapita = NULL)
+```
 
