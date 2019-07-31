@@ -196,69 +196,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="section-r-api" class="section level2">
 <h2><span class="header-section-number">5.1</span> R API</h2>
 <p>To install PRISM in R, you will need to install it from GitHub. In an R Console:</p>
-<div class="sourceCode" id="section-cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;resplab/prism&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="section-cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;resplab/prism&quot;</span>)</a></code></pre></div>
 <p>To use PRISM in R:</p>
-<div class="sourceCode" id="section-cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">library</span>(prism)</a>
-<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="kw">connect_to_model</span>(<span class="st">&quot;acceptPrism&quot;</span>, <span class="dt">api_key =</span> your_api_key)</a>
-<a class="sourceLine" id="cb35-3" data-line-number="3">patient1 &lt;-<span class="st"> </span>accept<span class="op">::</span>samplePatients[<span class="dv">1</span>,]</a>
-<a class="sourceLine" id="cb35-4" data-line-number="4"><span class="kw">model_run</span>(patient1)</a>
-<a class="sourceLine" id="cb35-5" data-line-number="5">res &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">model_run</span>(patient1))</a></code></pre></div>
+<div class="sourceCode" id="section-cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">library</span>(prism)</a>
+<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="kw">connect_to_model</span>(<span class="st">&quot;acceptPrism&quot;</span>, <span class="dt">api_key =</span> your_api_key)</a>
+<a class="sourceLine" id="cb37-3" data-line-number="3">patient1 &lt;-<span class="st"> </span>accept<span class="op">::</span>samplePatients[<span class="dv">1</span>,]</a>
+<a class="sourceLine" id="cb37-4" data-line-number="4"><span class="kw">model_run</span>(patient1)</a>
+<a class="sourceLine" id="cb37-5" data-line-number="5">res &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">model_run</span>(patient1))</a></code></pre></div>
 </div>
 <div id="section-shellbash-api" class="section level2">
 <h2><span class="header-section-number">5.2</span> Shell/Bash API</h2>
 <div id="section-linux" class="section level3">
 <h3><span class="header-section-number">5.2.1</span> Linux</h3>
 <p>You will need curl installed to use the API. To check if you have curl:</p>
-<div class="sourceCode" id="section-cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="ex">dpkg</span> -l curl</a></code></pre></div>
+<div class="sourceCode" id="section-cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="ex">dpkg</span> -l curl</a></code></pre></div>
 <p>If you do not have curl, you can install it by:</p>
-<div class="sourceCode" id="section-cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="fu">sudo</span> apt install curl</a></code></pre></div>
-<div class="sourceCode" id="section-cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb38-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="ex">curl</span> -X POST -H <span class="st">&quot;Content-Type: application/json&quot;</span> -d <span class="st">&#39;{&quot;api_key&quot;:[&quot;YOUR_API_KEY&quot;],&quot;func&quot;:[&quot;prism_model_run&quot;],&quot;model_input&quot;:[{&quot;ID&quot;: &quot;10001&quot;,</span></a>
-<a class="sourceLine" id="cb38-3" data-line-number="3"><span class="st">    &quot;male&quot;: 1,</span></a>
-<a class="sourceLine" id="cb38-4" data-line-number="4"><span class="st">    &quot;age&quot;: 70,</span></a>
-<a class="sourceLine" id="cb38-5" data-line-number="5"><span class="st">    &quot;smoker&quot;: 1,</span></a>
-<a class="sourceLine" id="cb38-6" data-line-number="6"><span class="st">    &quot;oxygen&quot;: 1,</span></a>
-<a class="sourceLine" id="cb38-7" data-line-number="7"><span class="st">    &quot;statin&quot;: 1,</span></a>
-<a class="sourceLine" id="cb38-8" data-line-number="8"><span class="st">    &quot;LAMA&quot;: 1,</span></a>
-<a class="sourceLine" id="cb38-9" data-line-number="9"><span class="st">    &quot;LABA&quot;: 1,</span></a>
-<a class="sourceLine" id="cb38-10" data-line-number="10"><span class="st">    &quot;ICS&quot;: 1,</span></a>
-<a class="sourceLine" id="cb38-11" data-line-number="11"><span class="st">    &quot;FEV1&quot;: 33,</span></a>
-<a class="sourceLine" id="cb38-12" data-line-number="12"><span class="st">    &quot;BMI&quot;: 25,</span></a>
-<a class="sourceLine" id="cb38-13" data-line-number="13"><span class="st">    &quot;SGRQ&quot;: 50,</span></a>
-<a class="sourceLine" id="cb38-14" data-line-number="14"><span class="st">    &quot;LastYrExacCount&quot;: 2,</span></a>
-<a class="sourceLine" id="cb38-15" data-line-number="15"><span class="st">    &quot;LastYrSevExacCount&quot;: 1,</span></a>
-<a class="sourceLine" id="cb38-16" data-line-number="16"><span class="st">    &quot;randomized_azithromycin&quot;: 0,</span></a>
-<a class="sourceLine" id="cb38-17" data-line-number="17"><span class="st">    &quot;randomized_statin&quot;: 0,</span></a>
-<a class="sourceLine" id="cb38-18" data-line-number="18"><span class="st">    &quot;randomized_LAMA&quot;: 0,</span></a>
-<a class="sourceLine" id="cb38-19" data-line-number="19"><span class="st">    &quot;randomized_LABA&quot;: 0,</span></a>
-<a class="sourceLine" id="cb38-20" data-line-number="20"><span class="st">    &quot;randomized_ICS&quot;: 0}]}&#39;</span> http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json</a></code></pre></div>
+<div class="sourceCode" id="section-cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="fu">sudo</span> apt install curl</a></code></pre></div>
+<div class="sourceCode" id="section-cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb40-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb40-2" data-line-number="2"><span class="ex">curl</span> -X POST -H <span class="st">&quot;Content-Type: application/json&quot;</span> -d <span class="st">&#39;{&quot;api_key&quot;:[&quot;YOUR_API_KEY&quot;],&quot;func&quot;:[&quot;prism_model_run&quot;],&quot;model_input&quot;:[{&quot;ID&quot;: &quot;10001&quot;,</span></a>
+<a class="sourceLine" id="cb40-3" data-line-number="3"><span class="st">    &quot;male&quot;: 1,</span></a>
+<a class="sourceLine" id="cb40-4" data-line-number="4"><span class="st">    &quot;age&quot;: 70,</span></a>
+<a class="sourceLine" id="cb40-5" data-line-number="5"><span class="st">    &quot;smoker&quot;: 1,</span></a>
+<a class="sourceLine" id="cb40-6" data-line-number="6"><span class="st">    &quot;oxygen&quot;: 1,</span></a>
+<a class="sourceLine" id="cb40-7" data-line-number="7"><span class="st">    &quot;statin&quot;: 1,</span></a>
+<a class="sourceLine" id="cb40-8" data-line-number="8"><span class="st">    &quot;LAMA&quot;: 1,</span></a>
+<a class="sourceLine" id="cb40-9" data-line-number="9"><span class="st">    &quot;LABA&quot;: 1,</span></a>
+<a class="sourceLine" id="cb40-10" data-line-number="10"><span class="st">    &quot;ICS&quot;: 1,</span></a>
+<a class="sourceLine" id="cb40-11" data-line-number="11"><span class="st">    &quot;FEV1&quot;: 33,</span></a>
+<a class="sourceLine" id="cb40-12" data-line-number="12"><span class="st">    &quot;BMI&quot;: 25,</span></a>
+<a class="sourceLine" id="cb40-13" data-line-number="13"><span class="st">    &quot;SGRQ&quot;: 50,</span></a>
+<a class="sourceLine" id="cb40-14" data-line-number="14"><span class="st">    &quot;LastYrExacCount&quot;: 2,</span></a>
+<a class="sourceLine" id="cb40-15" data-line-number="15"><span class="st">    &quot;LastYrSevExacCount&quot;: 1,</span></a>
+<a class="sourceLine" id="cb40-16" data-line-number="16"><span class="st">    &quot;randomized_azithromycin&quot;: 0,</span></a>
+<a class="sourceLine" id="cb40-17" data-line-number="17"><span class="st">    &quot;randomized_statin&quot;: 0,</span></a>
+<a class="sourceLine" id="cb40-18" data-line-number="18"><span class="st">    &quot;randomized_LAMA&quot;: 0,</span></a>
+<a class="sourceLine" id="cb40-19" data-line-number="19"><span class="st">    &quot;randomized_LABA&quot;: 0,</span></a>
+<a class="sourceLine" id="cb40-20" data-line-number="20"><span class="st">    &quot;randomized_ICS&quot;: 0}]}&#39;</span> http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json</a></code></pre></div>
 </div>
 <div id="section-mac-os" class="section level3">
 <h3><span class="header-section-number">5.2.2</span> Mac OS</h3>
 <p>You will need curl installed to use the API. To check if you have curl:</p>
-<div class="sourceCode" id="section-cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="ex">brew</span> list curl</a></code></pre></div>
+<div class="sourceCode" id="section-cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="ex">brew</span> list curl</a></code></pre></div>
 <p>If you do not have curl, you can install it using HomeBrew:</p>
-<div class="sourceCode" id="section-cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="ex">brew</span> install curl</a></code></pre></div>
-<div class="sourceCode" id="section-cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb41-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb41-2" data-line-number="2"><span class="ex">curl</span> -X POST -H <span class="st">&quot;Content-Type: application/json&quot;</span> -d <span class="st">&#39;{&quot;api_key&quot;:[&quot;YOUR_API_KEY&quot;],&quot;func&quot;:[&quot;prism_model_run&quot;],&quot;model_input&quot;:[{&quot;ID&quot;: &quot;10001&quot;,</span></a>
-<a class="sourceLine" id="cb41-3" data-line-number="3"><span class="st">    &quot;male&quot;: 1,</span></a>
-<a class="sourceLine" id="cb41-4" data-line-number="4"><span class="st">    &quot;age&quot;: 70,</span></a>
-<a class="sourceLine" id="cb41-5" data-line-number="5"><span class="st">    &quot;smoker&quot;: 1,</span></a>
-<a class="sourceLine" id="cb41-6" data-line-number="6"><span class="st">    &quot;oxygen&quot;: 1,</span></a>
-<a class="sourceLine" id="cb41-7" data-line-number="7"><span class="st">    &quot;statin&quot;: 1,</span></a>
-<a class="sourceLine" id="cb41-8" data-line-number="8"><span class="st">    &quot;LAMA&quot;: 1,</span></a>
-<a class="sourceLine" id="cb41-9" data-line-number="9"><span class="st">    &quot;LABA&quot;: 1,</span></a>
-<a class="sourceLine" id="cb41-10" data-line-number="10"><span class="st">    &quot;ICS&quot;: 1,</span></a>
-<a class="sourceLine" id="cb41-11" data-line-number="11"><span class="st">    &quot;FEV1&quot;: 33,</span></a>
-<a class="sourceLine" id="cb41-12" data-line-number="12"><span class="st">    &quot;BMI&quot;: 25,</span></a>
-<a class="sourceLine" id="cb41-13" data-line-number="13"><span class="st">    &quot;SGRQ&quot;: 50,</span></a>
-<a class="sourceLine" id="cb41-14" data-line-number="14"><span class="st">    &quot;LastYrExacCount&quot;: 2,</span></a>
-<a class="sourceLine" id="cb41-15" data-line-number="15"><span class="st">    &quot;LastYrSevExacCount&quot;: 1,</span></a>
-<a class="sourceLine" id="cb41-16" data-line-number="16"><span class="st">    &quot;randomized_azithromycin&quot;: 0,</span></a>
-<a class="sourceLine" id="cb41-17" data-line-number="17"><span class="st">    &quot;randomized_statin&quot;: 0,</span></a>
-<a class="sourceLine" id="cb41-18" data-line-number="18"><span class="st">    &quot;randomized_LAMA&quot;: 0,</span></a>
-<a class="sourceLine" id="cb41-19" data-line-number="19"><span class="st">    &quot;randomized_LABA&quot;: 0,</span></a>
-<a class="sourceLine" id="cb41-20" data-line-number="20"><span class="st">    &quot;randomized_ICS&quot;: 0}]}&#39;</span> http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json</a></code></pre></div>
+<div class="sourceCode" id="section-cb42"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="ex">brew</span> install curl</a></code></pre></div>
+<div class="sourceCode" id="section-cb43"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb43-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb43-2" data-line-number="2"><span class="ex">curl</span> -X POST -H <span class="st">&quot;Content-Type: application/json&quot;</span> -d <span class="st">&#39;{&quot;api_key&quot;:[&quot;YOUR_API_KEY&quot;],&quot;func&quot;:[&quot;prism_model_run&quot;],&quot;model_input&quot;:[{&quot;ID&quot;: &quot;10001&quot;,</span></a>
+<a class="sourceLine" id="cb43-3" data-line-number="3"><span class="st">    &quot;male&quot;: 1,</span></a>
+<a class="sourceLine" id="cb43-4" data-line-number="4"><span class="st">    &quot;age&quot;: 70,</span></a>
+<a class="sourceLine" id="cb43-5" data-line-number="5"><span class="st">    &quot;smoker&quot;: 1,</span></a>
+<a class="sourceLine" id="cb43-6" data-line-number="6"><span class="st">    &quot;oxygen&quot;: 1,</span></a>
+<a class="sourceLine" id="cb43-7" data-line-number="7"><span class="st">    &quot;statin&quot;: 1,</span></a>
+<a class="sourceLine" id="cb43-8" data-line-number="8"><span class="st">    &quot;LAMA&quot;: 1,</span></a>
+<a class="sourceLine" id="cb43-9" data-line-number="9"><span class="st">    &quot;LABA&quot;: 1,</span></a>
+<a class="sourceLine" id="cb43-10" data-line-number="10"><span class="st">    &quot;ICS&quot;: 1,</span></a>
+<a class="sourceLine" id="cb43-11" data-line-number="11"><span class="st">    &quot;FEV1&quot;: 33,</span></a>
+<a class="sourceLine" id="cb43-12" data-line-number="12"><span class="st">    &quot;BMI&quot;: 25,</span></a>
+<a class="sourceLine" id="cb43-13" data-line-number="13"><span class="st">    &quot;SGRQ&quot;: 50,</span></a>
+<a class="sourceLine" id="cb43-14" data-line-number="14"><span class="st">    &quot;LastYrExacCount&quot;: 2,</span></a>
+<a class="sourceLine" id="cb43-15" data-line-number="15"><span class="st">    &quot;LastYrSevExacCount&quot;: 1,</span></a>
+<a class="sourceLine" id="cb43-16" data-line-number="16"><span class="st">    &quot;randomized_azithromycin&quot;: 0,</span></a>
+<a class="sourceLine" id="cb43-17" data-line-number="17"><span class="st">    &quot;randomized_statin&quot;: 0,</span></a>
+<a class="sourceLine" id="cb43-18" data-line-number="18"><span class="st">    &quot;randomized_LAMA&quot;: 0,</span></a>
+<a class="sourceLine" id="cb43-19" data-line-number="19"><span class="st">    &quot;randomized_LABA&quot;: 0,</span></a>
+<a class="sourceLine" id="cb43-20" data-line-number="20"><span class="st">    &quot;randomized_ICS&quot;: 0}]}&#39;</span> http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json</a></code></pre></div>
 <!-- ```{bash prism-mac2, eval = TRUE, echo = FALSE} -->
 <!-- curl -X POST -H "Content-Type: application/json" -d '{"api_key":[123456],"func":["prism_model_run"], -->
 <!-- "model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -->
@@ -267,67 +267,67 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="section-windows-powershell" class="section level3">
 <h3><span class="header-section-number">5.2.3</span> Windows PowerShell</h3>
 <p>In PowerShell:</p>
-<div class="sourceCode" id="section-cb42"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="ex">curl</span> -Body <span class="st">&#39;{&quot;api_key&quot;:[&quot;YOUR_API_KEY&quot;],&quot;func&quot;:[&quot;prism_model_run&quot;],&quot;model_input&quot;:[{&quot;ID&quot;: &quot;10001&quot;,</span></a>
-<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="st">    &quot;male&quot;: 1,</span></a>
-<a class="sourceLine" id="cb42-3" data-line-number="3"><span class="st">    &quot;age&quot;: 70,</span></a>
-<a class="sourceLine" id="cb42-4" data-line-number="4"><span class="st">    &quot;smoker&quot;: 1,</span></a>
-<a class="sourceLine" id="cb42-5" data-line-number="5"><span class="st">    &quot;oxygen&quot;: 1,</span></a>
-<a class="sourceLine" id="cb42-6" data-line-number="6"><span class="st">    &quot;statin&quot;: 1,</span></a>
-<a class="sourceLine" id="cb42-7" data-line-number="7"><span class="st">    &quot;LAMA&quot;: 1,</span></a>
-<a class="sourceLine" id="cb42-8" data-line-number="8"><span class="st">    &quot;LABA&quot;: 1,</span></a>
-<a class="sourceLine" id="cb42-9" data-line-number="9"><span class="st">    &quot;ICS&quot;: 1,</span></a>
-<a class="sourceLine" id="cb42-10" data-line-number="10"><span class="st">    &quot;FEV1&quot;: 33,</span></a>
-<a class="sourceLine" id="cb42-11" data-line-number="11"><span class="st">    &quot;BMI&quot;: 25,</span></a>
-<a class="sourceLine" id="cb42-12" data-line-number="12"><span class="st">    &quot;SGRQ&quot;: 50,</span></a>
-<a class="sourceLine" id="cb42-13" data-line-number="13"><span class="st">    &quot;LastYrExacCount&quot;: 2,</span></a>
-<a class="sourceLine" id="cb42-14" data-line-number="14"><span class="st">    &quot;LastYrSevExacCount&quot;: 1,</span></a>
-<a class="sourceLine" id="cb42-15" data-line-number="15"><span class="st">    &quot;randomized_azithromycin&quot;: 0,</span></a>
-<a class="sourceLine" id="cb42-16" data-line-number="16"><span class="st">    &quot;randomized_statin&quot;: 0,</span></a>
-<a class="sourceLine" id="cb42-17" data-line-number="17"><span class="st">    &quot;randomized_LAMA&quot;: 0,</span></a>
-<a class="sourceLine" id="cb42-18" data-line-number="18"><span class="st">    &quot;randomized_LABA&quot;: 0,</span></a>
-<a class="sourceLine" id="cb42-19" data-line-number="19"><span class="st">    &quot;randomized_ICS&quot;: 0}]}&#39;</span> -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -Headers @<span class="dt">{&quot;Content-type&quot;=&quot;application/json&quot;}</span></a></code></pre></div>
+<div class="sourceCode" id="section-cb44"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="ex">curl</span> -Body <span class="st">&#39;{&quot;api_key&quot;:[&quot;YOUR_API_KEY&quot;],&quot;func&quot;:[&quot;prism_model_run&quot;],&quot;model_input&quot;:[{&quot;ID&quot;: &quot;10001&quot;,</span></a>
+<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="st">    &quot;male&quot;: 1,</span></a>
+<a class="sourceLine" id="cb44-3" data-line-number="3"><span class="st">    &quot;age&quot;: 70,</span></a>
+<a class="sourceLine" id="cb44-4" data-line-number="4"><span class="st">    &quot;smoker&quot;: 1,</span></a>
+<a class="sourceLine" id="cb44-5" data-line-number="5"><span class="st">    &quot;oxygen&quot;: 1,</span></a>
+<a class="sourceLine" id="cb44-6" data-line-number="6"><span class="st">    &quot;statin&quot;: 1,</span></a>
+<a class="sourceLine" id="cb44-7" data-line-number="7"><span class="st">    &quot;LAMA&quot;: 1,</span></a>
+<a class="sourceLine" id="cb44-8" data-line-number="8"><span class="st">    &quot;LABA&quot;: 1,</span></a>
+<a class="sourceLine" id="cb44-9" data-line-number="9"><span class="st">    &quot;ICS&quot;: 1,</span></a>
+<a class="sourceLine" id="cb44-10" data-line-number="10"><span class="st">    &quot;FEV1&quot;: 33,</span></a>
+<a class="sourceLine" id="cb44-11" data-line-number="11"><span class="st">    &quot;BMI&quot;: 25,</span></a>
+<a class="sourceLine" id="cb44-12" data-line-number="12"><span class="st">    &quot;SGRQ&quot;: 50,</span></a>
+<a class="sourceLine" id="cb44-13" data-line-number="13"><span class="st">    &quot;LastYrExacCount&quot;: 2,</span></a>
+<a class="sourceLine" id="cb44-14" data-line-number="14"><span class="st">    &quot;LastYrSevExacCount&quot;: 1,</span></a>
+<a class="sourceLine" id="cb44-15" data-line-number="15"><span class="st">    &quot;randomized_azithromycin&quot;: 0,</span></a>
+<a class="sourceLine" id="cb44-16" data-line-number="16"><span class="st">    &quot;randomized_statin&quot;: 0,</span></a>
+<a class="sourceLine" id="cb44-17" data-line-number="17"><span class="st">    &quot;randomized_LAMA&quot;: 0,</span></a>
+<a class="sourceLine" id="cb44-18" data-line-number="18"><span class="st">    &quot;randomized_LABA&quot;: 0,</span></a>
+<a class="sourceLine" id="cb44-19" data-line-number="19"><span class="st">    &quot;randomized_ICS&quot;: 0}]}&#39;</span> -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json -Headers @<span class="dt">{&quot;Content-type&quot;=&quot;application/json&quot;}</span></a></code></pre></div>
 </div>
 </div>
 <div id="section-python-api" class="section level2">
 <h2><span class="header-section-number">5.3</span> Python API</h2>
 <p>For this, we are assuming the use of Python 3.</p>
 <p>To get started, you will need to import the <strong>json</strong> and <strong>requests</strong> libraries. To install, open a terminal:</p>
-<div class="sourceCode" id="section-cb43"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="ex">pip3</span> install requests</a></code></pre></div>
+<div class="sourceCode" id="section-cb45"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="ex">pip3</span> install requests</a></code></pre></div>
 <p>We will start with the GET request. If everything is working, this should return 200 as a response.</p>
-<div class="sourceCode" id="section-cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="im">import</span> json</a>
-<a class="sourceLine" id="cb44-2" data-line-number="2"><span class="im">import</span> requests</a>
-<a class="sourceLine" id="cb44-3" data-line-number="3">response <span class="op">=</span> requests.get(<span class="st">&quot;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&quot;</span>)</a>
-<a class="sourceLine" id="cb44-4" data-line-number="4"><span class="bu">print</span>(response)</a></code></pre></div>
+<div class="sourceCode" id="section-cb46"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="im">import</span> json</a>
+<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="im">import</span> requests</a>
+<a class="sourceLine" id="cb46-3" data-line-number="3">response <span class="op">=</span> requests.get(<span class="st">&quot;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&quot;</span>)</a>
+<a class="sourceLine" id="cb46-4" data-line-number="4"><span class="bu">print</span>(response)</a></code></pre></div>
 <p>For the POST request, we will send some patient data to the API, and should get a prediction back from the API.</p>
-<div class="sourceCode" id="section-cb45"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb45-1" data-line-number="1">api_key <span class="op">=</span> <span class="st">&#39;YOUR_API_KEY&#39;</span></a>
-<a class="sourceLine" id="cb45-2" data-line-number="2">patientInput <span class="op">=</span> [{</a>
-<a class="sourceLine" id="cb45-3" data-line-number="3">    <span class="st">&quot;ID&quot;</span>: <span class="st">&quot;10001&quot;</span>,</a>
-<a class="sourceLine" id="cb45-4" data-line-number="4">    <span class="st">&quot;male&quot;</span>: <span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb45-5" data-line-number="5">    <span class="st">&quot;age&quot;</span>: <span class="dv">70</span>,</a>
-<a class="sourceLine" id="cb45-6" data-line-number="6">    <span class="st">&quot;smoker&quot;</span>: <span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb45-7" data-line-number="7">    <span class="st">&quot;oxygen&quot;</span>: <span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb45-8" data-line-number="8">    <span class="st">&quot;statin&quot;</span>: <span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb45-9" data-line-number="9">    <span class="st">&quot;LAMA&quot;</span>: <span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb45-10" data-line-number="10">    <span class="st">&quot;LABA&quot;</span>: <span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb45-11" data-line-number="11">    <span class="st">&quot;ICS&quot;</span>: <span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb45-12" data-line-number="12">    <span class="st">&quot;FEV1&quot;</span>: <span class="dv">33</span>,</a>
-<a class="sourceLine" id="cb45-13" data-line-number="13">    <span class="st">&quot;BMI&quot;</span>: <span class="dv">25</span>,</a>
-<a class="sourceLine" id="cb45-14" data-line-number="14">    <span class="st">&quot;SGRQ&quot;</span>: <span class="dv">50</span>,</a>
-<a class="sourceLine" id="cb45-15" data-line-number="15">    <span class="st">&quot;LastYrExacCount&quot;</span>: <span class="dv">2</span>,</a>
-<a class="sourceLine" id="cb45-16" data-line-number="16">    <span class="st">&quot;LastYrSevExacCount&quot;</span>: <span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb45-17" data-line-number="17">    <span class="st">&quot;randomized_azithromycin&quot;</span>: <span class="dv">0</span>,</a>
-<a class="sourceLine" id="cb45-18" data-line-number="18">    <span class="st">&quot;randomized_statin&quot;</span>: <span class="dv">0</span>,</a>
-<a class="sourceLine" id="cb45-19" data-line-number="19">    <span class="st">&quot;randomized_LAMA&quot;</span>: <span class="dv">0</span>,</a>
-<a class="sourceLine" id="cb45-20" data-line-number="20">    <span class="st">&#39;randomized_LABA&quot;: 0,</span></a>
-<a class="sourceLine" id="cb45-21" data-line-number="21"><span class="st">    &quot;randomized_ICS&quot;: 0</span></a>
-<a class="sourceLine" id="cb45-22" data-line-number="22"><span class="st">}]</span></a>
-<a class="sourceLine" id="cb45-23" data-line-number="23"><span class="st">response = requests.post(&quot;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&quot;,</span></a>
-<a class="sourceLine" id="cb45-24" data-line-number="24"><span class="st">  json = {&quot;api_key&quot;:[api_key],</span></a>
-<a class="sourceLine" id="cb45-25" data-line-number="25"><span class="st">  &quot;func&quot;: [&quot;prism_model_run&quot;],</span></a>
-<a class="sourceLine" id="cb45-26" data-line-number="26"><span class="st">  &quot;model_input&quot;: patientInput})</span></a>
-<a class="sourceLine" id="cb45-27" data-line-number="27"><span class="st">print(response)</span></a>
-<a class="sourceLine" id="cb45-28" data-line-number="28"><span class="st">results = json.loads(response.text)</span></a>
-<a class="sourceLine" id="cb45-29" data-line-number="29"><span class="st">print(results)</span></a></code></pre></div>
+<div class="sourceCode" id="section-cb47"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb47-1" data-line-number="1">api_key <span class="op">=</span> <span class="st">&#39;YOUR_API_KEY&#39;</span></a>
+<a class="sourceLine" id="cb47-2" data-line-number="2">patientInput <span class="op">=</span> [{</a>
+<a class="sourceLine" id="cb47-3" data-line-number="3">    <span class="st">&quot;ID&quot;</span>: <span class="st">&quot;10001&quot;</span>,</a>
+<a class="sourceLine" id="cb47-4" data-line-number="4">    <span class="st">&quot;male&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb47-5" data-line-number="5">    <span class="st">&quot;age&quot;</span>: <span class="dv">70</span>,</a>
+<a class="sourceLine" id="cb47-6" data-line-number="6">    <span class="st">&quot;smoker&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb47-7" data-line-number="7">    <span class="st">&quot;oxygen&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb47-8" data-line-number="8">    <span class="st">&quot;statin&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb47-9" data-line-number="9">    <span class="st">&quot;LAMA&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb47-10" data-line-number="10">    <span class="st">&quot;LABA&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb47-11" data-line-number="11">    <span class="st">&quot;ICS&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb47-12" data-line-number="12">    <span class="st">&quot;FEV1&quot;</span>: <span class="dv">33</span>,</a>
+<a class="sourceLine" id="cb47-13" data-line-number="13">    <span class="st">&quot;BMI&quot;</span>: <span class="dv">25</span>,</a>
+<a class="sourceLine" id="cb47-14" data-line-number="14">    <span class="st">&quot;SGRQ&quot;</span>: <span class="dv">50</span>,</a>
+<a class="sourceLine" id="cb47-15" data-line-number="15">    <span class="st">&quot;LastYrExacCount&quot;</span>: <span class="dv">2</span>,</a>
+<a class="sourceLine" id="cb47-16" data-line-number="16">    <span class="st">&quot;LastYrSevExacCount&quot;</span>: <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb47-17" data-line-number="17">    <span class="st">&quot;randomized_azithromycin&quot;</span>: <span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb47-18" data-line-number="18">    <span class="st">&quot;randomized_statin&quot;</span>: <span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb47-19" data-line-number="19">    <span class="st">&quot;randomized_LAMA&quot;</span>: <span class="dv">0</span>,</a>
+<a class="sourceLine" id="cb47-20" data-line-number="20">    <span class="st">&#39;randomized_LABA&quot;: 0,</span></a>
+<a class="sourceLine" id="cb47-21" data-line-number="21"><span class="st">    &quot;randomized_ICS&quot;: 0</span></a>
+<a class="sourceLine" id="cb47-22" data-line-number="22"><span class="st">}]</span></a>
+<a class="sourceLine" id="cb47-23" data-line-number="23"><span class="st">response = requests.post(&quot;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&quot;,</span></a>
+<a class="sourceLine" id="cb47-24" data-line-number="24"><span class="st">  json = {&quot;api_key&quot;:[api_key],</span></a>
+<a class="sourceLine" id="cb47-25" data-line-number="25"><span class="st">  &quot;func&quot;: [&quot;prism_model_run&quot;],</span></a>
+<a class="sourceLine" id="cb47-26" data-line-number="26"><span class="st">  &quot;model_input&quot;: patientInput})</span></a>
+<a class="sourceLine" id="cb47-27" data-line-number="27"><span class="st">print(response)</span></a>
+<a class="sourceLine" id="cb47-28" data-line-number="28"><span class="st">results = json.loads(response.text)</span></a>
+<a class="sourceLine" id="cb47-29" data-line-number="29"><span class="st">print(results)</span></a></code></pre></div>
 <!-- ```{python prism-python3, eval = TRUE, echo = FALSE, engine.path = pythonEngine} -->
 <!-- response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json", json = {"api_key":[123456],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}) -->
 <!-- print(response) -->
@@ -357,9 +357,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="section-javascript-api" class="section level2">
 <h2><span class="header-section-number">5.4</span> Javascript API</h2>
 <p>To use the PRISM API in Javascript, you will need to use the XMLHttpRequest module. We will start by sending a GET request:</p>
-<div class="sourceCode" id="section-cb46"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb46-1" data-line-number="1">request <span class="op">=</span> <span class="kw">new</span> <span class="at">XMLHttpRequest</span>()<span class="op">;</span></a>
-<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="va">request</span>.<span class="at">open</span>(<span class="st">&#39;GET&#39;</span><span class="op">,</span> <span class="st">&#39;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&#39;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb46-3" data-line-number="3"><span class="va">request</span>.<span class="at">send</span>()<span class="op">;</span></a></code></pre></div>
+<div class="sourceCode" id="section-cb48"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb48-1" data-line-number="1">request <span class="op">=</span> <span class="kw">new</span> <span class="at">XMLHttpRequest</span>()<span class="op">;</span></a>
+<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="va">request</span>.<span class="at">open</span>(<span class="st">&#39;GET&#39;</span><span class="op">,</span> <span class="st">&#39;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb48-3" data-line-number="3"><span class="va">request</span>.<span class="at">send</span>()<span class="op">;</span></a></code></pre></div>
 <p>The <strong>onreadystatechange</strong> is an XMLHttpRequest event which updates when the ready state changes. The ready state can be either 1, 2, 3, or 4.</p>
 <pre><code>&gt; RStudioGD 
 &gt;         2</code></pre>
@@ -394,46 +394,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="section-cb48"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="va">request</span>.<span class="at">onreadystatechange</span> <span class="op">=</span> <span class="kw">function</span>() <span class="op">{</span></a>
-<a class="sourceLine" id="cb48-2" data-line-number="2">            <span class="cf">if</span>(<span class="va">request</span>.<span class="at">readyState</span> <span class="op">===</span> <span class="dv">4</span>) <span class="op">{</span> <span class="co">//</span></a>
-<a class="sourceLine" id="cb48-3" data-line-number="3">                <span class="cf">if</span>(<span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">200</span>) <span class="op">{</span></a>
-<a class="sourceLine" id="cb48-4" data-line-number="4">                    <span class="va">console</span>.<span class="at">log</span>(<span class="va">request</span>.<span class="at">responseText</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb48-5" data-line-number="5">                <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb48-6" data-line-number="6">                        <span class="va">console</span>.<span class="at">log</span>(<span class="va">request</span>.<span class="at">status</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb48-7" data-line-number="7">                <span class="op">}</span></a>
-<a class="sourceLine" id="cb48-8" data-line-number="8">            <span class="op">}</span></a>
-<a class="sourceLine" id="cb48-9" data-line-number="9">        <span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="section-cb50"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="va">request</span>.<span class="at">onreadystatechange</span> <span class="op">=</span> <span class="kw">function</span>() <span class="op">{</span></a>
+<a class="sourceLine" id="cb50-2" data-line-number="2">            <span class="cf">if</span>(<span class="va">request</span>.<span class="at">readyState</span> <span class="op">===</span> <span class="dv">4</span>) <span class="op">{</span> <span class="co">//</span></a>
+<a class="sourceLine" id="cb50-3" data-line-number="3">                <span class="cf">if</span>(<span class="va">request</span>.<span class="at">status</span> <span class="op">===</span> <span class="dv">200</span>) <span class="op">{</span></a>
+<a class="sourceLine" id="cb50-4" data-line-number="4">                    <span class="va">console</span>.<span class="at">log</span>(<span class="va">request</span>.<span class="at">responseText</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb50-5" data-line-number="5">                <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb50-6" data-line-number="6">                        <span class="va">console</span>.<span class="at">log</span>(<span class="va">request</span>.<span class="at">status</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb50-7" data-line-number="7">                <span class="op">}</span></a>
+<a class="sourceLine" id="cb50-8" data-line-number="8">            <span class="op">}</span></a>
+<a class="sourceLine" id="cb50-9" data-line-number="9">        <span class="op">}</span></a></code></pre></div>
 <p>To get a prediction, we can send a POST request. We will first create an example patient using json:</p>
-<div class="sourceCode" id="section-cb49"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="kw">let</span> patient <span class="op">=</span> <span class="va">JSON</span>.<span class="at">stringify</span>(<span class="op">{</span></a>
-<a class="sourceLine" id="cb49-2" data-line-number="2">  <span class="dt">api_key</span><span class="op">:</span> YOUR_API_KEY<span class="op">,</span></a>
-<a class="sourceLine" id="cb49-3" data-line-number="3">  <span class="dt">func</span><span class="op">:</span> [<span class="st">&quot;prism_model_run&quot;</span>]<span class="op">,</span></a>
-<a class="sourceLine" id="cb49-4" data-line-number="4">  <span class="dt">model_input</span><span class="op">:</span> [<span class="op">{</span></a>
-<a class="sourceLine" id="cb49-5" data-line-number="5">    <span class="dt">ID</span><span class="op">:</span> <span class="dv">10001</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-6" data-line-number="6">    <span class="dt">male</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-7" data-line-number="7">    <span class="dt">age</span><span class="op">:</span> <span class="dv">70</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-8" data-line-number="8">    <span class="dt">smoker</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-9" data-line-number="9">    <span class="dt">oxygen</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-10" data-line-number="10">    <span class="dt">statin</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-11" data-line-number="11">    <span class="dt">LAMA</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-12" data-line-number="12">    <span class="dt">LABA</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-13" data-line-number="13">    <span class="dt">ICS</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-14" data-line-number="14">    <span class="dt">FEV1</span><span class="op">:</span> <span class="dv">33</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-15" data-line-number="15">    <span class="dt">BMI</span><span class="op">:</span> <span class="dv">25</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-16" data-line-number="16">    <span class="dt">SGRQ</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-17" data-line-number="17">    <span class="dt">LastYrExacCount</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-18" data-line-number="18">    <span class="dt">LastYrSevExacCount</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-19" data-line-number="19">    <span class="dt">randomized_azithromycin</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-20" data-line-number="20">    <span class="dt">randomized_statin</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-21" data-line-number="21">    <span class="dt">randomized_LAMA</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-22" data-line-number="22">    <span class="dt">randomized_LABA</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></a>
-<a class="sourceLine" id="cb49-23" data-line-number="23">    <span class="dt">randomized_ICS</span><span class="op">:</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb49-24" data-line-number="24">  <span class="op">}</span>]</a>
-<a class="sourceLine" id="cb49-25" data-line-number="25"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
+<div class="sourceCode" id="section-cb51"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="kw">let</span> patient <span class="op">=</span> <span class="va">JSON</span>.<span class="at">stringify</span>(<span class="op">{</span></a>
+<a class="sourceLine" id="cb51-2" data-line-number="2">  <span class="dt">api_key</span><span class="op">:</span> YOUR_API_KEY<span class="op">,</span></a>
+<a class="sourceLine" id="cb51-3" data-line-number="3">  <span class="dt">func</span><span class="op">:</span> [<span class="st">&quot;prism_model_run&quot;</span>]<span class="op">,</span></a>
+<a class="sourceLine" id="cb51-4" data-line-number="4">  <span class="dt">model_input</span><span class="op">:</span> [<span class="op">{</span></a>
+<a class="sourceLine" id="cb51-5" data-line-number="5">    <span class="dt">ID</span><span class="op">:</span> <span class="dv">10001</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-6" data-line-number="6">    <span class="dt">male</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-7" data-line-number="7">    <span class="dt">age</span><span class="op">:</span> <span class="dv">70</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-8" data-line-number="8">    <span class="dt">smoker</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-9" data-line-number="9">    <span class="dt">oxygen</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-10" data-line-number="10">    <span class="dt">statin</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-11" data-line-number="11">    <span class="dt">LAMA</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-12" data-line-number="12">    <span class="dt">LABA</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-13" data-line-number="13">    <span class="dt">ICS</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-14" data-line-number="14">    <span class="dt">FEV1</span><span class="op">:</span> <span class="dv">33</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-15" data-line-number="15">    <span class="dt">BMI</span><span class="op">:</span> <span class="dv">25</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-16" data-line-number="16">    <span class="dt">SGRQ</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-17" data-line-number="17">    <span class="dt">LastYrExacCount</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-18" data-line-number="18">    <span class="dt">LastYrSevExacCount</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-19" data-line-number="19">    <span class="dt">randomized_azithromycin</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-20" data-line-number="20">    <span class="dt">randomized_statin</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-21" data-line-number="21">    <span class="dt">randomized_LAMA</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-22" data-line-number="22">    <span class="dt">randomized_LABA</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb51-23" data-line-number="23">    <span class="dt">randomized_ICS</span><span class="op">:</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb51-24" data-line-number="24">  <span class="op">}</span>]</a>
+<a class="sourceLine" id="cb51-25" data-line-number="25"><span class="op">}</span>)<span class="op">;</span></a></code></pre></div>
 <p>We need to set the request header to json, and then send our patient json to the PRISM server using the <strong>request.send()</strong> function.</p>
-<div class="sourceCode" id="section-cb50"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="va">request</span>.<span class="at">open</span>(<span class="st">&#39;POST&#39;</span><span class="op">,</span> <span class="st">&#39;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&#39;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb50-2" data-line-number="2"><span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;Content-Type&#39;</span><span class="op">,</span> <span class="st">&#39;application/json&#39;</span>)<span class="op">;</span></a>
-<a class="sourceLine" id="cb50-3" data-line-number="3"><span class="va">request</span>.<span class="at">send</span>(patient)<span class="op">;</span> <span class="co">// Send request</span></a>
-<a class="sourceLine" id="cb50-4" data-line-number="4"><span class="kw">let</span> results <span class="op">=</span> <span class="va">request</span>.<span class="at">response</span><span class="op">;</span></a></code></pre></div>
+<div class="sourceCode" id="section-cb52"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="va">request</span>.<span class="at">open</span>(<span class="st">&#39;POST&#39;</span><span class="op">,</span> <span class="st">&#39;http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/gateway/json&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb52-2" data-line-number="2"><span class="va">request</span>.<span class="at">setRequestHeader</span>(<span class="st">&#39;Content-Type&#39;</span><span class="op">,</span> <span class="st">&#39;application/json&#39;</span>)<span class="op">;</span></a>
+<a class="sourceLine" id="cb52-3" data-line-number="3"><span class="va">request</span>.<span class="at">send</span>(patient)<span class="op">;</span> <span class="co">// Send request</span></a>
+<a class="sourceLine" id="cb52-4" data-line-number="4"><span class="kw">let</span> results <span class="op">=</span> <span class="va">request</span>.<span class="at">response</span><span class="op">;</span></a></code></pre></div>
 
 </div>
 </div>

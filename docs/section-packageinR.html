@@ -357,6 +357,12 @@ FLIBS = -L/usr/local/lib/gcc/9/gcc/x86_64-apple-darwin18/9.1.0
 <code>get_all_events()</code> function. This function returns the events matrix, with every event for every patient. As you may guess,
 this matrix can be quite large, depending on how many patients you ran the model with.</p>
 <div class="sourceCode" id="section-cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">eventsMatrix =<span class="st"> </span><span class="kw">get_all_events</span>()</a></code></pre></div>
+<p>The other two functions are <code>getExResults()</code> and <code>getMainResults()</code>.</p>
+<div class="sourceCode" id="section-cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">extendedResults =<span class="st"> </span><span class="kw">getExResults</span>()</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2">mainResults =<span class="st"> </span><span class="kw">getMainResults</span>()</a></code></pre></div>
+<p>Both functions return quite a long list of results, and as this package is in continuous development, I will refer you to the documentation in the R package for more details of how these functions work:</p>
+<div class="sourceCode" id="section-cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">??getExResults</a>
+<a class="sourceLine" id="cb28-2" data-line-number="2">??getMainResults</a></code></pre></div>
 </div>
 </div>
 <div id="section-figures" class="section level2">
@@ -427,25 +433,25 @@ this matrix can be quite large, depending on how many patients you ran the model
   </div>
   <br>
 <p>We can look at total number of exacerbations by age group:</p>
-<div class="sourceCode" id="section-cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">plotExacerbations</span>(<span class="dt">nPatients =</span> <span class="fl">1e4</span>,</a>
-<a class="sourceLine" id="cb27-2" data-line-number="2">                  <span class="dt">argX =</span> <span class="st">&quot;year&quot;</span>,</a>
-<a class="sourceLine" id="cb27-3" data-line-number="3">                  <span class="dt">argY =</span> <span class="st">&quot;number_of_exacerbations&quot;</span>,</a>
-<a class="sourceLine" id="cb27-4" data-line-number="4">                  <span class="dt">groupBy =</span> <span class="st">&quot;age&quot;</span>,</a>
-<a class="sourceLine" id="cb27-5" data-line-number="5">                  <span class="dt">exacType =</span> <span class="st">&quot;all&quot;</span>, </a>
-<a class="sourceLine" id="cb27-6" data-line-number="6">                  <span class="dt">perCapita =</span> <span class="ot">NULL</span>)</a></code></pre></div>
-<p>We can also look at the exacerbation rate by sex:</p>
-<div class="sourceCode" id="section-cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">plotExacerbations</span>(<span class="dt">nPatients =</span> <span class="fl">1e4</span>,</a>
-<a class="sourceLine" id="cb28-2" data-line-number="2">                  <span class="dt">argX =</span> <span class="st">&quot;year&quot;</span>,</a>
-<a class="sourceLine" id="cb28-3" data-line-number="3">                  <span class="dt">argY =</span> <span class="st">&quot;exacerbation_rate&quot;</span>,</a>
-<a class="sourceLine" id="cb28-4" data-line-number="4">                  <span class="dt">groupBy =</span> <span class="st">&quot;sex&quot;</span>,</a>
-<a class="sourceLine" id="cb28-5" data-line-number="5">                  <span class="dt">exacType =</span> <span class="st">&quot;all&quot;</span>, </a>
-<a class="sourceLine" id="cb28-6" data-line-number="6">                  <span class="dt">perCapita =</span> <span class="ot">NULL</span>)</a></code></pre></div>
 <div class="sourceCode" id="section-cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">plotExacerbations</span>(<span class="dt">nPatients =</span> <span class="fl">1e4</span>,</a>
 <a class="sourceLine" id="cb29-2" data-line-number="2">                  <span class="dt">argX =</span> <span class="st">&quot;year&quot;</span>,</a>
-<a class="sourceLine" id="cb29-3" data-line-number="3">                  <span class="dt">argY =</span> <span class="st">&quot;exacerbation_rate&quot;</span>,</a>
-<a class="sourceLine" id="cb29-4" data-line-number="4">                  <span class="dt">groupBy =</span> <span class="st">&quot;sex&quot;</span>,</a>
-<a class="sourceLine" id="cb29-5" data-line-number="5">                  <span class="dt">exacType =</span> <span class="st">&quot;severe&quot;</span>, </a>
+<a class="sourceLine" id="cb29-3" data-line-number="3">                  <span class="dt">argY =</span> <span class="st">&quot;number_of_exacerbations&quot;</span>,</a>
+<a class="sourceLine" id="cb29-4" data-line-number="4">                  <span class="dt">groupBy =</span> <span class="st">&quot;age&quot;</span>,</a>
+<a class="sourceLine" id="cb29-5" data-line-number="5">                  <span class="dt">exacType =</span> <span class="st">&quot;all&quot;</span>, </a>
 <a class="sourceLine" id="cb29-6" data-line-number="6">                  <span class="dt">perCapita =</span> <span class="ot">NULL</span>)</a></code></pre></div>
+<p>We can also look at the exacerbation rate by sex:</p>
+<div class="sourceCode" id="section-cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">plotExacerbations</span>(<span class="dt">nPatients =</span> <span class="fl">1e4</span>,</a>
+<a class="sourceLine" id="cb30-2" data-line-number="2">                  <span class="dt">argX =</span> <span class="st">&quot;year&quot;</span>,</a>
+<a class="sourceLine" id="cb30-3" data-line-number="3">                  <span class="dt">argY =</span> <span class="st">&quot;exacerbation_rate&quot;</span>,</a>
+<a class="sourceLine" id="cb30-4" data-line-number="4">                  <span class="dt">groupBy =</span> <span class="st">&quot;sex&quot;</span>,</a>
+<a class="sourceLine" id="cb30-5" data-line-number="5">                  <span class="dt">exacType =</span> <span class="st">&quot;all&quot;</span>, </a>
+<a class="sourceLine" id="cb30-6" data-line-number="6">                  <span class="dt">perCapita =</span> <span class="ot">NULL</span>)</a></code></pre></div>
+<div class="sourceCode" id="section-cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">plotExacerbations</span>(<span class="dt">nPatients =</span> <span class="fl">1e4</span>,</a>
+<a class="sourceLine" id="cb31-2" data-line-number="2">                  <span class="dt">argX =</span> <span class="st">&quot;year&quot;</span>,</a>
+<a class="sourceLine" id="cb31-3" data-line-number="3">                  <span class="dt">argY =</span> <span class="st">&quot;exacerbation_rate&quot;</span>,</a>
+<a class="sourceLine" id="cb31-4" data-line-number="4">                  <span class="dt">groupBy =</span> <span class="st">&quot;sex&quot;</span>,</a>
+<a class="sourceLine" id="cb31-5" data-line-number="5">                  <span class="dt">exacType =</span> <span class="st">&quot;severe&quot;</span>, </a>
+<a class="sourceLine" id="cb31-6" data-line-number="6">                  <span class="dt">perCapita =</span> <span class="ot">NULL</span>)</a></code></pre></div>
 </div>
 <div id="section-copd-occurrence-charts" class="section level3 unnumbered">
 <h3>COPD Occurrence Charts</h3>
@@ -512,35 +518,35 @@ this matrix can be quite large, depending on how many patients you ran the model
   </div>
   <br>
 <p>We can look at COPD incidence by age:</p>
-<div class="sourceCode" id="section-cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">plotCOPD</span>(<span class="dv">10000</span>, <span class="dt">argX=</span><span class="st">&quot;age&quot;</span>, <span class="dt">argY=</span><span class="st">&quot;incidence&quot;</span>, <span class="dt">aggregateBy=</span><span class="st">&quot;none&quot;</span>, <span class="dt">groupBy=</span><span class="st">&quot;none&quot;</span>)</a>
-<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="op">&gt;</span><span class="st"> </span>Initializing the session</a>
-<a class="sourceLine" id="cb30-3" data-line-number="3"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
-<a class="sourceLine" id="cb30-4" data-line-number="4"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
-<a class="sourceLine" id="cb30-5" data-line-number="5"><span class="op">&gt;</span><span class="st"> </span>Terminating the session</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
-<p>We can look at COPD incidence by age group:</p>
-<div class="sourceCode" id="section-cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">plotCOPD</span>(<span class="dv">10000</span>, <span class="dt">argX=</span><span class="st">&quot;age&quot;</span>, <span class="dt">argY=</span><span class="st">&quot;incidence&quot;</span>, <span class="dt">aggregateBy=</span><span class="st">&quot;age&quot;</span>, <span class="dt">groupBy=</span><span class="st">&quot;none&quot;</span>)</a>
-<a class="sourceLine" id="cb31-2" data-line-number="2"><span class="op">&gt;</span><span class="st"> </span>Initializing the session</a>
-<a class="sourceLine" id="cb31-3" data-line-number="3"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
-<a class="sourceLine" id="cb31-4" data-line-number="4"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
-<a class="sourceLine" id="cb31-5" data-line-number="5"><span class="op">&gt;</span><span class="st"> </span>Terminating the session</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
-<p>We can look at COPD incidence by year and sex:</p>
-<div class="sourceCode" id="section-cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">plotCOPD</span>(<span class="dv">10000</span>, <span class="dt">argX=</span><span class="st">&quot;year&quot;</span>, <span class="dt">argY=</span><span class="st">&quot;incidence&quot;</span>, <span class="dt">aggregateBy=</span><span class="st">&quot;none&quot;</span>, <span class="dt">groupBy=</span><span class="st">&quot;sex&quot;</span>)</a>
+<div class="sourceCode" id="section-cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">plotCOPD</span>(<span class="dv">10000</span>, <span class="dt">argX=</span><span class="st">&quot;age&quot;</span>, <span class="dt">argY=</span><span class="st">&quot;incidence&quot;</span>, <span class="dt">aggregateBy=</span><span class="st">&quot;none&quot;</span>, <span class="dt">groupBy=</span><span class="st">&quot;none&quot;</span>)</a>
 <a class="sourceLine" id="cb32-2" data-line-number="2"><span class="op">&gt;</span><span class="st"> </span>Initializing the session</a>
 <a class="sourceLine" id="cb32-3" data-line-number="3"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
 <a class="sourceLine" id="cb32-4" data-line-number="4"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
-<a class="sourceLine" id="cb32-5" data-line-number="5"><span class="op">&gt;</span><span class="st"> </span>Terminating the session</a>
-<a class="sourceLine" id="cb32-6" data-line-number="6"><span class="op">&gt;</span><span class="st"> </span>No id variables; using all as measure variables</a>
-<a class="sourceLine" id="cb32-7" data-line-number="7"><span class="op">&gt;</span><span class="st"> </span>No id variables; using all as measure variables</a></code></pre></div>
+<a class="sourceLine" id="cb32-5" data-line-number="5"><span class="op">&gt;</span><span class="st"> </span>Terminating the session</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
-<p>We can also look at COPD prevalence by age:</p>
-<div class="sourceCode" id="section-cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">plotCOPD</span>(<span class="dv">10000</span>, <span class="dt">argX=</span><span class="st">&quot;age&quot;</span>, <span class="dt">argY=</span><span class="st">&quot;prevalence&quot;</span>, <span class="dt">aggregateBy=</span><span class="st">&quot;none&quot;</span>, <span class="dt">groupBy=</span><span class="st">&quot;none&quot;</span>)</a>
+<p>We can look at COPD incidence by age group:</p>
+<div class="sourceCode" id="section-cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">plotCOPD</span>(<span class="dv">10000</span>, <span class="dt">argX=</span><span class="st">&quot;age&quot;</span>, <span class="dt">argY=</span><span class="st">&quot;incidence&quot;</span>, <span class="dt">aggregateBy=</span><span class="st">&quot;age&quot;</span>, <span class="dt">groupBy=</span><span class="st">&quot;none&quot;</span>)</a>
 <a class="sourceLine" id="cb33-2" data-line-number="2"><span class="op">&gt;</span><span class="st"> </span>Initializing the session</a>
 <a class="sourceLine" id="cb33-3" data-line-number="3"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
 <a class="sourceLine" id="cb33-4" data-line-number="4"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
 <a class="sourceLine" id="cb33-5" data-line-number="5"><span class="op">&gt;</span><span class="st"> </span>Terminating the session</a></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<p>We can look at COPD incidence by year and sex:</p>
+<div class="sourceCode" id="section-cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="kw">plotCOPD</span>(<span class="dv">10000</span>, <span class="dt">argX=</span><span class="st">&quot;year&quot;</span>, <span class="dt">argY=</span><span class="st">&quot;incidence&quot;</span>, <span class="dt">aggregateBy=</span><span class="st">&quot;none&quot;</span>, <span class="dt">groupBy=</span><span class="st">&quot;sex&quot;</span>)</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2"><span class="op">&gt;</span><span class="st"> </span>Initializing the session</a>
+<a class="sourceLine" id="cb34-3" data-line-number="3"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
+<a class="sourceLine" id="cb34-4" data-line-number="4"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
+<a class="sourceLine" id="cb34-5" data-line-number="5"><span class="op">&gt;</span><span class="st"> </span>Terminating the session</a>
+<a class="sourceLine" id="cb34-6" data-line-number="6"><span class="op">&gt;</span><span class="st"> </span>No id variables; using all as measure variables</a>
+<a class="sourceLine" id="cb34-7" data-line-number="7"><span class="op">&gt;</span><span class="st"> </span>No id variables; using all as measure variables</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<p>We can also look at COPD prevalence by age:</p>
+<div class="sourceCode" id="section-cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">plotCOPD</span>(<span class="dv">10000</span>, <span class="dt">argX=</span><span class="st">&quot;age&quot;</span>, <span class="dt">argY=</span><span class="st">&quot;prevalence&quot;</span>, <span class="dt">aggregateBy=</span><span class="st">&quot;none&quot;</span>, <span class="dt">groupBy=</span><span class="st">&quot;none&quot;</span>)</a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="op">&gt;</span><span class="st"> </span>Initializing the session</a>
+<a class="sourceLine" id="cb35-3" data-line-number="3"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
+<a class="sourceLine" id="cb35-4" data-line-number="4"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
+<a class="sourceLine" id="cb35-5" data-line-number="5"><span class="op">&gt;</span><span class="st"> </span>Terminating the session</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 
 </div>
 </div>

@@ -211,12 +211,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li>First, check which Ubuntu version you are using in Terminal:</li>
 </ol>
-<div class="sourceCode" id="section-cb51"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="ex">lsb_release</span> -a</a></code></pre></div>
+<div class="sourceCode" id="section-cb53"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="ex">lsb_release</span> -a</a></code></pre></div>
 <p>{YOUR_UBUNTU_VERSION} is the Codename given. For example, on my computer it would be <code>bionic</code>.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Open the <code>/etc/apt/sources.list</code> file:</li>
 </ol>
-<div class="sourceCode" id="section-cb52"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="fu">sudo</span> gedit /etc/apt/sources.list</a></code></pre></div>
+<div class="sourceCode" id="section-cb54"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb54-1" data-line-number="1"><span class="fu">sudo</span> gedit /etc/apt/sources.list</a></code></pre></div>
 <p>For R 3.6 paste the following in the file:</p>
 <pre><code>deb https://cloud.r-project.org/bin/linux/ubuntu {YOUR_UBUNTU_VERSION}-cran35/</code></pre>
 <p>On my computer, this would be:</p>
@@ -224,9 +224,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="3" style="list-style-type: decimal">
 <li>Install R:</li>
 </ol>
-<div class="sourceCode" id="section-cb55"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="fu">sudo</span> apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9</a>
-<a class="sourceLine" id="cb55-2" data-line-number="2"><span class="fu">sudo</span> apt-get update</a>
-<a class="sourceLine" id="cb55-3" data-line-number="3"><span class="fu">sudo</span> apt-get install r-base</a></code></pre></div>
+<div class="sourceCode" id="section-cb57"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="fu">sudo</span> apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9</a>
+<a class="sourceLine" id="cb57-2" data-line-number="2"><span class="fu">sudo</span> apt-get update</a>
+<a class="sourceLine" id="cb57-3" data-line-number="3"><span class="fu">sudo</span> apt-get install r-base</a></code></pre></div>
 
 
 </div>
