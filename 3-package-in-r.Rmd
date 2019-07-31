@@ -217,6 +217,20 @@ this matrix can be quite large, depending on how many patients you ran the model
 eventsMatrix = get_all_events()
 ```
 
+The other two functions are  `getExResults()` and `getMainResults()`. 
+
+```{r, eval=FALSE, echo=TRUE}
+extendedResults = getExResults()
+mainResults = getMainResults()
+```
+
+Both functions return quite a long list of results, and as this package is in continuous development, I will refer you to the documentation in the R package for more details of how these functions work:
+
+```{r, eval=FALSE, echo=TRUE}
+??getExResults
+??getMainResults
+```
+
 ## Figures
 
 We have created some figures and charts for users, although they are not exhaustive, so you may want to create your own figures as well. 
@@ -233,7 +247,7 @@ HTML(rawHTML)
 
 We can look at total number of exacerbations by age group:
 
-```{r, eval=TRUE, echo=TRUE}
+```{r, eval=FALSE, echo=TRUE}
 plotExacerbations(nPatients = 1e4,
                   argX = "year",
                   argY = "number_of_exacerbations",
@@ -244,7 +258,7 @@ plotExacerbations(nPatients = 1e4,
 
 We can also look at the exacerbation rate by sex:
 
-```{r, eval=TRUE, echo=TRUE}
+```{r, eval=FALSE, echo=TRUE}
 plotExacerbations(nPatients = 1e4,
                   argX = "year",
                   argY = "exacerbation_rate",
@@ -253,7 +267,7 @@ plotExacerbations(nPatients = 1e4,
                   perCapita = NULL)
 ```
 
-```{r, eval=TRUE, echo=TRUE}
+```{r, eval=FALSE, echo=TRUE}
 plotExacerbations(nPatients = 1e4,
                   argX = "year",
                   argY = "exacerbation_rate",
@@ -262,3 +276,36 @@ plotExacerbations(nPatients = 1e4,
                   perCapita = NULL)
 ```
 
+### COPD Occurrence Charts {-}
+
+To look at COPD incidence and prevalence, we have the function `plotCOPD()`.
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("plot-occurrence.html"), collapse="\n")
+HTML(rawHTML)
+```
+
+We can look at COPD incidence by age:
+
+```{r, eval=TRUE, echo=TRUE}
+plotCOPD(10000, argX="age", argY="incidence", aggregateBy="none", groupBy="none")
+```
+
+We can look at COPD incidence by age group:
+
+```{r, eval=TRUE, echo=TRUE}
+plotCOPD(10000, argX="age", argY="incidence", aggregateBy="age", groupBy="none")
+```
+
+We can look at COPD incidence by year and sex:
+
+```{r, eval=TRUE, echo=TRUE}
+plotCOPD(10000, argX="year", argY="incidence", aggregateBy="none", groupBy="sex")
+```
+
+We can also look at COPD prevalence by age:
+
+```{r, eval=TRUE, echo=TRUE}
+plotCOPD(10000, argX="age", argY="prevalence", aggregateBy="none", groupBy="none")
+```
