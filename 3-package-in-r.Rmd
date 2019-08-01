@@ -247,7 +247,7 @@ HTML(rawHTML)
 
 We can look at total number of exacerbations by age group:
 
-```{r, eval=FALSE, echo=TRUE}
+```{r, eval=TRUE, echo=TRUE}
 plotExacerbations(nPatients = 1e4,
                   argX = "year",
                   argY = "number_of_exacerbations",
@@ -258,7 +258,7 @@ plotExacerbations(nPatients = 1e4,
 
 We can also look at the exacerbation rate by sex:
 
-```{r, eval=FALSE, echo=TRUE}
+```{r, eval=TRUE, echo=TRUE}
 plotExacerbations(nPatients = 1e4,
                   argX = "year",
                   argY = "exacerbation_rate",
@@ -267,7 +267,7 @@ plotExacerbations(nPatients = 1e4,
                   perCapita = NULL)
 ```
 
-```{r, eval=FALSE, echo=TRUE}
+```{r, eval=TRUE, echo=TRUE}
 plotExacerbations(nPatients = 1e4,
                   argX = "year",
                   argY = "exacerbation_rate",
