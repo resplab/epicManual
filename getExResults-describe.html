@@ -1,0 +1,182 @@
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="js/list-group.js"></script>
+  </head>
+<br><div class="row">
+<div class="col-4">
+    <div class="list-group left" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-n_alive_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_alive_by_ctime_sex-getExResults" role="tab" aria-controls="n_alive_by_ctime_sex-getExResults">n_alive_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_alive_by_ctime_age-getExResults-list" data-toggle="list" href="#list-n_alive_by_ctime_age-getExResults" role="tab" aria-controls="n_alive_by_ctime_age-getExResults">n_alive_by_ctime_age</a>
+<a class="list-group-item list-group-item-action" id="list-n_smoking_status_by_ctime-getExResults-list" data-toggle="list" href="#list-n_smoking_status_by_ctime-getExResults" role="tab" aria-controls="n_smoking_status_by_ctime-getExResults">n_smoking_status_by_ctime</a>
+<a class="list-group-item list-group-item-action" id="list-n_current_smoker_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_current_smoker_by_ctime_sex-getExResults" role="tab" aria-controls="n_current_smoker_by_ctime_sex-getExResults">n_current_smoker_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-cumul_cost_ctime-getExResults-list" data-toggle="list" href="#list-cumul_cost_ctime-getExResults" role="tab" aria-controls="cumul_cost_ctime-getExResults">cumul_cost_ctime</a>
+<a class="list-group-item list-group-item-action" id="list-sum_fev1_ltime-getExResults-list" data-toggle="list" href="#list-sum_fev1_ltime-getExResults" role="tab" aria-controls="sum_fev1_ltime-getExResults">sum_fev1_ltime</a>
+<a class="list-group-item list-group-item-action" id="list-cumul_time_by_smoking_status-getExResults-list" data-toggle="list" href="#list-cumul_time_by_smoking_status-getExResults" role="tab" aria-controls="cumul_time_by_smoking_status-getExResults">cumul_time_by_smoking_status</a>
+<a class="list-group-item list-group-item-action" id="list-cumul_non_COPD_time-getExResults-list" data-toggle="list" href="#list-cumul_non_COPD_time-getExResults" role="tab" aria-controls="cumul_non_COPD_time-getExResults">cumul_non_COPD_time</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="list-group right" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-sum_p_COPD_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-sum_p_COPD_by_ctime_sex-getExResults" role="tab" aria-controls="sum_p_COPD_by_ctime_sex-getExResults">sum_p_COPD_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-sum_pack_years_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-sum_pack_years_by_ctime_sex-getExResults" role="tab" aria-controls="sum_pack_years_by_ctime_sex-getExResults">sum_pack_years_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-sum_age_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-sum_age_by_ctime_sex-getExResults" role="tab" aria-controls="sum_age_by_ctime_sex-getExResults">sum_age_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_death_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_death_by_age_sex-getExResults" role="tab" aria-controls="n_death_by_age_sex-getExResults">n_death_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_alive_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_alive_by_age_sex-getExResults" role="tab" aria-controls="n_alive_by_age_sex-getExResults">n_alive_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-sum_time_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-sum_time_by_ctime_sex-getExResults" role="tab" aria-controls="sum_time_by_ctime_sex-getExResults">sum_time_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-sum_time_by_age_sex-getExResults-list" data-toggle="list" href="#list-sum_time_by_age_sex-getExResults" role="tab" aria-controls="sum_time_by_age_sex-getExResults">sum_time_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-sum_weight_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-sum_weight_by_ctime_sex-getExResults" role="tab" aria-controls="sum_weight_by_ctime_sex-getExResults">sum_weight_by_ctime_sex</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="tab-content" id="nav-tabContent">
+<div class="tab-pane fade show active" id="list-n_alive_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_alive_by_ctime_sex-getExResults-list">number of people alive; rows = years, columns = gender</div>
+<div class="tab-pane fade" id="list-n_alive_by_ctime_age-getExResults" role="tabpanel" aria-labelledby="list-n_alive_by_ctime_age-getExResults-list">number of people alive; rows = years, columns = age</div>
+<div class="tab-pane fade" id="list-n_smoking_status_by_ctime-getExResults" role="tabpanel" aria-labelledby="list-n_smoking_status_by_ctime-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_current_smoker_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_current_smoker_by_ctime_sex-getExResults-list">number of people who smoke; rows = years, columns = gender</div>
+<div class="tab-pane fade" id="list-cumul_cost_ctime-getExResults" role="tabpanel" aria-labelledby="list-cumul_cost_ctime-getExResults-list">total cost for one year; rows = years</div>
+<div class="tab-pane fade" id="list-sum_fev1_ltime-getExResults" role="tabpanel" aria-labelledby="list-sum_fev1_ltime-getExResults-list"></div>
+<div class="tab-pane fade" id="list-cumul_time_by_smoking_status-getExResults" role="tabpanel" aria-labelledby="list-cumul_time_by_smoking_status-getExResults-list"></div>
+<div class="tab-pane fade" id="list-cumul_non_COPD_time-getExResults" role="tabpanel" aria-labelledby="list-cumul_non_COPD_time-getExResults-list"></div>
+<div class="tab-pane fade" id="list-sum_p_COPD_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-sum_p_COPD_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-sum_pack_years_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-sum_pack_years_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-sum_age_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-sum_age_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_death_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_death_by_age_sex-getExResults-list">total number of deaths (background) during the time period; rows = age, columns = sex</div>
+<div class="tab-pane fade" id="list-n_alive_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_alive_by_age_sex-getExResults-list">total number of people alive at the end of the time period; rows = age, columns = sex</div>
+<div class="tab-pane fade" id="list-sum_time_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-sum_time_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-sum_time_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-sum_time_by_age_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-sum_weight_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-sum_weight_by_ctime_sex-getExResults-list"></div>
+</div>
+    </div>
+  </div>
+<br><div class="row">
+<div class="col-4">
+    <div class="list-group left" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-n_COPD_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_COPD_by_ctime_sex-getExResults" role="tab" aria-controls="n_COPD_by_ctime_sex-getExResults">n_COPD_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_COPD_by_ctime_age-getExResults-list" data-toggle="list" href="#list-n_COPD_by_ctime_age-getExResults" role="tab" aria-controls="n_COPD_by_ctime_age-getExResults">n_COPD_by_ctime_age</a>
+<a class="list-group-item list-group-item-action" id="list-n_inc_COPD_by_ctime_age-getExResults-list" data-toggle="list" href="#list-n_inc_COPD_by_ctime_age-getExResults" role="tab" aria-controls="n_inc_COPD_by_ctime_age-getExResults">n_inc_COPD_by_ctime_age</a>
+<a class="list-group-item list-group-item-action" id="list-n_COPD_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_COPD_by_ctime_severity-getExResults" role="tab" aria-controls="n_COPD_by_ctime_severity-getExResults">n_COPD_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_COPD_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_COPD_by_age_sex-getExResults" role="tab" aria-controls="n_COPD_by_age_sex-getExResults">n_COPD_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_Diagnosed_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_Diagnosed_by_ctime_sex-getExResults" role="tab" aria-controls="n_Diagnosed_by_ctime_sex-getExResults">n_Diagnosed_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_Diagnosed_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_Diagnosed_by_ctime_severity-getExResults" role="tab" aria-controls="n_Diagnosed_by_ctime_severity-getExResults">n_Diagnosed_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-cumul_time_by_ctime_GOLD-getExResults-list" data-toggle="list" href="#list-cumul_time_by_ctime_GOLD-getExResults" role="tab" aria-controls="cumul_time_by_ctime_GOLD-getExResults">cumul_time_by_ctime_GOLD</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="list-group right" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-n_exac_by_ctime_age-getExResults-list" data-toggle="list" href="#list-n_exac_by_ctime_age-getExResults" role="tab" aria-controls="n_exac_by_ctime_age-getExResults">n_exac_by_ctime_age</a>
+<a class="list-group-item list-group-item-action" id="list-n_severep_exac_by_ctime_age-getExResults-list" data-toggle="list" href="#list-n_severep_exac_by_ctime_age-getExResults" role="tab" aria-controls="n_severep_exac_by_ctime_age-getExResults">n_severep_exac_by_ctime_age</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_death_by_ctime_age-getExResults-list" data-toggle="list" href="#list-n_exac_death_by_ctime_age-getExResults" role="tab" aria-controls="n_exac_death_by_ctime_age-getExResults">n_exac_death_by_ctime_age</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_death_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_exac_death_by_ctime_severity-getExResults" role="tab" aria-controls="n_exac_death_by_ctime_severity-getExResults">n_exac_death_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_death_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_exac_death_by_age_sex-getExResults" role="tab" aria-controls="n_exac_death_by_age_sex-getExResults">n_exac_death_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_exac_by_ctime_severity-getExResults" role="tab" aria-controls="n_exac_by_ctime_severity-getExResults">n_exac_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_by_gold_severity-getExResults-list" data-toggle="list" href="#list-n_exac_by_gold_severity-getExResults" role="tab" aria-controls="n_exac_by_gold_severity-getExResults">n_exac_by_gold_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_by_gold_severity_diagnosed-getExResults-list" data-toggle="list" href="#list-n_exac_by_gold_severity_diagnosed-getExResults" role="tab" aria-controls="n_exac_by_gold_severity_diagnosed-getExResults">n_exac_by_gold_severity_diagnosed</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="tab-content" id="nav-tabContent">
+<div class="tab-pane fade show active" id="list-n_COPD_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_COPD_by_ctime_sex-getExResults-list">total number of people diagnosed with COPD (prevalence); rows = years, columns = sex</div>
+<div class="tab-pane fade" id="list-n_COPD_by_ctime_age-getExResults" role="tabpanel" aria-labelledby="list-n_COPD_by_ctime_age-getExResults-list">total number of people diagnosed with COPD (prevalence); rows = years, columns = age</div>
+<div class="tab-pane fade" id="list-n_inc_COPD_by_ctime_age-getExResults" role="tabpanel" aria-labelledby="list-n_inc_COPD_by_ctime_age-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_COPD_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_COPD_by_ctime_severity-getExResults-list">number of people diagnosed with COPD (prevalence); rows = years, columns = GOLD status</div>
+<div class="tab-pane fade" id="list-n_COPD_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_COPD_by_age_sex-getExResults-list">total number of people diagnosed with COPD (prevalence); rows = age, columns = sex</div>
+<div class="tab-pane fade" id="list-n_Diagnosed_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_Diagnosed_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_Diagnosed_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_Diagnosed_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-cumul_time_by_ctime_GOLD-getExResults" role="tabpanel" aria-labelledby="list-cumul_time_by_ctime_GOLD-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_ctime_age-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_ctime_age-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_severep_exac_by_ctime_age-getExResults" role="tabpanel" aria-labelledby="list-n_severep_exac_by_ctime_age-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_death_by_ctime_age-getExResults" role="tabpanel" aria-labelledby="list-n_exac_death_by_ctime_age-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_death_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_exac_death_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_death_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_exac_death_by_age_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_gold_severity-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_gold_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_gold_severity_diagnosed-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_gold_severity_diagnosed-getExResults-list"></div>
+</div>
+    </div>
+  </div>
+<br><div class="row">
+<div class="col-4">
+    <div class="list-group left" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-n_exac_by_ctime_severity_female-getExResults-list" data-toggle="list" href="#list-n_exac_by_ctime_severity_female-getExResults" role="tab" aria-controls="n_exac_by_ctime_severity_female-getExResults">n_exac_by_ctime_severity_female</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_by_ctime_GOLD-getExResults-list" data-toggle="list" href="#list-n_exac_by_ctime_GOLD-getExResults" role="tab" aria-controls="n_exac_by_ctime_GOLD-getExResults">n_exac_by_ctime_GOLD</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_by_ctime_severity_undiagnosed-getExResults-list" data-toggle="list" href="#list-n_exac_by_ctime_severity_undiagnosed-getExResults" role="tab" aria-controls="n_exac_by_ctime_severity_undiagnosed-getExResults">n_exac_by_ctime_severity_undiagnosed</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_by_ctime_severity_diagnosed-getExResults-list" data-toggle="list" href="#list-n_exac_by_ctime_severity_diagnosed-getExResults" role="tab" aria-controls="n_exac_by_ctime_severity_diagnosed-getExResults">n_exac_by_ctime_severity_diagnosed</a>
+<a class="list-group-item list-group-item-action" id="list-n_GPvisits_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_GPvisits_by_ctime_sex-getExResults" role="tab" aria-controls="n_GPvisits_by_ctime_sex-getExResults">n_GPvisits_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_GPvisits_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_GPvisits_by_ctime_severity-getExResults" role="tab" aria-controls="n_GPvisits_by_ctime_severity-getExResults">n_GPvisits_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_GPvisits_by_ctime_diagnosis-getExResults-list" data-toggle="list" href="#list-n_GPvisits_by_ctime_diagnosis-getExResults" role="tab" aria-controls="n_GPvisits_by_ctime_diagnosis-getExResults">n_GPvisits_by_ctime_diagnosis</a>
+<a class="list-group-item list-group-item-action" id="list-n_cough_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_cough_by_ctime_severity-getExResults" role="tab" aria-controls="n_cough_by_ctime_severity-getExResults">n_cough_by_ctime_severity</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="list-group right" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-n_phlegm_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_phlegm_by_ctime_severity-getExResults" role="tab" aria-controls="n_phlegm_by_ctime_severity-getExResults">n_phlegm_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_wheeze_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_wheeze_by_ctime_severity-getExResults" role="tab" aria-controls="n_wheeze_by_ctime_severity-getExResults">n_wheeze_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_dyspnea_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_dyspnea_by_ctime_severity-getExResults" role="tab" aria-controls="n_dyspnea_by_ctime_severity-getExResults">n_dyspnea_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_mi-getExResults-list" data-toggle="list" href="#list-n_mi-getExResults" role="tab" aria-controls="n_mi-getExResults">n_mi</a>
+<a class="list-group-item list-group-item-action" id="list-n_incident_mi-getExResults-list" data-toggle="list" href="#list-n_incident_mi-getExResults" role="tab" aria-controls="n_incident_mi-getExResults">n_incident_mi</a>
+<a class="list-group-item list-group-item-action" id="list-n_mi_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_mi_by_age_sex-getExResults" role="tab" aria-controls="n_mi_by_age_sex-getExResults">n_mi_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_mi_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_mi_by_ctime_sex-getExResults" role="tab" aria-controls="n_mi_by_ctime_sex-getExResults">n_mi_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-sum_p_mi_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-sum_p_mi_by_ctime_sex-getExResults" role="tab" aria-controls="sum_p_mi_by_ctime_sex-getExResults">sum_p_mi_by_ctime_sex</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="tab-content" id="nav-tabContent">
+<div class="tab-pane fade show active" id="list-n_exac_by_ctime_severity_female-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_ctime_severity_female-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_ctime_GOLD-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_ctime_GOLD-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_ctime_severity_undiagnosed-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_ctime_severity_undiagnosed-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_ctime_severity_diagnosed-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_ctime_severity_diagnosed-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_GPvisits_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_GPvisits_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_GPvisits_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_GPvisits_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_GPvisits_by_ctime_diagnosis-getExResults" role="tabpanel" aria-labelledby="list-n_GPvisits_by_ctime_diagnosis-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_cough_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_cough_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_phlegm_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_phlegm_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_wheeze_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_wheeze_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_dyspnea_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_dyspnea_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_mi-getExResults" role="tabpanel" aria-labelledby="list-n_mi-getExResults-list">total number of myocardial infarctions</div>
+<div class="tab-pane fade" id="list-n_incident_mi-getExResults" role="tabpanel" aria-labelledby="list-n_incident_mi-getExResults-list">number of myocardial infarctions</div>
+<div class="tab-pane fade" id="list-n_mi_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_mi_by_age_sex-getExResults-list">total number of myocardial infarctions over the time period; rows = age, columns = gender</div>
+<div class="tab-pane fade" id="list-n_mi_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_mi_by_ctime_sex-getExResults-list">number of myocardial infarctions in a year; rows = years, columns = gender</div>
+<div class="tab-pane fade" id="list-sum_p_mi_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-sum_p_mi_by_ctime_sex-getExResults-list"></div>
+</div>
+    </div>
+  </div>
+<br><div class="row">
+<div class="col-4">
+    <div class="list-group left" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-n_stroke-getExResults-list" data-toggle="list" href="#list-n_stroke-getExResults" role="tab" aria-controls="n_stroke-getExResults">n_stroke</a>
+<a class="list-group-item list-group-item-action" id="list-n_incident_stroke-getExResults-list" data-toggle="list" href="#list-n_incident_stroke-getExResults" role="tab" aria-controls="n_incident_stroke-getExResults">n_incident_stroke</a>
+<a class="list-group-item list-group-item-action" id="list-n_stroke_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_stroke_by_age_sex-getExResults" role="tab" aria-controls="n_stroke_by_age_sex-getExResults">n_stroke_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_stroke_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_stroke_by_ctime_sex-getExResults" role="tab" aria-controls="n_stroke_by_ctime_sex-getExResults">n_stroke_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_hf-getExResults-list" data-toggle="list" href="#list-n_hf-getExResults" role="tab" aria-controls="n_hf-getExResults">n_hf</a>
+<a class="list-group-item list-group-item-action" id="list-n_incident_hf-getExResults-list" data-toggle="list" href="#list-n_incident_hf-getExResults" role="tab" aria-controls="n_incident_hf-getExResults">n_incident_hf</a>
+<a class="list-group-item list-group-item-action" id="list-n_hf_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_hf_by_age_sex-getExResults" role="tab" aria-controls="n_hf_by_age_sex-getExResults">n_hf_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_hf-getExResults-list" data-toggle="list" href="#list-n_hf-getExResults" role="tab" aria-controls="n_hf-getExResults">n_hf</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="list-group right" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-n_incident_hf-getExResults-list" data-toggle="list" href="#list-n_incident_hf-getExResults" role="tab" aria-controls="n_incident_hf-getExResults">n_incident_hf</a>
+<a class="list-group-item list-group-item-action" id="list-n_hf_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_hf_by_age_sex-getExResults" role="tab" aria-controls="n_hf_by_age_sex-getExResults">n_hf_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_hf_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_hf_by_ctime_sex-getExResults" role="tab" aria-controls="n_hf_by_ctime_sex-getExResults">n_hf_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-medication_time_by_class-getExResults-list" data-toggle="list" href="#list-medication_time_by_class-getExResults" role="tab" aria-controls="medication_time_by_class-getExResults">medication_time_by_class</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_by_medication_class-getExResults-list" data-toggle="list" href="#list-n_exac_by_medication_class-getExResults" role="tab" aria-controls="n_exac_by_medication_class-getExResults">n_exac_by_medication_class</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="tab-content" id="nav-tabContent">
+<div class="tab-pane fade show active" id="list-n_stroke-getExResults" role="tabpanel" aria-labelledby="list-n_stroke-getExResults-list">total number of strokes by all patients over the time period</div>
+<div class="tab-pane fade" id="list-n_incident_stroke-getExResults" role="tabpanel" aria-labelledby="list-n_incident_stroke-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_stroke_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_stroke_by_age_sex-getExResults-list">number of strokes over the time period; rows = age, columns = sex</div>
+<div class="tab-pane fade" id="list-n_stroke_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_stroke_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_hf-getExResults" role="tabpanel" aria-labelledby="list-n_hf-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_incident_hf-getExResults" role="tabpanel" aria-labelledby="list-n_incident_hf-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_hf_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_hf_by_age_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_hf-getExResults" role="tabpanel" aria-labelledby="list-n_hf-getExResults-list">number of heart failures</div>
+<div class="tab-pane fade" id="list-n_incident_hf-getExResults" role="tabpanel" aria-labelledby="list-n_incident_hf-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_hf_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_hf_by_age_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_hf_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_hf_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-medication_time_by_class-getExResults" role="tabpanel" aria-labelledby="list-medication_time_by_class-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_medication_class-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_medication_class-getExResults-list"></div>
+</div>
+    </div>
+  </div>
+<br>

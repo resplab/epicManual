@@ -1,0 +1,26 @@
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="js/list-group.js"></script>
+  </head>
+<br><div class="row">
+<div class="col-4">
+    <div class="list-group left" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-nPatients-plotCOPD-list" data-toggle="list" href="#list-nPatients-plotCOPD" role="tab" aria-controls="nPatients-plotCOPD">nPatients</a>
+<a class="list-group-item list-group-item-action" id="list-argX-plotCOPD-list" data-toggle="list" href="#list-argX-plotCOPD" role="tab" aria-controls="argX-plotCOPD">argX</a>
+<a class="list-group-item list-group-item-action" id="list-argY-plotCOPD-list" data-toggle="list" href="#list-argY-plotCOPD" role="tab" aria-controls="argY-plotCOPD">argY</a>
+<a class="list-group-item list-group-item-action" id="list-aggregateBy-plotCOPD-list" data-toggle="list" href="#list-aggregateBy-plotCOPD" role="tab" aria-controls="aggregateBy-plotCOPD">aggregateBy</a>
+<a class="list-group-item list-group-item-action" id="list-groupBy-plotCOPD-list" data-toggle="list" href="#list-groupBy-plotCOPD" role="tab" aria-controls="groupBy-plotCOPD">groupBy</a>
+<a class="list-group-item list-group-item-action" id="list-perCapita-plotCOPD-list" data-toggle="list" href="#list-perCapita-plotCOPD" role="tab" aria-controls="perCapita-plotCOPD">perCapita</a>
+</div>
+  </div>
+<div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+<div class="tab-pane fade show active" id="list-nPatients-plotCOPD" role="tabpanel" aria-labelledby="list-nPatients-plotCOPD-list">number of patients/agents/individuals to simulate</div>
+<div class="tab-pane fade" id="list-argX-plotCOPD" role="tabpanel" aria-labelledby="list-argX-plotCOPD-list">string: one of "year", "age"</div>
+<div class="tab-pane fade" id="list-argY-plotCOPD" role="tabpanel" aria-labelledby="list-argY-plotCOPD-list">string: one of "incidence", "prevalence"</div>
+<div class="tab-pane fade" id="list-aggregateBy-plotCOPD" role="tabpanel" aria-labelledby="list-aggregateBy-plotCOPD-list">string: one of "age", "none"</div>
+<div class="tab-pane fade" id="list-groupBy-plotCOPD" role="tabpanel" aria-labelledby="list-groupBy-plotCOPD-list">string: one of "sex", "age", "gold"</div>
+<div class="tab-pane fade" id="list-perCapita-plotCOPD" role="tabpanel" aria-labelledby="list-perCapita-plotCOPD-list">numeric: if null, parameter is ignored, otherwise, population size to look at</div>
+</div>
+    </div>
+  </div>
+<br>

@@ -1,0 +1,26 @@
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="js/list-group.js"></script>
+  </head>
+<br><div class="row">
+<div class="col-4">
+    <div class="list-group left" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-nPatients-plotExacerbations-list" data-toggle="list" href="#list-nPatients-plotExacerbations" role="tab" aria-controls="nPatients-plotExacerbations">nPatients</a>
+<a class="list-group-item list-group-item-action" id="list-argX-plotExacerbations-list" data-toggle="list" href="#list-argX-plotExacerbations" role="tab" aria-controls="argX-plotExacerbations">argX</a>
+<a class="list-group-item list-group-item-action" id="list-argY-plotExacerbations-list" data-toggle="list" href="#list-argY-plotExacerbations" role="tab" aria-controls="argY-plotExacerbations">argY</a>
+<a class="list-group-item list-group-item-action" id="list-groupBy-plotExacerbations-list" data-toggle="list" href="#list-groupBy-plotExacerbations" role="tab" aria-controls="groupBy-plotExacerbations">groupBy</a>
+<a class="list-group-item list-group-item-action" id="list-exacType-plotExacerbations-list" data-toggle="list" href="#list-exacType-plotExacerbations" role="tab" aria-controls="exacType-plotExacerbations">exacType</a>
+<a class="list-group-item list-group-item-action" id="list-perCapita-plotExacerbations-list" data-toggle="list" href="#list-perCapita-plotExacerbations" role="tab" aria-controls="perCapita-plotExacerbations">perCapita</a>
+</div>
+  </div>
+<div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+<div class="tab-pane fade show active" id="list-nPatients-plotExacerbations" role="tabpanel" aria-labelledby="list-nPatients-plotExacerbations-list">number of patients/agents/individuals to simulate</div>
+<div class="tab-pane fade" id="list-argX-plotExacerbations" role="tabpanel" aria-labelledby="list-argX-plotExacerbations-list">string: one of "year"</div>
+<div class="tab-pane fade" id="list-argY-plotExacerbations" role="tabpanel" aria-labelledby="list-argY-plotExacerbations-list">string: one of "exacerbation_rate", "number_of_exacerbations"</div>
+<div class="tab-pane fade" id="list-groupBy-plotExacerbations" role="tabpanel" aria-labelledby="list-groupBy-plotExacerbations-list">string: one of "sex", "age", "gold"</div>
+<div class="tab-pane fade" id="list-exacType-plotExacerbations" role="tabpanel" aria-labelledby="list-exacType-plotExacerbations-list">string: "all" or "severe"</div>
+<div class="tab-pane fade" id="list-perCapita-plotExacerbations" role="tabpanel" aria-labelledby="list-perCapita-plotExacerbations-list">numeric: if null, parameter is ignored, otherwise, population size to look at</div>
+</div>
+    </div>
+  </div>
+<br>

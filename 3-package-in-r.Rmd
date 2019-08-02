@@ -177,7 +177,8 @@ The default input values are created in the file **input.R**. To set your own in
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("input-parameters.html"), collapse="\n")
+getItemizeDocs("createInput", TRUE)
+rawHTML <- paste(readLines("createInput-arguments.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -217,7 +218,23 @@ this matrix can be quite large, depending on how many patients you ran the model
 eventsMatrix = get_all_events()
 ```
 
-The other two functions are  `getExResults()` and `getMainResults()`. 
+The other two functions are  `getExResults()` and `getMainResults()`. The `getMainResults()` shows some of the overall results:
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+getItemizeDocs("getMainResults", keyword="describe")
+rawHTML <- paste(readLines("getMainResults-describe.html"), collapse="\n")
+HTML(rawHTML)
+```
+
+The `getExResults()` returns a very large list of results:
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+getItemizeDocs("getExResults", keyword="describe", maxSize = 8)
+rawHTML <- paste(readLines("getExResults-describe.html"), collapse="\n")
+HTML(rawHTML)
+```
 
 ```{r, eval=FALSE, echo=TRUE}
 extendedResults = getExResults()
@@ -241,7 +258,8 @@ To look at total number of exacerbations and exacerbation rate, we have the func
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("plot-exacerbations.html"), collapse="\n")
+getArgumentDocs("plotExacerbations")
+rawHTML <- paste(readLines("plotExacerbations-arguments.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -282,7 +300,8 @@ To look at COPD incidence and prevalence, we have the function `plotCOPD()`.
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("plot-occurrence.html"), collapse="\n")
+getArgumentDocs("plotCOPD")
+rawHTML <- paste(readLines("plotCOPD-arguments.html"), collapse="\n")
 HTML(rawHTML)
 ```
 

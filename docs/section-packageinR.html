@@ -304,38 +304,26 @@ FLIBS = -L/usr/local/lib/gcc/9/gcc/x86_64-apple-darwin18/9.1.0
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <div class="row">
-  <div class="col-4">
-
+    <div class="col-4">
     <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-exacerbation-list" data-toggle="list" href="#list-exacerbation" role="tab" aria-controls="exacerbation">percentFemale</a>
-      <a class="list-group-item list-group-item-action" id="list-fev1-list" data-toggle="list" href="#list-fev1" role="tab" aria-controls="fev1">timeHorizon</a>
-      <a class="list-group-item list-group-item-action" id="list-smoking-list" data-toggle="list" href="#list-smoking" role="tab" aria-controls="smoking">costDiscount</a>
-      <a class="list-group-item list-group-item-action" id="list-age-list" data-toggle="list" href="#list-age" role="tab" aria-controls="age">qalyDiscount</a>
-      <a class="list-group-item list-group-item-action" id="list-gender-list" data-toggle="list" href="#list-gender" role="tab" aria-controls="gender">baselineAge</a>
-    </div>
+<a class="list-group-item list-group-item-action active" id="list-percentFemale-createInput-list" data-toggle="list" href="#list-percentFemale-createInput" role="tab" aria-controls="percentFemale-createInput">percentFemale</a>
+<a class="list-group-item list-group-item-action" id="list-timeHorizon-createInput-list" data-toggle="list" href="#list-timeHorizon-createInput" role="tab" aria-controls="timeHorizon-createInput">timeHorizon</a>
+<a class="list-group-item list-group-item-action" id="list-costDiscount-createInput-list" data-toggle="list" href="#list-costDiscount-createInput" role="tab" aria-controls="costDiscount-createInput">costDiscount</a>
+<a class="list-group-item list-group-item-action" id="list-qalyDiscount-createInput-list" data-toggle="list" href="#list-qalyDiscount-createInput" role="tab" aria-controls="qalyDiscount-createInput">qalyDiscount</a>
+<a class="list-group-item list-group-item-action" id="list-baselineAge-createInput-list" data-toggle="list" href="#list-baselineAge-createInput" role="tab" aria-controls="baselineAge-createInput">baselineAge</a>
+</div>
   </div>
   <div class="col-8">
     <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="list-exacerbation" role="tabpanel" aria-labelledby="list-exacerbation-list">
-        decimal: between 0 and 1, percentage of population that is female
-      </div>
-      <div class="tab-pane fade" id="list-fev1" role="tabpanel" aria-labelledby="list-fev1-list">
-        integer: time in years for model
-      </div>
-      <div class="tab-pane fade" id="list-smoking" role="tabpanel" aria-labelledby="list-smoking-list">
-        decimal: between 0 and 1, percentage which payoffs decrease every year
-      </div>
-      <div class="tab-pane fade" id="list-age" role="tabpanel" aria-labelledby="list-age-list">
-        decimal: between 0 and 1, percentage which QALYs decrease every year
-      </div>
-    <div class="tab-pane fade" id="list-gender" role="tabpanel" aria-labelledby="list-gender-list">
-      integer: mean age at baseline
-    </div>
+<div class="tab-pane fade show active" id="list-percentFemale-createInput" role="tabpanel" aria-labelledby="list-percentFemale-createInput-list">decimal: between 0 and 1, percentage of population that is female</div>
+<div class="tab-pane fade" id="list-timeHorizon-createInput" role="tabpanel" aria-labelledby="list-timeHorizon-createInput-list">integer: time in years for model</div>
+<div class="tab-pane fade" id="list-costDiscount-createInput" role="tabpanel" aria-labelledby="list-costDiscount-createInput-list">decimal: between 0 and 1, percentage which payoffs decrease every year</div>
+<div class="tab-pane fade" id="list-qalyDiscount-createInput" role="tabpanel" aria-labelledby="list-qalyDiscount-createInput-list">decimal: between 0 and 1, percentage which QALYs decrease every year</div>
+<div class="tab-pane fade" id="list-baselineAge-createInput" role="tabpanel" aria-labelledby="list-baselineAge-createInput-list">integer: mean age at baseline</div>
+</div>
     </div>
   </div>
-</div>
-<br>
-<br>
+  <br>
 <p>To create the inputs:</p>
 <div class="sourceCode" id="section-cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">input =<span class="st"> </span><span class="kw">createInput</span>(<span class="dt">percentFemale =</span> <span class="fl">0.5</span>,</a>
 <a class="sourceLine" id="cb23-2" data-line-number="2">                        <span class="dt">timeHorizon =</span> <span class="dv">20</span>,</a>
@@ -357,7 +345,224 @@ FLIBS = -L/usr/local/lib/gcc/9/gcc/x86_64-apple-darwin18/9.1.0
 <code>get_all_events()</code> function. This function returns the events matrix, with every event for every patient. As you may guess,
 this matrix can be quite large, depending on how many patients you ran the model with.</p>
 <div class="sourceCode" id="section-cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">eventsMatrix =<span class="st"> </span><span class="kw">get_all_events</span>()</a></code></pre></div>
-<p>The other two functions are <code>getExResults()</code> and <code>getMainResults()</code>.</p>
+<p>The other two functions are <code>getExResults()</code> and <code>getMainResults()</code>. The <code>getMainResults()</code> shows some of the overall results:</p>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="js/list-group.js"></script>
+  </head>
+<br><div class="row">
+<div class="col-4">
+    <div class="list-group left" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-n_agents-getMainResults-list" data-toggle="list" href="#list-n_agents-getMainResults" role="tab" aria-controls="n_agents-getMainResults">n_agents</a>
+<a class="list-group-item list-group-item-action" id="list-cumul_time-getMainResults-list" data-toggle="list" href="#list-cumul_time-getMainResults" role="tab" aria-controls="cumul_time-getMainResults">cumul_time</a>
+<a class="list-group-item list-group-item-action" id="list-n_deaths-getMainResults-list" data-toggle="list" href="#list-n_deaths-getMainResults" role="tab" aria-controls="n_deaths-getMainResults">n_deaths</a>
+<a class="list-group-item list-group-item-action" id="list-n_COPD-getMainResults-list" data-toggle="list" href="#list-n_COPD-getMainResults" role="tab" aria-controls="n_COPD-getMainResults">n_COPD</a>
+<a class="list-group-item list-group-item-action" id="list-total_exac-getMainResults-list" data-toggle="list" href="#list-total_exac-getMainResults" role="tab" aria-controls="total_exac-getMainResults">total_exac</a>
+<a class="list-group-item list-group-item-action" id="list-total_exac_time-getMainResults-list" data-toggle="list" href="#list-total_exac_time-getMainResults" role="tab" aria-controls="total_exac_time-getMainResults">total_exac_time</a>
+<a class="list-group-item list-group-item-action" id="list-total_pack_years-getMainResults-list" data-toggle="list" href="#list-total_pack_years-getMainResults" role="tab" aria-controls="total_pack_years-getMainResults">total_pack_years</a>
+<a class="list-group-item list-group-item-action" id="list-total_doctor_visit-getMainResults-list" data-toggle="list" href="#list-total_doctor_visit-getMainResults" role="tab" aria-controls="total_doctor_visit-getMainResults">total_doctor_visit</a>
+<a class="list-group-item list-group-item-action" id="list-total_cost-getMainResults-list" data-toggle="list" href="#list-total_cost-getMainResults" role="tab" aria-controls="total_cost-getMainResults">total_cost</a>
+<a class="list-group-item list-group-item-action" id="list-total_qaly-getMainResults-list" data-toggle="list" href="#list-total_qaly-getMainResults" role="tab" aria-controls="total_qaly-getMainResults">total_qaly</a>
+</div>
+  </div>
+<div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+<div class="tab-pane fade show active" id="list-n_agents-getMainResults" role="tabpanel" aria-labelledby="list-n_agents-getMainResults-list">number of people who started in the simulation</div>
+<div class="tab-pane fade" id="list-cumul_time-getMainResults" role="tabpanel" aria-labelledby="list-cumul_time-getMainResults-list"></div>
+<div class="tab-pane fade" id="list-n_deaths-getMainResults" role="tabpanel" aria-labelledby="list-n_deaths-getMainResults-list">total number of deaths during the simulation</div>
+<div class="tab-pane fade" id="list-n_COPD-getMainResults" role="tabpanel" aria-labelledby="list-n_COPD-getMainResults-list">total number of people with COPD by the end of the simulation</div>
+<div class="tab-pane fade" id="list-total_exac-getMainResults" role="tabpanel" aria-labelledby="list-total_exac-getMainResults-list">total number of exacerbations; columns = exacerbation severity</div>
+<div class="tab-pane fade" id="list-total_exac_time-getMainResults" role="tabpanel" aria-labelledby="list-total_exac_time-getMainResults-list">total amount of time for exacerbations; columns = exacerbation severity</div>
+<div class="tab-pane fade" id="list-total_pack_years-getMainResults" role="tabpanel" aria-labelledby="list-total_pack_years-getMainResults-list">total number of pack years the population smoked during the simulation</div>
+<div class="tab-pane fade" id="list-total_doctor_visit-getMainResults" role="tabpanel" aria-labelledby="list-total_doctor_visit-getMainResults-list"></div>
+<div class="tab-pane fade" id="list-total_cost-getMainResults" role="tabpanel" aria-labelledby="list-total_cost-getMainResults-list">total cost to the health care system, in adjusted 2015 $CAD</div>
+<div class="tab-pane fade" id="list-total_qaly-getMainResults" role="tabpanel" aria-labelledby="list-total_qaly-getMainResults-list">total quality-adjusted life years lost (QALY) during the simulation</div>
+</div>
+    </div>
+  </div>
+<br>
+<p>The <code>getExResults()</code> returns a very large list of results:</p>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="js/list-group.js"></script>
+  </head>
+<br><div class="row">
+<div class="col-4">
+    <div class="list-group left" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-n_alive_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_alive_by_ctime_sex-getExResults" role="tab" aria-controls="n_alive_by_ctime_sex-getExResults">n_alive_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_alive_by_ctime_age-getExResults-list" data-toggle="list" href="#list-n_alive_by_ctime_age-getExResults" role="tab" aria-controls="n_alive_by_ctime_age-getExResults">n_alive_by_ctime_age</a>
+<a class="list-group-item list-group-item-action" id="list-n_smoking_status_by_ctime-getExResults-list" data-toggle="list" href="#list-n_smoking_status_by_ctime-getExResults" role="tab" aria-controls="n_smoking_status_by_ctime-getExResults">n_smoking_status_by_ctime</a>
+<a class="list-group-item list-group-item-action" id="list-n_current_smoker_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_current_smoker_by_ctime_sex-getExResults" role="tab" aria-controls="n_current_smoker_by_ctime_sex-getExResults">n_current_smoker_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-cumul_cost_ctime-getExResults-list" data-toggle="list" href="#list-cumul_cost_ctime-getExResults" role="tab" aria-controls="cumul_cost_ctime-getExResults">cumul_cost_ctime</a>
+<a class="list-group-item list-group-item-action" id="list-sum_fev1_ltime-getExResults-list" data-toggle="list" href="#list-sum_fev1_ltime-getExResults" role="tab" aria-controls="sum_fev1_ltime-getExResults">sum_fev1_ltime</a>
+<a class="list-group-item list-group-item-action" id="list-cumul_time_by_smoking_status-getExResults-list" data-toggle="list" href="#list-cumul_time_by_smoking_status-getExResults" role="tab" aria-controls="cumul_time_by_smoking_status-getExResults">cumul_time_by_smoking_status</a>
+<a class="list-group-item list-group-item-action" id="list-cumul_non_COPD_time-getExResults-list" data-toggle="list" href="#list-cumul_non_COPD_time-getExResults" role="tab" aria-controls="cumul_non_COPD_time-getExResults">cumul_non_COPD_time</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="list-group right" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-sum_p_COPD_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-sum_p_COPD_by_ctime_sex-getExResults" role="tab" aria-controls="sum_p_COPD_by_ctime_sex-getExResults">sum_p_COPD_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-sum_pack_years_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-sum_pack_years_by_ctime_sex-getExResults" role="tab" aria-controls="sum_pack_years_by_ctime_sex-getExResults">sum_pack_years_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-sum_age_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-sum_age_by_ctime_sex-getExResults" role="tab" aria-controls="sum_age_by_ctime_sex-getExResults">sum_age_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_death_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_death_by_age_sex-getExResults" role="tab" aria-controls="n_death_by_age_sex-getExResults">n_death_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_alive_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_alive_by_age_sex-getExResults" role="tab" aria-controls="n_alive_by_age_sex-getExResults">n_alive_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-sum_time_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-sum_time_by_ctime_sex-getExResults" role="tab" aria-controls="sum_time_by_ctime_sex-getExResults">sum_time_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-sum_time_by_age_sex-getExResults-list" data-toggle="list" href="#list-sum_time_by_age_sex-getExResults" role="tab" aria-controls="sum_time_by_age_sex-getExResults">sum_time_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-sum_weight_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-sum_weight_by_ctime_sex-getExResults" role="tab" aria-controls="sum_weight_by_ctime_sex-getExResults">sum_weight_by_ctime_sex</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="tab-content" id="nav-tabContent">
+<div class="tab-pane fade show active" id="list-n_alive_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_alive_by_ctime_sex-getExResults-list">number of people alive; rows = years, columns = gender</div>
+<div class="tab-pane fade" id="list-n_alive_by_ctime_age-getExResults" role="tabpanel" aria-labelledby="list-n_alive_by_ctime_age-getExResults-list">number of people alive; rows = years, columns = age</div>
+<div class="tab-pane fade" id="list-n_smoking_status_by_ctime-getExResults" role="tabpanel" aria-labelledby="list-n_smoking_status_by_ctime-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_current_smoker_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_current_smoker_by_ctime_sex-getExResults-list">number of people who smoke; rows = years, columns = gender</div>
+<div class="tab-pane fade" id="list-cumul_cost_ctime-getExResults" role="tabpanel" aria-labelledby="list-cumul_cost_ctime-getExResults-list">total cost for one year; rows = years</div>
+<div class="tab-pane fade" id="list-sum_fev1_ltime-getExResults" role="tabpanel" aria-labelledby="list-sum_fev1_ltime-getExResults-list"></div>
+<div class="tab-pane fade" id="list-cumul_time_by_smoking_status-getExResults" role="tabpanel" aria-labelledby="list-cumul_time_by_smoking_status-getExResults-list"></div>
+<div class="tab-pane fade" id="list-cumul_non_COPD_time-getExResults" role="tabpanel" aria-labelledby="list-cumul_non_COPD_time-getExResults-list"></div>
+<div class="tab-pane fade" id="list-sum_p_COPD_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-sum_p_COPD_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-sum_pack_years_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-sum_pack_years_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-sum_age_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-sum_age_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_death_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_death_by_age_sex-getExResults-list">total number of deaths (background) during the time period; rows = age, columns = sex</div>
+<div class="tab-pane fade" id="list-n_alive_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_alive_by_age_sex-getExResults-list">total number of people alive at the end of the time period; rows = age, columns = sex</div>
+<div class="tab-pane fade" id="list-sum_time_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-sum_time_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-sum_time_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-sum_time_by_age_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-sum_weight_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-sum_weight_by_ctime_sex-getExResults-list"></div>
+</div>
+    </div>
+  </div>
+<br><div class="row">
+<div class="col-4">
+    <div class="list-group left" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-n_COPD_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_COPD_by_ctime_sex-getExResults" role="tab" aria-controls="n_COPD_by_ctime_sex-getExResults">n_COPD_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_COPD_by_ctime_age-getExResults-list" data-toggle="list" href="#list-n_COPD_by_ctime_age-getExResults" role="tab" aria-controls="n_COPD_by_ctime_age-getExResults">n_COPD_by_ctime_age</a>
+<a class="list-group-item list-group-item-action" id="list-n_inc_COPD_by_ctime_age-getExResults-list" data-toggle="list" href="#list-n_inc_COPD_by_ctime_age-getExResults" role="tab" aria-controls="n_inc_COPD_by_ctime_age-getExResults">n_inc_COPD_by_ctime_age</a>
+<a class="list-group-item list-group-item-action" id="list-n_COPD_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_COPD_by_ctime_severity-getExResults" role="tab" aria-controls="n_COPD_by_ctime_severity-getExResults">n_COPD_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_COPD_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_COPD_by_age_sex-getExResults" role="tab" aria-controls="n_COPD_by_age_sex-getExResults">n_COPD_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_Diagnosed_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_Diagnosed_by_ctime_sex-getExResults" role="tab" aria-controls="n_Diagnosed_by_ctime_sex-getExResults">n_Diagnosed_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_Diagnosed_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_Diagnosed_by_ctime_severity-getExResults" role="tab" aria-controls="n_Diagnosed_by_ctime_severity-getExResults">n_Diagnosed_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-cumul_time_by_ctime_GOLD-getExResults-list" data-toggle="list" href="#list-cumul_time_by_ctime_GOLD-getExResults" role="tab" aria-controls="cumul_time_by_ctime_GOLD-getExResults">cumul_time_by_ctime_GOLD</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="list-group right" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-n_exac_by_ctime_age-getExResults-list" data-toggle="list" href="#list-n_exac_by_ctime_age-getExResults" role="tab" aria-controls="n_exac_by_ctime_age-getExResults">n_exac_by_ctime_age</a>
+<a class="list-group-item list-group-item-action" id="list-n_severep_exac_by_ctime_age-getExResults-list" data-toggle="list" href="#list-n_severep_exac_by_ctime_age-getExResults" role="tab" aria-controls="n_severep_exac_by_ctime_age-getExResults">n_severep_exac_by_ctime_age</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_death_by_ctime_age-getExResults-list" data-toggle="list" href="#list-n_exac_death_by_ctime_age-getExResults" role="tab" aria-controls="n_exac_death_by_ctime_age-getExResults">n_exac_death_by_ctime_age</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_death_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_exac_death_by_ctime_severity-getExResults" role="tab" aria-controls="n_exac_death_by_ctime_severity-getExResults">n_exac_death_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_death_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_exac_death_by_age_sex-getExResults" role="tab" aria-controls="n_exac_death_by_age_sex-getExResults">n_exac_death_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_exac_by_ctime_severity-getExResults" role="tab" aria-controls="n_exac_by_ctime_severity-getExResults">n_exac_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_by_gold_severity-getExResults-list" data-toggle="list" href="#list-n_exac_by_gold_severity-getExResults" role="tab" aria-controls="n_exac_by_gold_severity-getExResults">n_exac_by_gold_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_by_gold_severity_diagnosed-getExResults-list" data-toggle="list" href="#list-n_exac_by_gold_severity_diagnosed-getExResults" role="tab" aria-controls="n_exac_by_gold_severity_diagnosed-getExResults">n_exac_by_gold_severity_diagnosed</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="tab-content" id="nav-tabContent">
+<div class="tab-pane fade show active" id="list-n_COPD_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_COPD_by_ctime_sex-getExResults-list">total number of people diagnosed with COPD (prevalence); rows = years, columns = sex</div>
+<div class="tab-pane fade" id="list-n_COPD_by_ctime_age-getExResults" role="tabpanel" aria-labelledby="list-n_COPD_by_ctime_age-getExResults-list">total number of people diagnosed with COPD (prevalence); rows = years, columns = age</div>
+<div class="tab-pane fade" id="list-n_inc_COPD_by_ctime_age-getExResults" role="tabpanel" aria-labelledby="list-n_inc_COPD_by_ctime_age-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_COPD_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_COPD_by_ctime_severity-getExResults-list">number of people diagnosed with COPD (prevalence); rows = years, columns = GOLD status</div>
+<div class="tab-pane fade" id="list-n_COPD_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_COPD_by_age_sex-getExResults-list">total number of people diagnosed with COPD (prevalence); rows = age, columns = sex</div>
+<div class="tab-pane fade" id="list-n_Diagnosed_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_Diagnosed_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_Diagnosed_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_Diagnosed_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-cumul_time_by_ctime_GOLD-getExResults" role="tabpanel" aria-labelledby="list-cumul_time_by_ctime_GOLD-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_ctime_age-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_ctime_age-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_severep_exac_by_ctime_age-getExResults" role="tabpanel" aria-labelledby="list-n_severep_exac_by_ctime_age-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_death_by_ctime_age-getExResults" role="tabpanel" aria-labelledby="list-n_exac_death_by_ctime_age-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_death_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_exac_death_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_death_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_exac_death_by_age_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_gold_severity-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_gold_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_gold_severity_diagnosed-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_gold_severity_diagnosed-getExResults-list"></div>
+</div>
+    </div>
+  </div>
+<br><div class="row">
+<div class="col-4">
+    <div class="list-group left" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-n_exac_by_ctime_severity_female-getExResults-list" data-toggle="list" href="#list-n_exac_by_ctime_severity_female-getExResults" role="tab" aria-controls="n_exac_by_ctime_severity_female-getExResults">n_exac_by_ctime_severity_female</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_by_ctime_GOLD-getExResults-list" data-toggle="list" href="#list-n_exac_by_ctime_GOLD-getExResults" role="tab" aria-controls="n_exac_by_ctime_GOLD-getExResults">n_exac_by_ctime_GOLD</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_by_ctime_severity_undiagnosed-getExResults-list" data-toggle="list" href="#list-n_exac_by_ctime_severity_undiagnosed-getExResults" role="tab" aria-controls="n_exac_by_ctime_severity_undiagnosed-getExResults">n_exac_by_ctime_severity_undiagnosed</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_by_ctime_severity_diagnosed-getExResults-list" data-toggle="list" href="#list-n_exac_by_ctime_severity_diagnosed-getExResults" role="tab" aria-controls="n_exac_by_ctime_severity_diagnosed-getExResults">n_exac_by_ctime_severity_diagnosed</a>
+<a class="list-group-item list-group-item-action" id="list-n_GPvisits_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_GPvisits_by_ctime_sex-getExResults" role="tab" aria-controls="n_GPvisits_by_ctime_sex-getExResults">n_GPvisits_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_GPvisits_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_GPvisits_by_ctime_severity-getExResults" role="tab" aria-controls="n_GPvisits_by_ctime_severity-getExResults">n_GPvisits_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_GPvisits_by_ctime_diagnosis-getExResults-list" data-toggle="list" href="#list-n_GPvisits_by_ctime_diagnosis-getExResults" role="tab" aria-controls="n_GPvisits_by_ctime_diagnosis-getExResults">n_GPvisits_by_ctime_diagnosis</a>
+<a class="list-group-item list-group-item-action" id="list-n_cough_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_cough_by_ctime_severity-getExResults" role="tab" aria-controls="n_cough_by_ctime_severity-getExResults">n_cough_by_ctime_severity</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="list-group right" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-n_phlegm_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_phlegm_by_ctime_severity-getExResults" role="tab" aria-controls="n_phlegm_by_ctime_severity-getExResults">n_phlegm_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_wheeze_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_wheeze_by_ctime_severity-getExResults" role="tab" aria-controls="n_wheeze_by_ctime_severity-getExResults">n_wheeze_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_dyspnea_by_ctime_severity-getExResults-list" data-toggle="list" href="#list-n_dyspnea_by_ctime_severity-getExResults" role="tab" aria-controls="n_dyspnea_by_ctime_severity-getExResults">n_dyspnea_by_ctime_severity</a>
+<a class="list-group-item list-group-item-action" id="list-n_mi-getExResults-list" data-toggle="list" href="#list-n_mi-getExResults" role="tab" aria-controls="n_mi-getExResults">n_mi</a>
+<a class="list-group-item list-group-item-action" id="list-n_incident_mi-getExResults-list" data-toggle="list" href="#list-n_incident_mi-getExResults" role="tab" aria-controls="n_incident_mi-getExResults">n_incident_mi</a>
+<a class="list-group-item list-group-item-action" id="list-n_mi_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_mi_by_age_sex-getExResults" role="tab" aria-controls="n_mi_by_age_sex-getExResults">n_mi_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_mi_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_mi_by_ctime_sex-getExResults" role="tab" aria-controls="n_mi_by_ctime_sex-getExResults">n_mi_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-sum_p_mi_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-sum_p_mi_by_ctime_sex-getExResults" role="tab" aria-controls="sum_p_mi_by_ctime_sex-getExResults">sum_p_mi_by_ctime_sex</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="tab-content" id="nav-tabContent">
+<div class="tab-pane fade show active" id="list-n_exac_by_ctime_severity_female-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_ctime_severity_female-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_ctime_GOLD-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_ctime_GOLD-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_ctime_severity_undiagnosed-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_ctime_severity_undiagnosed-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_ctime_severity_diagnosed-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_ctime_severity_diagnosed-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_GPvisits_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_GPvisits_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_GPvisits_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_GPvisits_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_GPvisits_by_ctime_diagnosis-getExResults" role="tabpanel" aria-labelledby="list-n_GPvisits_by_ctime_diagnosis-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_cough_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_cough_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_phlegm_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_phlegm_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_wheeze_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_wheeze_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_dyspnea_by_ctime_severity-getExResults" role="tabpanel" aria-labelledby="list-n_dyspnea_by_ctime_severity-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_mi-getExResults" role="tabpanel" aria-labelledby="list-n_mi-getExResults-list">total number of myocardial infarctions</div>
+<div class="tab-pane fade" id="list-n_incident_mi-getExResults" role="tabpanel" aria-labelledby="list-n_incident_mi-getExResults-list">number of myocardial infarctions</div>
+<div class="tab-pane fade" id="list-n_mi_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_mi_by_age_sex-getExResults-list">total number of myocardial infarctions over the time period; rows = age, columns = gender</div>
+<div class="tab-pane fade" id="list-n_mi_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_mi_by_ctime_sex-getExResults-list">number of myocardial infarctions in a year; rows = years, columns = gender</div>
+<div class="tab-pane fade" id="list-sum_p_mi_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-sum_p_mi_by_ctime_sex-getExResults-list"></div>
+</div>
+    </div>
+  </div>
+<br><div class="row">
+<div class="col-4">
+    <div class="list-group left" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-n_stroke-getExResults-list" data-toggle="list" href="#list-n_stroke-getExResults" role="tab" aria-controls="n_stroke-getExResults">n_stroke</a>
+<a class="list-group-item list-group-item-action" id="list-n_incident_stroke-getExResults-list" data-toggle="list" href="#list-n_incident_stroke-getExResults" role="tab" aria-controls="n_incident_stroke-getExResults">n_incident_stroke</a>
+<a class="list-group-item list-group-item-action" id="list-n_stroke_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_stroke_by_age_sex-getExResults" role="tab" aria-controls="n_stroke_by_age_sex-getExResults">n_stroke_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_stroke_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_stroke_by_ctime_sex-getExResults" role="tab" aria-controls="n_stroke_by_ctime_sex-getExResults">n_stroke_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_hf-getExResults-list" data-toggle="list" href="#list-n_hf-getExResults" role="tab" aria-controls="n_hf-getExResults">n_hf</a>
+<a class="list-group-item list-group-item-action" id="list-n_incident_hf-getExResults-list" data-toggle="list" href="#list-n_incident_hf-getExResults" role="tab" aria-controls="n_incident_hf-getExResults">n_incident_hf</a>
+<a class="list-group-item list-group-item-action" id="list-n_hf_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_hf_by_age_sex-getExResults" role="tab" aria-controls="n_hf_by_age_sex-getExResults">n_hf_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_hf-getExResults-list" data-toggle="list" href="#list-n_hf-getExResults" role="tab" aria-controls="n_hf-getExResults">n_hf</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="list-group right" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-n_incident_hf-getExResults-list" data-toggle="list" href="#list-n_incident_hf-getExResults" role="tab" aria-controls="n_incident_hf-getExResults">n_incident_hf</a>
+<a class="list-group-item list-group-item-action" id="list-n_hf_by_age_sex-getExResults-list" data-toggle="list" href="#list-n_hf_by_age_sex-getExResults" role="tab" aria-controls="n_hf_by_age_sex-getExResults">n_hf_by_age_sex</a>
+<a class="list-group-item list-group-item-action" id="list-n_hf_by_ctime_sex-getExResults-list" data-toggle="list" href="#list-n_hf_by_ctime_sex-getExResults" role="tab" aria-controls="n_hf_by_ctime_sex-getExResults">n_hf_by_ctime_sex</a>
+<a class="list-group-item list-group-item-action" id="list-medication_time_by_class-getExResults-list" data-toggle="list" href="#list-medication_time_by_class-getExResults" role="tab" aria-controls="medication_time_by_class-getExResults">medication_time_by_class</a>
+<a class="list-group-item list-group-item-action" id="list-n_exac_by_medication_class-getExResults-list" data-toggle="list" href="#list-n_exac_by_medication_class-getExResults" role="tab" aria-controls="n_exac_by_medication_class-getExResults">n_exac_by_medication_class</a>
+</div>
+  </div>
+<div class="col-4">
+    <div class="tab-content" id="nav-tabContent">
+<div class="tab-pane fade show active" id="list-n_stroke-getExResults" role="tabpanel" aria-labelledby="list-n_stroke-getExResults-list">total number of strokes by all patients over the time period</div>
+<div class="tab-pane fade" id="list-n_incident_stroke-getExResults" role="tabpanel" aria-labelledby="list-n_incident_stroke-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_stroke_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_stroke_by_age_sex-getExResults-list">number of strokes over the time period; rows = age, columns = sex</div>
+<div class="tab-pane fade" id="list-n_stroke_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_stroke_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_hf-getExResults" role="tabpanel" aria-labelledby="list-n_hf-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_incident_hf-getExResults" role="tabpanel" aria-labelledby="list-n_incident_hf-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_hf_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_hf_by_age_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_hf-getExResults" role="tabpanel" aria-labelledby="list-n_hf-getExResults-list">number of heart failures</div>
+<div class="tab-pane fade" id="list-n_incident_hf-getExResults" role="tabpanel" aria-labelledby="list-n_incident_hf-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_hf_by_age_sex-getExResults" role="tabpanel" aria-labelledby="list-n_hf_by_age_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_hf_by_ctime_sex-getExResults" role="tabpanel" aria-labelledby="list-n_hf_by_ctime_sex-getExResults-list"></div>
+<div class="tab-pane fade" id="list-medication_time_by_class-getExResults" role="tabpanel" aria-labelledby="list-medication_time_by_class-getExResults-list"></div>
+<div class="tab-pane fade" id="list-n_exac_by_medication_class-getExResults" role="tabpanel" aria-labelledby="list-n_exac_by_medication_class-getExResults-list"></div>
+</div>
+    </div>
+  </div>
+<br>
 <div class="sourceCode" id="section-cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">extendedResults =<span class="st"> </span><span class="kw">getExResults</span>()</a>
 <a class="sourceLine" id="cb27-2" data-line-number="2">mainResults =<span class="st"> </span><span class="kw">getMainResults</span>()</a></code></pre></div>
 <p>Both functions return quite a long list of results, and as this package is in continuous development, I will refer you to the documentation in the R package for more details of how these functions work:</p>
@@ -372,66 +577,31 @@ this matrix can be quite large, depending on how many patients you ran the model
 <h3>Exacerbation Charts</h3>
 <p>To look at total number of exacerbations and exacerbation rate, we have the function <code>plotExacerbations()</code>.</p>
 <head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      CommonHTML: { linebreaks: { automatic: true } },
-      "HTML-CSS": { linebreaks: { automatic: true } },
-         SVG: { linebreaks: { automatic: true } },
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        processEscapes: true
-      }
-    });
-  </script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-</head>
-<div class="row">
-  <div class="col-4">
-    <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-mild-list" data-toggle="list" href="#list-mild" role="tab" aria-controls="mild">
-        nPatients
-      </a>
-      <a class="list-group-item list-group-item-action" id="list-moderate-list" data-toggle="list" href="#list-moderate" role="tab" aria-controls="moderate">
-        argX
-      </a>
-      <a class="list-group-item list-group-item-action" id="list-severe-list" data-toggle="list" href="#list-severe" role="tab" aria-controls="severe">
-        argY
-      </a>
-      <a class="list-group-item list-group-item-action" id="list-groupBy-list" data-toggle="list" href="#list-groupBy" role="tab" aria-controls="groupBy">
-        groupBy
-      </a>
-      <a class="list-group-item list-group-item-action" id="list-exacType-list" data-toggle="list" href="#list-exacType" role="tab" aria-controls="exacType">
-        exacType
-      </a>
-      <a class="list-group-item list-group-item-action" id="list-perCapita-list" data-toggle="list" href="#list-perCapita" role="tab" aria-controls="perCapita">
-        perCapita
-      </a>
-    </div>
+  <script src="js/list-group.js"></script>
+  </head>
+<br><div class="row">
+<div class="col-4">
+    <div class="list-group left" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-nPatients-plotExacerbations-list" data-toggle="list" href="#list-nPatients-plotExacerbations" role="tab" aria-controls="nPatients-plotExacerbations">nPatients</a>
+<a class="list-group-item list-group-item-action" id="list-argX-plotExacerbations-list" data-toggle="list" href="#list-argX-plotExacerbations" role="tab" aria-controls="argX-plotExacerbations">argX</a>
+<a class="list-group-item list-group-item-action" id="list-argY-plotExacerbations-list" data-toggle="list" href="#list-argY-plotExacerbations" role="tab" aria-controls="argY-plotExacerbations">argY</a>
+<a class="list-group-item list-group-item-action" id="list-groupBy-plotExacerbations-list" data-toggle="list" href="#list-groupBy-plotExacerbations" role="tab" aria-controls="groupBy-plotExacerbations">groupBy</a>
+<a class="list-group-item list-group-item-action" id="list-exacType-plotExacerbations-list" data-toggle="list" href="#list-exacType-plotExacerbations" role="tab" aria-controls="exacType-plotExacerbations">exacType</a>
+<a class="list-group-item list-group-item-action" id="list-perCapita-plotExacerbations-list" data-toggle="list" href="#list-perCapita-plotExacerbations" role="tab" aria-controls="perCapita-plotExacerbations">perCapita</a>
+</div>
   </div>
-  <div class="col-8">
+<div class="col-8">
     <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="list-mild" role="tabpanel" aria-labelledby="list-mild-list">
-        number of patients/agents/individuals to simulate
-      </div>
-      <div class="tab-pane fade" id="list-moderate" role="tabpanel" aria-labelledby="list-moderate-list">
-        string: one of "year"
-      </div>
-      <div class="tab-pane fade" id="list-severe" role="tabpanel" aria-labelledby="list-severe-list">
-        string: one of "exacerbation_rate", "number_of_exacerbations"
-    </div>
-      <div class="tab-pane fade" id="list-groupBy" role="tabpanel" aria-labelledby="list-groupBy-list">
-        string: one of "sex", "age", "gold"
-    </div>
-      <div class="tab-pane fade" id="list-exacType" role="tabpanel" aria-labelledby="list-exacType-list">
-        string: "all" or "severe"
-    </div>
-      <div class="tab-pane fade" id="list-perCapita" role="tabpanel" aria-labelledby="list-perCapita-list">
-        numeric: if null, parameter is ignored, otherwise, population size to look at
-</div>
+<div class="tab-pane fade show active" id="list-nPatients-plotExacerbations" role="tabpanel" aria-labelledby="list-nPatients-plotExacerbations-list">number of patients/agents/individuals to simulate</div>
+<div class="tab-pane fade" id="list-argX-plotExacerbations" role="tabpanel" aria-labelledby="list-argX-plotExacerbations-list">string: one of "year"</div>
+<div class="tab-pane fade" id="list-argY-plotExacerbations" role="tabpanel" aria-labelledby="list-argY-plotExacerbations-list">string: one of "exacerbation_rate", "number_of_exacerbations"</div>
+<div class="tab-pane fade" id="list-groupBy-plotExacerbations" role="tabpanel" aria-labelledby="list-groupBy-plotExacerbations-list">string: one of "sex", "age", "gold"</div>
+<div class="tab-pane fade" id="list-exacType-plotExacerbations" role="tabpanel" aria-labelledby="list-exacType-plotExacerbations-list">string: "all" or "severe"</div>
+<div class="tab-pane fade" id="list-perCapita-plotExacerbations" role="tabpanel" aria-labelledby="list-perCapita-plotExacerbations-list">numeric: if null, parameter is ignored, otherwise, population size to look at</div>
 </div>
     </div>
   </div>
-  <br>
+<br>
 <p>We can look at total number of exacerbations by age group:</p>
 <div class="sourceCode" id="section-cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">plotExacerbations</span>(<span class="dt">nPatients =</span> <span class="fl">1e4</span>,</a>
 <a class="sourceLine" id="cb29-2" data-line-number="2">                  <span class="dt">argX =</span> <span class="st">&quot;year&quot;</span>,</a>
@@ -443,7 +613,7 @@ this matrix can be quite large, depending on how many patients you ran the model
 <a class="sourceLine" id="cb29-8" data-line-number="8"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
 <a class="sourceLine" id="cb29-9" data-line-number="9"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
 <a class="sourceLine" id="cb29-10" data-line-number="10"><span class="op">&gt;</span><span class="st"> </span>Terminating the session</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
 <p>We can also look at the exacerbation rate by sex:</p>
 <div class="sourceCode" id="section-cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">plotExacerbations</span>(<span class="dt">nPatients =</span> <span class="fl">1e4</span>,</a>
 <a class="sourceLine" id="cb30-2" data-line-number="2">                  <span class="dt">argX =</span> <span class="st">&quot;year&quot;</span>,</a>
@@ -455,7 +625,7 @@ this matrix can be quite large, depending on how many patients you ran the model
 <a class="sourceLine" id="cb30-8" data-line-number="8"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
 <a class="sourceLine" id="cb30-9" data-line-number="9"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
 <a class="sourceLine" id="cb30-10" data-line-number="10"><span class="op">&gt;</span><span class="st"> </span>Terminating the session</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
 <div class="sourceCode" id="section-cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">plotExacerbations</span>(<span class="dt">nPatients =</span> <span class="fl">1e4</span>,</a>
 <a class="sourceLine" id="cb31-2" data-line-number="2">                  <span class="dt">argX =</span> <span class="st">&quot;year&quot;</span>,</a>
 <a class="sourceLine" id="cb31-3" data-line-number="3">                  <span class="dt">argY =</span> <span class="st">&quot;exacerbation_rate&quot;</span>,</a>
@@ -466,86 +636,51 @@ this matrix can be quite large, depending on how many patients you ran the model
 <a class="sourceLine" id="cb31-8" data-line-number="8"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
 <a class="sourceLine" id="cb31-9" data-line-number="9"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
 <a class="sourceLine" id="cb31-10" data-line-number="10"><span class="op">&gt;</span><span class="st"> </span>Terminating the session</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
 </div>
 <div id="section-copd-occurrence-charts" class="section level3 unnumbered">
 <h3>COPD Occurrence Charts</h3>
 <p>To look at COPD incidence and prevalence, we have the function <code>plotCOPD()</code>.</p>
 <head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      CommonHTML: { linebreaks: { automatic: true } },
-      "HTML-CSS": { linebreaks: { automatic: true } },
-         SVG: { linebreaks: { automatic: true } },
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        processEscapes: true
-      }
-    });
-  </script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-</head>
-<div class="row">
-  <div class="col-4">
-    <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-mild-list" data-toggle="list" href="#list-mild" role="tab" aria-controls="mild">
-        nPatients
-      </a>
-      <a class="list-group-item list-group-item-action" id="list-moderate-list" data-toggle="list" href="#list-moderate" role="tab" aria-controls="moderate">
-        argX
-      </a>
-      <a class="list-group-item list-group-item-action" id="list-severe-list" data-toggle="list" href="#list-severe" role="tab" aria-controls="severe">
-        argY
-      </a>
-      <a class="list-group-item list-group-item-action" id="list-groupBy-list" data-toggle="list" href="#list-groupBy" role="tab" aria-controls="groupBy">
-        groupBy
-      </a>
-      <a class="list-group-item list-group-item-action" id="list-exacType-list" data-toggle="list" href="#list-exacType" role="tab" aria-controls="exacType">
-        exacType
-      </a>
-      <a class="list-group-item list-group-item-action" id="list-perCapita-list" data-toggle="list" href="#list-perCapita" role="tab" aria-controls="perCapita">
-        perCapita
-      </a>
-    </div>
+  <script src="js/list-group.js"></script>
+  </head>
+<br><div class="row">
+<div class="col-4">
+    <div class="list-group left" id="list-tab" role="tablist">
+<a class="list-group-item list-group-item-action active" id="list-nPatients-plotCOPD-list" data-toggle="list" href="#list-nPatients-plotCOPD" role="tab" aria-controls="nPatients-plotCOPD">nPatients</a>
+<a class="list-group-item list-group-item-action" id="list-argX-plotCOPD-list" data-toggle="list" href="#list-argX-plotCOPD" role="tab" aria-controls="argX-plotCOPD">argX</a>
+<a class="list-group-item list-group-item-action" id="list-argY-plotCOPD-list" data-toggle="list" href="#list-argY-plotCOPD" role="tab" aria-controls="argY-plotCOPD">argY</a>
+<a class="list-group-item list-group-item-action" id="list-aggregateBy-plotCOPD-list" data-toggle="list" href="#list-aggregateBy-plotCOPD" role="tab" aria-controls="aggregateBy-plotCOPD">aggregateBy</a>
+<a class="list-group-item list-group-item-action" id="list-groupBy-plotCOPD-list" data-toggle="list" href="#list-groupBy-plotCOPD" role="tab" aria-controls="groupBy-plotCOPD">groupBy</a>
+<a class="list-group-item list-group-item-action" id="list-perCapita-plotCOPD-list" data-toggle="list" href="#list-perCapita-plotCOPD" role="tab" aria-controls="perCapita-plotCOPD">perCapita</a>
+</div>
   </div>
-  <div class="col-8">
+<div class="col-8">
     <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="list-mild" role="tabpanel" aria-labelledby="list-mild-list">
-        number of patients/agents/individuals to simulate
-      </div>
-      <div class="tab-pane fade" id="list-moderate" role="tabpanel" aria-labelledby="list-moderate-list">
-        string: one of "year"
-      </div>
-      <div class="tab-pane fade" id="list-severe" role="tabpanel" aria-labelledby="list-severe-list">
-        string: one of "exacerbation_rate", "number_of_exacerbations"
-    </div>
-      <div class="tab-pane fade" id="list-groupBy" role="tabpanel" aria-labelledby="list-groupBy-list">
-        string: one of "sex", "age", "gold"
-    </div>
-      <div class="tab-pane fade" id="list-exacType" role="tabpanel" aria-labelledby="list-exacType-list">
-        string: "all" or "severe"
-    </div>
-      <div class="tab-pane fade" id="list-perCapita" role="tabpanel" aria-labelledby="list-perCapita-list">
-        numeric: if null, parameter is ignored, otherwise, population size to look at
-</div>
+<div class="tab-pane fade show active" id="list-nPatients-plotCOPD" role="tabpanel" aria-labelledby="list-nPatients-plotCOPD-list">number of patients/agents/individuals to simulate</div>
+<div class="tab-pane fade" id="list-argX-plotCOPD" role="tabpanel" aria-labelledby="list-argX-plotCOPD-list">string: one of "year", "age"</div>
+<div class="tab-pane fade" id="list-argY-plotCOPD" role="tabpanel" aria-labelledby="list-argY-plotCOPD-list">string: one of "incidence", "prevalence"</div>
+<div class="tab-pane fade" id="list-aggregateBy-plotCOPD" role="tabpanel" aria-labelledby="list-aggregateBy-plotCOPD-list">string: one of "age", "none"</div>
+<div class="tab-pane fade" id="list-groupBy-plotCOPD" role="tabpanel" aria-labelledby="list-groupBy-plotCOPD-list">string: one of "sex", "age", "gold"</div>
+<div class="tab-pane fade" id="list-perCapita-plotCOPD" role="tabpanel" aria-labelledby="list-perCapita-plotCOPD-list">numeric: if null, parameter is ignored, otherwise, population size to look at</div>
 </div>
     </div>
   </div>
-  <br>
+<br>
 <p>We can look at COPD incidence by age:</p>
 <div class="sourceCode" id="section-cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">plotCOPD</span>(<span class="dv">10000</span>, <span class="dt">argX=</span><span class="st">&quot;age&quot;</span>, <span class="dt">argY=</span><span class="st">&quot;incidence&quot;</span>, <span class="dt">aggregateBy=</span><span class="st">&quot;none&quot;</span>, <span class="dt">groupBy=</span><span class="st">&quot;none&quot;</span>)</a>
 <a class="sourceLine" id="cb32-2" data-line-number="2"><span class="op">&gt;</span><span class="st"> </span>Initializing the session</a>
 <a class="sourceLine" id="cb32-3" data-line-number="3"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
 <a class="sourceLine" id="cb32-4" data-line-number="4"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
 <a class="sourceLine" id="cb32-5" data-line-number="5"><span class="op">&gt;</span><span class="st"> </span>Terminating the session</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
 <p>We can look at COPD incidence by age group:</p>
 <div class="sourceCode" id="section-cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">plotCOPD</span>(<span class="dv">10000</span>, <span class="dt">argX=</span><span class="st">&quot;age&quot;</span>, <span class="dt">argY=</span><span class="st">&quot;incidence&quot;</span>, <span class="dt">aggregateBy=</span><span class="st">&quot;age&quot;</span>, <span class="dt">groupBy=</span><span class="st">&quot;none&quot;</span>)</a>
 <a class="sourceLine" id="cb33-2" data-line-number="2"><span class="op">&gt;</span><span class="st"> </span>Initializing the session</a>
 <a class="sourceLine" id="cb33-3" data-line-number="3"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
 <a class="sourceLine" id="cb33-4" data-line-number="4"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
 <a class="sourceLine" id="cb33-5" data-line-number="5"><span class="op">&gt;</span><span class="st"> </span>Terminating the session</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 <p>We can look at COPD incidence by year and sex:</p>
 <div class="sourceCode" id="section-cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="kw">plotCOPD</span>(<span class="dv">10000</span>, <span class="dt">argX=</span><span class="st">&quot;year&quot;</span>, <span class="dt">argY=</span><span class="st">&quot;incidence&quot;</span>, <span class="dt">aggregateBy=</span><span class="st">&quot;none&quot;</span>, <span class="dt">groupBy=</span><span class="st">&quot;sex&quot;</span>)</a>
 <a class="sourceLine" id="cb34-2" data-line-number="2"><span class="op">&gt;</span><span class="st"> </span>Initializing the session</a>
@@ -554,14 +689,14 @@ this matrix can be quite large, depending on how many patients you ran the model
 <a class="sourceLine" id="cb34-5" data-line-number="5"><span class="op">&gt;</span><span class="st"> </span>Terminating the session</a>
 <a class="sourceLine" id="cb34-6" data-line-number="6"><span class="op">&gt;</span><span class="st"> </span>No id variables; using all as measure variables</a>
 <a class="sourceLine" id="cb34-7" data-line-number="7"><span class="op">&gt;</span><span class="st"> </span>No id variables; using all as measure variables</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
 <p>We can also look at COPD prevalence by age:</p>
 <div class="sourceCode" id="section-cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">plotCOPD</span>(<span class="dv">10000</span>, <span class="dt">argX=</span><span class="st">&quot;age&quot;</span>, <span class="dt">argY=</span><span class="st">&quot;prevalence&quot;</span>, <span class="dt">aggregateBy=</span><span class="st">&quot;none&quot;</span>, <span class="dt">groupBy=</span><span class="st">&quot;none&quot;</span>)</a>
 <a class="sourceLine" id="cb35-2" data-line-number="2"><span class="op">&gt;</span><span class="st"> </span>Initializing the session</a>
 <a class="sourceLine" id="cb35-3" data-line-number="3"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
 <a class="sourceLine" id="cb35-4" data-line-number="4"><span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span></a>
 <a class="sourceLine" id="cb35-5" data-line-number="5"><span class="op">&gt;</span><span class="st"> </span>Terminating the session</a></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
 
 </div>
 </div>
