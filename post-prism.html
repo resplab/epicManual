@@ -1,0 +1,61 @@
+<code-chunk>
+  <div slot="code">
+    <div class="code-chunk">
+    <code class="code mac">
+      curl -X POST -H "Content-Type: application/json" -d '{"api_key":[YOUR_API_KEY],"func":["prism_model_run"],
+"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json </code>
+      <code class="code linux">
+      curl -X POST -H "Content-Type: application/json" -d '{"api_key":[YOUR_API_KEY],"func":["prism_model_run"],
+"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json
+      </code>
+        <code class="code windows">
+          curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json -Headers @{"Content-type"="application/json"}
+        </code>
+    <code class="code js">
+      let patient = JSON.stringify({
+  api_key: 'YOUR_API_KEY',
+  func: ["prism_model_run"],
+  model_input: [{
+    ID: 10001,
+    male: 1,
+    age: 70,
+    smoker: 1,
+    FEV1: 2.5,
+    height: 1.68,
+    weight: 65
+  }]
+});
+request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json');
+request.setRequestHeader('Content-Type', 'application/json');
+request.send(patient);
+let results = request.response;
+    </code>
+    <code class="code r active">
+      library(prism) <br>
+      <span class="hljs-function">connect_to_model</span>('epicPrism', api_key = YOUR_API_KEY) <br>
+      patient1 = epic::samplePatients[1,] <br>
+      model_run(patient1) <br>
+      res = as.data.frame(model_run(patient1))
+    </code>
+    <code class="code python">
+      api_key = 'YOUR_API_KEY' <br>
+patientInput = [{
+"ID":"10001",
+"male":1,
+"age":70,
+"smoker":1,
+"FEV1":2.5,
+"height":1.68,
+"weight":65
+}] <br>
+response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json",
+  json = {"api_key":[api_key],
+  "func": ["prism_model_run"],
+  "model_input": patientInput}) <br>
+print(response) <br>
+results = json.loads(response.text) <br>
+print(results)
+    </code>
+</div>
+</div>
+</code-chunk>

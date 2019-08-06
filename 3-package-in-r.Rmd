@@ -177,6 +177,7 @@ The default input values are created in the file **input.R**. To set your own in
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
+source("readArguments.R")
 getItemizeDocs("createInput", TRUE)
 rawHTML <- paste(readLines("createInput-arguments.html"), collapse="\n")
 HTML(rawHTML)
@@ -258,7 +259,7 @@ To look at total number of exacerbations and exacerbation rate, we have the func
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-getArgumentDocs("plotExacerbations")
+getItemizeDocs("plotExacerbations")
 rawHTML <- paste(readLines("plotExacerbations-arguments.html"), collapse="\n")
 HTML(rawHTML)
 ```
@@ -300,7 +301,7 @@ To look at COPD incidence and prevalence, we have the function `plotCOPD()`.
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-getArgumentDocs("plotCOPD")
+getItemizeDocs("plotCOPD")
 rawHTML <- paste(readLines("plotCOPD-arguments.html"), collapse="\n")
 HTML(rawHTML)
 ```
