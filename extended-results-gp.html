@@ -1,0 +1,195 @@
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head><script src="js/list-group.js"></script>
+<div class="row">
+<div class="col-3">
+    <div class="list-group predict-output" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-n-gp-list"
+      data-toggle="list" href="#list-n-gp" role="tab" aria-controls="n-gp">Number</a>
+      <a class="list-group-item list-group-item-action" id="list-sum-gp-list"
+      data-toggle="list" href="#list-sum-gp" role="tab" aria-controls="sum-gp">Sum</a>
+    </div>
+  </div>
+  <div class="col-3">
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-gp-list"
+        data-toggle="list" href="#list-gp" role="tab" aria-controls="gp">GP Visits</a>
+        <a class="list-group-item list-group-item-action" id="list-dyspnea-list"
+        data-toggle="list" href="#list-dyspnea" role="tab" aria-controls="dyspnea">Dyspnea</a>
+        <a class="list-group-item list-group-item-action" id="list-cough-list"
+        data-toggle="list" href="#list-cough" role="tab" aria-controls="cough">Cough</a>
+        <a class="list-group-item list-group-item-action" id="list-wheeze-list"
+        data-toggle="list" href="#list-wheeze" role="tab" aria-controls="wheeze">Wheeze</a>
+        <a class="list-group-item list-group-item-action" id="list-phlegm-list"
+        data-toggle="list" href="#list-phlegm" role="tab" aria-controls="phlegm">Phlegm</a>
+      </div>
+    </div>
+<div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-probability-list"
+      data-toggle="list" href="#list-probability" role="tab" aria-controls="probability">Severity</a>
+      <a class="list-group-item list-group-item-action" id="list-time-1-gp-list"
+      data-toggle="list" href="#list-time-1-gp" role="tab" aria-controls="time-1-gp">Time</a>
+      <a class="list-group-item list-group-item-action" id="list-sex-1-gp-list"
+      data-toggle="list" href="#list-sex-1-gp" role="tab" aria-controls="sex-1-gp">Sex</a>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-ci-list"
+      data-toggle="list" href="#list-ci" role="tab" aria-controls="ci">Age</a>
+      <a class="list-group-item list-group-item-action" id="list-time-2-gp-list"
+      data-toggle="list" href="#list-time-2-gp" role="tab" aria-controls="time-2-gp">Time</a>
+      <a class="list-group-item list-group-item-action" id="list-sex-2-gp-list"
+      data-toggle="list" href="#list-sex-2-gp" role="tab" aria-controls="sex-2-gp">Sex</a>
+      <a class="list-group-item list-group-item-action" id="list-diagnosis-2-gp-list"
+      data-toggle="list" href="#list-diagnosis-2-gp" role="tab" aria-controls="diagnosis-2-gp">Diagnosis</a>
+    </div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-n" role="tabpanel"
+      aria-labelledby="list-n-gp-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      n_</h6>
+      <p class="card-text">Total number of agents/individuals/people</p>
+  </div></div>
+    </div>
+      <div class="tab-pane fade" id="list-sum-gp" role="tabpanel"
+      aria-labelledby="list-sum-gp-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      sum_</h6>
+      <p class="card-text"></p>
+  </div></div>
+    </div>
+    </div>
+    </div>
+      <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-gp" role="tabpanel"
+      aria-labelledby="list-gp-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      GPvisits </h6>
+      <p class="card-text"></p>
+  </div></div></div>
+
+      <div class="tab-pane fade" id="list-dyspnea" role="tabpanel"
+      aria-labelledby="list-dyspnea-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      dyspnea </h6>
+      <p class="card-text"></p>
+  </div></div></div>
+
+  <div class="tab-pane fade" id="list-cough" role="tabpanel"
+  aria-labelledby="list-cough-list">
+  <div class="card basic">
+    <div class="card-body basic">
+      <h6 class="card-subtitle mb-2 text-muted">
+  cough</h6>
+  <p class="card-text"></p>
+</div></div></div>
+
+<div class="tab-pane fade" id="list-wheeze" role="tabpanel"
+aria-labelledby="list-wheeze-list">
+<div class="card basic">
+  <div class="card-body basic">
+    <h6 class="card-subtitle mb-2 text-muted">
+wheeze</h6>
+<p class="card-text"></p>
+</div></div></div>
+
+<div class="tab-pane fade" id="list-phlegm" role="tabpanel"
+aria-labelledby="list-phlegm-list">
+<div class="card basic">
+  <div class="card-body basic">
+    <h6 class="card-subtitle mb-2 text-muted">
+phlegm</h6>
+<p class="card-text"></p>
+</div></div></div>
+
+    </div>
+    </div>
+    <div class="col-3">
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="list-probability" role="tabpanel"
+    aria-labelledby="list-probability-list">
+    <div class="card basic">
+      <div class="card-body basic">
+        <h6 class="card-subtitle mb-2 text-muted">
+    _by_age</h6>
+    <p class="card-text">Age in years; rows = age</p>
+</div></div></div>
+
+    <div class="tab-pane fade" id="list-time-1-gp" role="tabpanel"
+    aria-labelledby="list-time-1-gp-list">
+    <div class="card basic">
+          <div class="card-body basic">
+            <h6 class="card-subtitle mb-2 text-muted">
+        _by_ctime</h6>
+        <p class="card-text">Time of simulation in years; rows = time</p>
+    </div></div></div>
+
+    <div class="tab-pane fade" id="list-sex-1-gp" role="tabpanel"
+    aria-labelledby="list-sex-1-gp-list">
+    <div class="card basic">
+          <div class="card-body basic">
+            <h6 class="card-subtitle mb-2 text-muted">
+        _by_sex</h6>
+        <p class="card-text">Sex of agent, either "male" or "female"; rows = sex</p>
+    </div></div></div>
+
+  </div>
+  </div>
+          <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-ci" role="tabpanel"
+      aria-labelledby="list-ci-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_age</h6>
+            <p class="card-text">Age in years; columns = age</p>
+    </div></div></div>
+
+      <div class="tab-pane fade" id="list-time-2-gp" role="tabpanel"
+      aria-labelledby="list-time-2-gp-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_ctime</h6>
+          <p class="card-text">Time of simulation in years; columns = time</p>
+    </div></div></div>
+    <div class="tab-pane fade" id="list-sex-2-gp" role="tabpanel"
+    aria-labelledby="list-sex-2-gp-list">
+    <div class="card basic">
+      <div class="card-body basic">
+        <h6 class="card-subtitle mb-2 text-muted">_sex</h6>
+        <p class="card-text">Sex of agent, either "male" or "female"; columns = sex</p>
+  </div></div></div>
+  <div class="tab-pane fade" id="list-sex-2-gp" role="tabpanel"
+  aria-labelledby="list-sex-2-gp-list">
+  <div class="card basic">
+    <div class="card-body basic">
+      <h6 class="card-subtitle mb-2 text-muted">_sex</h6>
+      <p class="card-text">Sex of agent, either "male" or "female"; columns = sex</p>
+</div></div></div>
+<div class="tab-pane fade" id="list-sex-2-gp" role="tabpanel"
+aria-labelledby="list-diagnosed-2-list">
+<div class="card basic">
+  <div class="card-body basic">
+    <h6 class="card-subtitle mb-2 text-muted">_diagnosis</h6>
+    <p class="card-text"></p>
+</div></div></div>
+
+    </div>
+    </div>
+    </div>
+    <br>

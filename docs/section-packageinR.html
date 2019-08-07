@@ -536,11 +536,579 @@ devtools<span class="op">::</span><span class="kw">install_github</span>(<span c
     </div>
   </div>
 <br>
+<p>As the <code>getExResults()</code> function returns a very large list, we have broken them down into the different modules.</p>
+<div id="section-cardiovascular-module" class="section level4 unnumbered">
+<h4>Cardiovascular Module</h4>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/list-group.js"></script>
+<div class="row">
+<div class="col-3">
+    <div class="list-group predict-output" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-n-list"
+      data-toggle="list" href="#list-n" role="tab" aria-controls="n">Number</a>
+      <a class="list-group-item list-group-item-action" id="list-no-treatment-list"
+      data-toggle="list" href="#list-no-treatment" role="tab" aria-controls="no-treatment">Sum</a>
+    </div>
+  </div>
+  <div class="col-3">
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-stroke-list"
+        data-toggle="list" href="#list-stroke" role="tab" aria-controls="stroke">Stroke</a>
+        <a class="list-group-item list-group-item-action" id="list-incident-stroke-list"
+        data-toggle="list" href="#list-incident-stroke" role="tab" aria-controls="incident-stroke">Incident Stroke</a>
+        <a class="list-group-item list-group-item-action" id="list-mi-list"
+        data-toggle="list" href="#list-mi" role="tab" aria-controls="mi">Myocardial Infarction</a>
+        <a class="list-group-item list-group-item-action" id="list-incident-mi-list"
+        data-toggle="list" href="#list-incident-mi" role="tab" aria-controls="incident-mi">Inicident Myocardial Infarction</a>
+        <a class="list-group-item list-group-item-action" id="list-hf-list"
+        data-toggle="list" href="#list-hf" role="tab" aria-controls="hf">Heart Failure</a>
+        <a class="list-group-item list-group-item-action" id="list-incident-hf-list"
+        data-toggle="list" href="#list-incident-hf" role="tab" aria-controls="incident-hf">Incident Heart Failure</a>
+
+      </div>
+    </div>
+<div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-probability-list"
+      data-toggle="list" href="#list-probability" role="tab" aria-controls="probability">Age</a>
+      <a class="list-group-item list-group-item-action" id="list-time-1-list"
+      data-toggle="list" href="#list-time-1" role="tab" aria-controls="time-1">Time</a>
+      <a class="list-group-item list-group-item-action" id="list-sex-1-list"
+      data-toggle="list" href="#list-sex-1" role="tab" aria-controls="sex-1">Sex</a>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-ci-list"
+      data-toggle="list" href="#list-ci" role="tab" aria-controls="ci">Age</a>
+      <a class="list-group-item list-group-item-action" id="list-time-2-list"
+      data-toggle="list" href="#list-time-2" role="tab" aria-controls="time-2">Time</a>
+      <a class="list-group-item list-group-item-action" id="list-sex-2-list"
+      data-toggle="list" href="#list-sex-2" role="tab" aria-controls="sex-2">Sex</a>
+    </div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-n" role="tabpanel"
+      aria-labelledby="list-n-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      n_</h6>
+      <p class="card-text">Total number of agents/individuals/people</p>
+  </div></div>
+    </div>
+      <div class="tab-pane fade" id="list-no-treatment" role="tabpanel"
+      aria-labelledby="list-no-treatment-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      sum_</h6>
+      <p class="card-text"></p>
+  </div></div>
+    </div>
+    </div>
+    </div>
+      <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-stroke" role="tabpanel"
+      aria-labelledby="list-stroke-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      stroke </h6>
+      <p class="card-text"></p>
+  </div></div></div>
+
+      <div class="tab-pane fade" id="list-incident-stroke" role="tabpanel"
+      aria-labelledby="list-incident-stroke-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      incident_stroke </h6>
+      <p class="card-text"></p>
+  </div></div></div>
+
+  <div class="tab-pane fade" id="list-mi" role="tabpanel"
+  aria-labelledby="list-mi-list">
+  <div class="card basic">
+    <div class="card-body basic">
+      <h6 class="card-subtitle mb-2 text-muted">
+  mi</h6>
+  <p class="card-text"></p>
+</div></div></div>
+
+<div class="tab-pane fade" id="list-incident-mi" role="tabpanel"
+aria-labelledby="list-incident-mi-list">
+<div class="card basic">
+  <div class="card-body basic">
+    <h6 class="card-subtitle mb-2 text-muted">
+incident_mi</h6>
+<p class="card-text"></p>
+</div></div></div>
+
+<div class="tab-pane fade" id="list-hf" role="tabpanel"
+aria-labelledby="list-hf-list">
+<div class="card basic">
+  <div class="card-body basic">
+    <h6 class="card-subtitle mb-2 text-muted">
+hf</h6>
+<p class="card-text"></p>
+</div></div></div>
+
+<div class="tab-pane fade" id="list-incident-hf" role="tabpanel"
+aria-labelledby="list-incident-hf-list">
+<div class="card basic">
+  <div class="card-body basic">
+    <h6 class="card-subtitle mb-2 text-muted">
+incident_hf</h6>
+<p class="card-text"></p>
+</div></div></div>
+
+    </div>
+    </div>
+    <div class="col-3">
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="list-probability" role="tabpanel"
+    aria-labelledby="list-probability-list">
+    <div class="card basic">
+      <div class="card-body basic">
+        <h6 class="card-subtitle mb-2 text-muted">
+    _by_age</h6>
+    <p class="card-text">Age in years; rows = age</p>
+</div></div></div>
+
+    <div class="tab-pane fade" id="list-time-1" role="tabpanel"
+    aria-labelledby="list-time-1-list">
+    <div class="card basic">
+          <div class="card-body basic">
+            <h6 class="card-subtitle mb-2 text-muted">
+        _by_ctime</h6>
+        <p class="card-text">Time of simulation in years; rows = time</p>
+    </div></div></div>
+
+    <div class="tab-pane fade" id="list-sex-1" role="tabpanel"
+    aria-labelledby="list-sex-1-list">
+    <div class="card basic">
+          <div class="card-body basic">
+            <h6 class="card-subtitle mb-2 text-muted">
+        _by_sex</h6>
+        <p class="card-text">Sex of agent, either "male" or "female"; rows = sex</p>
+    </div></div></div>
+
+  </div>
+  </div>
+          <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-ci" role="tabpanel"
+      aria-labelledby="list-ci-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_age</h6>
+            <p class="card-text">Age in years; columns = age</p>
+    </div></div></div>
+
+      <div class="tab-pane fade" id="list-time-2" role="tabpanel"
+      aria-labelledby="list-time-2-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_ctime</h6>
+          <p class="card-text">Time of simulation in years; columns = time</p>
+    </div></div></div>
+    <div class="tab-pane fade" id="list-sex-2" role="tabpanel"
+    aria-labelledby="list-sex-2-list">
+    <div class="card basic">
+      <div class="card-body basic">
+        <h6 class="card-subtitle mb-2 text-muted">_sex</h6>
+        <p class="card-text">Sex of agent, either "male" or "female"; columns = sex</p>
+  </div></div></div>
+
+    </div>
+    </div>
+    </div>
+    <br>
+</div>
+<div id="section-physician-module" class="section level4 unnumbered">
+<h4>Physician Module</h4>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head><script src="js/list-group.js"></script>
+<div class="row">
+<div class="col-3">
+    <div class="list-group predict-output" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-n-gp-list"
+      data-toggle="list" href="#list-n-gp" role="tab" aria-controls="n-gp">Number</a>
+      <a class="list-group-item list-group-item-action" id="list-sum-gp-list"
+      data-toggle="list" href="#list-sum-gp" role="tab" aria-controls="sum-gp">Sum</a>
+    </div>
+  </div>
+  <div class="col-3">
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-gp-list"
+        data-toggle="list" href="#list-gp" role="tab" aria-controls="gp">GP Visits</a>
+        <a class="list-group-item list-group-item-action" id="list-dyspnea-list"
+        data-toggle="list" href="#list-dyspnea" role="tab" aria-controls="dyspnea">Dyspnea</a>
+        <a class="list-group-item list-group-item-action" id="list-cough-list"
+        data-toggle="list" href="#list-cough" role="tab" aria-controls="cough">Cough</a>
+        <a class="list-group-item list-group-item-action" id="list-wheeze-list"
+        data-toggle="list" href="#list-wheeze" role="tab" aria-controls="wheeze">Wheeze</a>
+        <a class="list-group-item list-group-item-action" id="list-phlegm-list"
+        data-toggle="list" href="#list-phlegm" role="tab" aria-controls="phlegm">Phlegm</a>
+      </div>
+    </div>
+<div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-probability-list"
+      data-toggle="list" href="#list-probability" role="tab" aria-controls="probability">Severity</a>
+      <a class="list-group-item list-group-item-action" id="list-time-1-gp-list"
+      data-toggle="list" href="#list-time-1-gp" role="tab" aria-controls="time-1-gp">Time</a>
+      <a class="list-group-item list-group-item-action" id="list-sex-1-gp-list"
+      data-toggle="list" href="#list-sex-1-gp" role="tab" aria-controls="sex-1-gp">Sex</a>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-ci-list"
+      data-toggle="list" href="#list-ci" role="tab" aria-controls="ci">Age</a>
+      <a class="list-group-item list-group-item-action" id="list-time-2-gp-list"
+      data-toggle="list" href="#list-time-2-gp" role="tab" aria-controls="time-2-gp">Time</a>
+      <a class="list-group-item list-group-item-action" id="list-sex-2-gp-list"
+      data-toggle="list" href="#list-sex-2-gp" role="tab" aria-controls="sex-2-gp">Sex</a>
+      <a class="list-group-item list-group-item-action" id="list-diagnosis-2-gp-list"
+      data-toggle="list" href="#list-diagnosis-2-gp" role="tab" aria-controls="diagnosis-2-gp">Diagnosis</a>
+    </div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-n" role="tabpanel"
+      aria-labelledby="list-n-gp-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      n_</h6>
+      <p class="card-text">Total number of agents/individuals/people</p>
+  </div></div>
+    </div>
+      <div class="tab-pane fade" id="list-sum-gp" role="tabpanel"
+      aria-labelledby="list-sum-gp-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      sum_</h6>
+      <p class="card-text"></p>
+  </div></div>
+    </div>
+    </div>
+    </div>
+      <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-gp" role="tabpanel"
+      aria-labelledby="list-gp-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      GPvisits </h6>
+      <p class="card-text"></p>
+  </div></div></div>
+
+      <div class="tab-pane fade" id="list-dyspnea" role="tabpanel"
+      aria-labelledby="list-dyspnea-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      dyspnea </h6>
+      <p class="card-text"></p>
+  </div></div></div>
+
+  <div class="tab-pane fade" id="list-cough" role="tabpanel"
+  aria-labelledby="list-cough-list">
+  <div class="card basic">
+    <div class="card-body basic">
+      <h6 class="card-subtitle mb-2 text-muted">
+  cough</h6>
+  <p class="card-text"></p>
+</div></div></div>
+
+<div class="tab-pane fade" id="list-wheeze" role="tabpanel"
+aria-labelledby="list-wheeze-list">
+<div class="card basic">
+  <div class="card-body basic">
+    <h6 class="card-subtitle mb-2 text-muted">
+wheeze</h6>
+<p class="card-text"></p>
+</div></div></div>
+
+<div class="tab-pane fade" id="list-phlegm" role="tabpanel"
+aria-labelledby="list-phlegm-list">
+<div class="card basic">
+  <div class="card-body basic">
+    <h6 class="card-subtitle mb-2 text-muted">
+phlegm</h6>
+<p class="card-text"></p>
+</div></div></div>
+
+    </div>
+    </div>
+    <div class="col-3">
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="list-probability" role="tabpanel"
+    aria-labelledby="list-probability-list">
+    <div class="card basic">
+      <div class="card-body basic">
+        <h6 class="card-subtitle mb-2 text-muted">
+    _by_age</h6>
+    <p class="card-text">Age in years; rows = age</p>
+</div></div></div>
+
+    <div class="tab-pane fade" id="list-time-1-gp" role="tabpanel"
+    aria-labelledby="list-time-1-gp-list">
+    <div class="card basic">
+          <div class="card-body basic">
+            <h6 class="card-subtitle mb-2 text-muted">
+        _by_ctime</h6>
+        <p class="card-text">Time of simulation in years; rows = time</p>
+    </div></div></div>
+
+    <div class="tab-pane fade" id="list-sex-1-gp" role="tabpanel"
+    aria-labelledby="list-sex-1-gp-list">
+    <div class="card basic">
+          <div class="card-body basic">
+            <h6 class="card-subtitle mb-2 text-muted">
+        _by_sex</h6>
+        <p class="card-text">Sex of agent, either "male" or "female"; rows = sex</p>
+    </div></div></div>
+
+  </div>
+  </div>
+          <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-ci" role="tabpanel"
+      aria-labelledby="list-ci-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_age</h6>
+            <p class="card-text">Age in years; columns = age</p>
+    </div></div></div>
+
+      <div class="tab-pane fade" id="list-time-2-gp" role="tabpanel"
+      aria-labelledby="list-time-2-gp-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_ctime</h6>
+          <p class="card-text">Time of simulation in years; columns = time</p>
+    </div></div></div>
+    <div class="tab-pane fade" id="list-sex-2-gp" role="tabpanel"
+    aria-labelledby="list-sex-2-gp-list">
+    <div class="card basic">
+      <div class="card-body basic">
+        <h6 class="card-subtitle mb-2 text-muted">_sex</h6>
+        <p class="card-text">Sex of agent, either "male" or "female"; columns = sex</p>
+  </div></div></div>
+  <div class="tab-pane fade" id="list-sex-2-gp" role="tabpanel"
+  aria-labelledby="list-sex-2-gp-list">
+  <div class="card basic">
+    <div class="card-body basic">
+      <h6 class="card-subtitle mb-2 text-muted">_sex</h6>
+      <p class="card-text">Sex of agent, either "male" or "female"; columns = sex</p>
+</div></div></div>
+<div class="tab-pane fade" id="list-sex-2-gp" role="tabpanel"
+aria-labelledby="list-diagnosed-2-list">
+<div class="card basic">
+  <div class="card-body basic">
+    <h6 class="card-subtitle mb-2 text-muted">_diagnosis</h6>
+    <p class="card-text"></p>
+</div></div></div>
+
+    </div>
+    </div>
+    </div>
+    <br>
+</div>
+<div id="section-exacerbation-module" class="section level4 unnumbered">
+<h4>Exacerbation Module</h4>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/list-group.js"></script>
+<div class="row">
+<div class="col-3">
+    <div class="list-group predict-output" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-n-exac-list"
+      data-toggle="list" href="#list-n-exac" role="tab" aria-controls="n-exac">Number</a>
+      <a class="list-group-item list-group-item-action" id="list-sum-exac-list"
+      data-toggle="list" href="#list-sum-exac" role="tab" aria-controls="sum-exac">Sum</a>
+    </div>
+  </div>
+  <div class="col-3">
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-exacerbation-list"
+        data-toggle="list" href="#list-exacerbation" role="tab" aria-controls="exacerbation">Exacerbations</a>
+        <a class="list-group-item list-group-item-action" id="list-exacerbation-death-list"
+        data-toggle="list" href="#list-exacerbation-death" role="tab" aria-controls="exacerbation-death">Exacerbation Death</a>
+        <a class="list-group-item list-group-item-action" id="list-severe-exac-list"
+        data-toggle="list" href="#list-severe-exac" role="tab" aria-controls="severe-exac">Severe Exacerbations</a>
+      </div>
+    </div>
+<div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-age-1-exac-list"
+      data-toggle="list" href="#list-age-1-exac" role="tab" aria-controls="age-1-exac">Age</a>
+      <a class="list-group-item list-group-item-action" id="list-time-1-exac-list"
+      data-toggle="list" href="#list-time-1-exac" role="tab" aria-controls="time-1-exac">Time</a>
+      <a class="list-group-item list-group-item-action" id="list-sex-1-exac-list"
+      data-toggle="list" href="#list-sex-1-exac" role="tab" aria-controls="sex-1-exac">Sex</a>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-age-2-exac-list"
+      data-toggle="list" href="#list-age-2-exac" role="tab" aria-controls="age-2-exac">Age</a>
+      <a class="list-group-item list-group-item-action" id="list-time-2-exac-list"
+      data-toggle="list" href="#list-time-2-exac" role="tab" aria-controls="time-2-exac">Time</a>
+      <a class="list-group-item list-group-item-action" id="list-sex-2-exac-list"
+      data-toggle="list" href="#list-sex-2-exac" role="tab" aria-controls="sex-2-exac">Sex</a>
+      <a class="list-group-item list-group-item-action" id="list-severity-list"
+      data-toggle="list" href="#list-severity" role="tab" aria-controls="severity">Severity</a>
+    </div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-n-exac" role="tabpanel"
+      aria-labelledby="list-n-exac-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      n_</h6>
+      <p class="card-text">Total number of agents/individuals/people</p>
+  </div></div>
+    </div>
+      <div class="tab-pane fade" id="list-sum-exac" role="tabpanel"
+      aria-labelledby="list-sum-exac-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      sum_</h6>
+      <p class="card-text"></p>
+  </div></div>
+    </div>
+    </div>
+    </div>
+      <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-exacerbation" role="tabpanel"
+      aria-labelledby="list-exacerbation-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      exac </h6>
+      <p class="card-text"></p>
+  </div></div></div>
+
+      <div class="tab-pane fade" id="list-exacerbation-death" role="tabpanel"
+      aria-labelledby="list-exacerbation-death-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      exac_death </h6>
+      <p class="card-text"></p>
+  </div></div></div>
+
+  <div class="tab-pane fade" id="list-severe-exac" role="tabpanel"
+  aria-labelledby="list-severe-exac-list">
+  <div class="card basic">
+    <div class="card-body basic">
+      <h6 class="card-subtitle mb-2 text-muted">
+  severep_exac</h6>
+  <p class="card-text"></p>
+</div></div></div>
+
+    </div>
+    </div>
+    <div class="col-3">
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="list-age-1-exac" role="tabpanel"
+    aria-labelledby="list-age-1-exac-list">
+    <div class="card basic">
+      <div class="card-body basic">
+        <h6 class="card-subtitle mb-2 text-muted">
+    _by_age</h6>
+    <p class="card-text">Age in years; rows = age</p>
+</div></div></div>
+
+    <div class="tab-pane fade" id="list-time-1-exac" role="tabpanel"
+    aria-labelledby="list-time-1-exac-list">
+    <div class="card basic">
+          <div class="card-body basic">
+            <h6 class="card-subtitle mb-2 text-muted">
+        _by_ctime</h6>
+        <p class="card-text">Time of simulation in years; rows = time</p>
+    </div></div></div>
+
+    <div class="tab-pane fade" id="list-sex-1-exac" role="tabpanel"
+    aria-labelledby="list-sex-1-exac-list">
+    <div class="card basic">
+          <div class="card-body basic">
+            <h6 class="card-subtitle mb-2 text-muted">
+        _by_sex</h6>
+        <p class="card-text">Sex of agent, either "male" or "female"; rows = sex</p>
+    </div></div></div>
+
+  </div>
+  </div>
+          <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-age-2-exac" role="tabpanel"
+      aria-labelledby="list-age-2-exac-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_age</h6>
+            <p class="card-text">Age in years; columns = age</p>
+    </div></div></div>
+
+      <div class="tab-pane fade" id="list-time-2-exac" role="tabpanel"
+      aria-labelledby="list-time-2-exac-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_ctime</h6>
+          <p class="card-text">Time of simulation in years; columns = time</p>
+    </div></div></div>
+    <div class="tab-pane fade" id="list-sex-2-exac" role="tabpanel"
+    aria-labelledby="list-sex-2-exac-list">
+    <div class="card basic">
+      <div class="card-body basic">
+        <h6 class="card-subtitle mb-2 text-muted">_sex</h6>
+        <p class="card-text">Sex of agent, either "male" or "female"; columns = sex</p>
+  </div></div></div>
+  <div class="tab-pane fade" id="list-severity" role="tabpanel"
+  aria-labelledby="list-severity-list">
+  <div class="card basic">
+    <div class="card-body basic">
+      <h6 class="card-subtitle mb-2 text-muted">_severity</h6>
+      <p class="card-text">Severity of exacerbation; columns = severity</p>
+</div></div></div>
+
+    </div>
+    </div>
+    </div>
+    <br>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">extendedResults =<span class="st"> </span><span class="kw">getExResults</span>()
 mainResults =<span class="st"> </span><span class="kw">getMainResults</span>()</code></pre></div>
 <p>Both functions return quite a long list of results, and as this package is in continuous development, I will refer you to the documentation in the R package for more details of how these functions work:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">??getExResults
 ??getMainResults</code></pre></div>
+</div>
 </div>
 </div>
 <div id="section-figures" class="section level2">
@@ -586,7 +1154,7 @@ mainResults =<span class="st"> </span><span class="kw">getMainResults</span>()</
 <span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span>
 <span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span>
 <span class="op">&gt;</span><span class="st"> </span>Terminating the session</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
 <p>We can also look at the exacerbation rate by sex:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotExacerbations</span>(<span class="dt">nPatients =</span> <span class="fl">1e4</span>,
                   <span class="dt">argX =</span> <span class="st">&quot;year&quot;</span>,
@@ -598,7 +1166,7 @@ mainResults =<span class="st"> </span><span class="kw">getMainResults</span>()</
 <span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span>
 <span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span>
 <span class="op">&gt;</span><span class="st"> </span>Terminating the session</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotExacerbations</span>(<span class="dt">nPatients =</span> <span class="fl">1e4</span>,
                   <span class="dt">argX =</span> <span class="st">&quot;year&quot;</span>,
                   <span class="dt">argY =</span> <span class="st">&quot;exacerbation_rate&quot;</span>,
@@ -609,7 +1177,7 @@ mainResults =<span class="st"> </span><span class="kw">getMainResults</span>()</
 <span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span>
 <span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span>
 <span class="op">&gt;</span><span class="st"> </span>Terminating the session</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 </div>
 <div id="section-copd-occurrence-charts" class="section level3 unnumbered">
 <h3>COPD Occurrence Charts</h3>
@@ -646,14 +1214,14 @@ mainResults =<span class="st"> </span><span class="kw">getMainResults</span>()</
 <span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span>
 <span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span>
 <span class="op">&gt;</span><span class="st"> </span>Terminating the session</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
 <p>We can look at COPD incidence by age group:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotCOPD</span>(<span class="dv">10000</span>, <span class="dt">argX=</span><span class="st">&quot;age&quot;</span>, <span class="dt">argY=</span><span class="st">&quot;incidence&quot;</span>, <span class="dt">aggregateBy=</span><span class="st">&quot;age&quot;</span>, <span class="dt">groupBy=</span><span class="st">&quot;none&quot;</span>)
 <span class="op">&gt;</span><span class="st"> </span>Initializing the session
 <span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span>
 <span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span>
 <span class="op">&gt;</span><span class="st"> </span>Terminating the session</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
 <p>We can look at COPD incidence by year and sex:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotCOPD</span>(<span class="dv">10000</span>, <span class="dt">argX=</span><span class="st">&quot;year&quot;</span>, <span class="dt">argY=</span><span class="st">&quot;incidence&quot;</span>, <span class="dt">aggregateBy=</span><span class="st">&quot;none&quot;</span>, <span class="dt">groupBy=</span><span class="st">&quot;sex&quot;</span>)
 <span class="op">&gt;</span><span class="st"> </span>Initializing the session
@@ -662,14 +1230,14 @@ mainResults =<span class="st"> </span><span class="kw">getMainResults</span>()</
 <span class="op">&gt;</span><span class="st"> </span>Terminating the session
 <span class="op">&gt;</span><span class="st"> </span>No id variables; using all as measure variables
 <span class="op">&gt;</span><span class="st"> </span>No id variables; using all as measure variables</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
 <p>We can also look at COPD prevalence by age:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotCOPD</span>(<span class="dv">10000</span>, <span class="dt">argX=</span><span class="st">&quot;age&quot;</span>, <span class="dt">argY=</span><span class="st">&quot;prevalence&quot;</span>, <span class="dt">aggregateBy=</span><span class="st">&quot;none&quot;</span>, <span class="dt">groupBy=</span><span class="st">&quot;none&quot;</span>)
 <span class="op">&gt;</span><span class="st"> </span>Initializing the session
 <span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span>
 <span class="op">&gt;</span><span class="st"> </span>[<span class="dv">1</span>] <span class="dv">0</span>
 <span class="op">&gt;</span><span class="st"> </span>Terminating the session</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 
 </div>
 </div>

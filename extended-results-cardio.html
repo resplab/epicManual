@@ -1,0 +1,194 @@
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/list-group.js"></script>
+<div class="row">
+<div class="col-3">
+    <div class="list-group predict-output" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-n-list"
+      data-toggle="list" href="#list-n" role="tab" aria-controls="n">Number</a>
+      <a class="list-group-item list-group-item-action" id="list-no-treatment-list"
+      data-toggle="list" href="#list-no-treatment" role="tab" aria-controls="no-treatment">Sum</a>
+    </div>
+  </div>
+  <div class="col-3">
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-stroke-list"
+        data-toggle="list" href="#list-stroke" role="tab" aria-controls="stroke">Stroke</a>
+        <a class="list-group-item list-group-item-action" id="list-incident-stroke-list"
+        data-toggle="list" href="#list-incident-stroke" role="tab" aria-controls="incident-stroke">Incident Stroke</a>
+        <a class="list-group-item list-group-item-action" id="list-mi-list"
+        data-toggle="list" href="#list-mi" role="tab" aria-controls="mi">Myocardial Infarction</a>
+        <a class="list-group-item list-group-item-action" id="list-incident-mi-list"
+        data-toggle="list" href="#list-incident-mi" role="tab" aria-controls="incident-mi">Inicident Myocardial Infarction</a>
+        <a class="list-group-item list-group-item-action" id="list-hf-list"
+        data-toggle="list" href="#list-hf" role="tab" aria-controls="hf">Heart Failure</a>
+        <a class="list-group-item list-group-item-action" id="list-incident-hf-list"
+        data-toggle="list" href="#list-incident-hf" role="tab" aria-controls="incident-hf">Incident Heart Failure</a>
+
+      </div>
+    </div>
+<div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-probability-list"
+      data-toggle="list" href="#list-probability" role="tab" aria-controls="probability">Age</a>
+      <a class="list-group-item list-group-item-action" id="list-time-1-list"
+      data-toggle="list" href="#list-time-1" role="tab" aria-controls="time-1">Time</a>
+      <a class="list-group-item list-group-item-action" id="list-sex-1-list"
+      data-toggle="list" href="#list-sex-1" role="tab" aria-controls="sex-1">Sex</a>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-ci-list"
+      data-toggle="list" href="#list-ci" role="tab" aria-controls="ci">Age</a>
+      <a class="list-group-item list-group-item-action" id="list-time-2-list"
+      data-toggle="list" href="#list-time-2" role="tab" aria-controls="time-2">Time</a>
+      <a class="list-group-item list-group-item-action" id="list-sex-2-list"
+      data-toggle="list" href="#list-sex-2" role="tab" aria-controls="sex-2">Sex</a>
+    </div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-n" role="tabpanel"
+      aria-labelledby="list-n-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      n_</h6>
+      <p class="card-text">Total number of agents/individuals/people</p>
+  </div></div>
+    </div>
+      <div class="tab-pane fade" id="list-no-treatment" role="tabpanel"
+      aria-labelledby="list-no-treatment-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      sum_</h6>
+      <p class="card-text"></p>
+  </div></div>
+    </div>
+    </div>
+    </div>
+      <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-stroke" role="tabpanel"
+      aria-labelledby="list-stroke-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      stroke </h6>
+      <p class="card-text"></p>
+  </div></div></div>
+
+      <div class="tab-pane fade" id="list-incident-stroke" role="tabpanel"
+      aria-labelledby="list-incident-stroke-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      incident_stroke </h6>
+      <p class="card-text"></p>
+  </div></div></div>
+
+  <div class="tab-pane fade" id="list-mi" role="tabpanel"
+  aria-labelledby="list-mi-list">
+  <div class="card basic">
+    <div class="card-body basic">
+      <h6 class="card-subtitle mb-2 text-muted">
+  mi</h6>
+  <p class="card-text"></p>
+</div></div></div>
+
+<div class="tab-pane fade" id="list-incident-mi" role="tabpanel"
+aria-labelledby="list-incident-mi-list">
+<div class="card basic">
+  <div class="card-body basic">
+    <h6 class="card-subtitle mb-2 text-muted">
+incident_mi</h6>
+<p class="card-text"></p>
+</div></div></div>
+
+<div class="tab-pane fade" id="list-hf" role="tabpanel"
+aria-labelledby="list-hf-list">
+<div class="card basic">
+  <div class="card-body basic">
+    <h6 class="card-subtitle mb-2 text-muted">
+hf</h6>
+<p class="card-text"></p>
+</div></div></div>
+
+<div class="tab-pane fade" id="list-incident-hf" role="tabpanel"
+aria-labelledby="list-incident-hf-list">
+<div class="card basic">
+  <div class="card-body basic">
+    <h6 class="card-subtitle mb-2 text-muted">
+incident_hf</h6>
+<p class="card-text"></p>
+</div></div></div>
+
+    </div>
+    </div>
+    <div class="col-3">
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="list-probability" role="tabpanel"
+    aria-labelledby="list-probability-list">
+    <div class="card basic">
+      <div class="card-body basic">
+        <h6 class="card-subtitle mb-2 text-muted">
+    _by_age</h6>
+    <p class="card-text">Age in years; rows = age</p>
+</div></div></div>
+
+    <div class="tab-pane fade" id="list-time-1" role="tabpanel"
+    aria-labelledby="list-time-1-list">
+    <div class="card basic">
+          <div class="card-body basic">
+            <h6 class="card-subtitle mb-2 text-muted">
+        _by_ctime</h6>
+        <p class="card-text">Time of simulation in years; rows = time</p>
+    </div></div></div>
+
+    <div class="tab-pane fade" id="list-sex-1" role="tabpanel"
+    aria-labelledby="list-sex-1-list">
+    <div class="card basic">
+          <div class="card-body basic">
+            <h6 class="card-subtitle mb-2 text-muted">
+        _by_sex</h6>
+        <p class="card-text">Sex of agent, either "male" or "female"; rows = sex</p>
+    </div></div></div>
+
+  </div>
+  </div>
+          <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-ci" role="tabpanel"
+      aria-labelledby="list-ci-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_age</h6>
+            <p class="card-text">Age in years; columns = age</p>
+    </div></div></div>
+
+      <div class="tab-pane fade" id="list-time-2" role="tabpanel"
+      aria-labelledby="list-time-2-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_ctime</h6>
+          <p class="card-text">Time of simulation in years; columns = time</p>
+    </div></div></div>
+    <div class="tab-pane fade" id="list-sex-2" role="tabpanel"
+    aria-labelledby="list-sex-2-list">
+    <div class="card basic">
+      <div class="card-body basic">
+        <h6 class="card-subtitle mb-2 text-muted">_sex</h6>
+        <p class="card-text">Sex of agent, either "male" or "female"; columns = sex</p>
+  </div></div></div>
+
+    </div>
+    </div>
+    </div>
+    <br>

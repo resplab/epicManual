@@ -237,6 +237,32 @@ rawHTML <- paste(readLines("getExResults-describe.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
+As the `getExResults()` function returns a very large list, we have broken them down into the different modules. 
+
+#### Cardiovascular Module {-}
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("extended-results-cardio.html"), collapse="\n")
+HTML(rawHTML)
+```
+
+#### Physician Module {-}
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("extended-results-gp.html"), collapse="\n")
+HTML(rawHTML)
+```
+
+#### Exacerbation Module {-}
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("extended-results-exacerbation.html"), collapse="\n")
+HTML(rawHTML)
+```
+
 ```{r, eval=FALSE, echo=TRUE}
 extendedResults = getExResults()
 mainResults = getMainResults()

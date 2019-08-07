@@ -1,0 +1,169 @@
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/list-group.js"></script>
+<div class="row">
+<div class="col-3">
+    <div class="list-group predict-output" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-n-exac-list"
+      data-toggle="list" href="#list-n-exac" role="tab" aria-controls="n-exac">Number</a>
+      <a class="list-group-item list-group-item-action" id="list-sum-exac-list"
+      data-toggle="list" href="#list-sum-exac" role="tab" aria-controls="sum-exac">Sum</a>
+    </div>
+  </div>
+  <div class="col-3">
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-exacerbation-list"
+        data-toggle="list" href="#list-exacerbation" role="tab" aria-controls="exacerbation">Exacerbations</a>
+        <a class="list-group-item list-group-item-action" id="list-exacerbation-death-list"
+        data-toggle="list" href="#list-exacerbation-death" role="tab" aria-controls="exacerbation-death">Exacerbation Death</a>
+        <a class="list-group-item list-group-item-action" id="list-severe-exac-list"
+        data-toggle="list" href="#list-severe-exac" role="tab" aria-controls="severe-exac">Severe Exacerbations</a>
+      </div>
+    </div>
+<div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-age-1-exac-list"
+      data-toggle="list" href="#list-age-1-exac" role="tab" aria-controls="age-1-exac">Age</a>
+      <a class="list-group-item list-group-item-action" id="list-time-1-exac-list"
+      data-toggle="list" href="#list-time-1-exac" role="tab" aria-controls="time-1-exac">Time</a>
+      <a class="list-group-item list-group-item-action" id="list-sex-1-exac-list"
+      data-toggle="list" href="#list-sex-1-exac" role="tab" aria-controls="sex-1-exac">Sex</a>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-age-2-exac-list"
+      data-toggle="list" href="#list-age-2-exac" role="tab" aria-controls="age-2-exac">Age</a>
+      <a class="list-group-item list-group-item-action" id="list-time-2-exac-list"
+      data-toggle="list" href="#list-time-2-exac" role="tab" aria-controls="time-2-exac">Time</a>
+      <a class="list-group-item list-group-item-action" id="list-sex-2-exac-list"
+      data-toggle="list" href="#list-sex-2-exac" role="tab" aria-controls="sex-2-exac">Sex</a>
+      <a class="list-group-item list-group-item-action" id="list-severity-list"
+      data-toggle="list" href="#list-severity" role="tab" aria-controls="severity">Severity</a>
+    </div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-n-exac" role="tabpanel"
+      aria-labelledby="list-n-exac-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      n_</h6>
+      <p class="card-text">Total number of agents/individuals/people</p>
+  </div></div>
+    </div>
+      <div class="tab-pane fade" id="list-sum-exac" role="tabpanel"
+      aria-labelledby="list-sum-exac-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      sum_</h6>
+      <p class="card-text"></p>
+  </div></div>
+    </div>
+    </div>
+    </div>
+      <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-exacerbation" role="tabpanel"
+      aria-labelledby="list-exacerbation-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      exac </h6>
+      <p class="card-text"></p>
+  </div></div></div>
+
+      <div class="tab-pane fade" id="list-exacerbation-death" role="tabpanel"
+      aria-labelledby="list-exacerbation-death-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">
+      exac_death </h6>
+      <p class="card-text"></p>
+  </div></div></div>
+
+  <div class="tab-pane fade" id="list-severe-exac" role="tabpanel"
+  aria-labelledby="list-severe-exac-list">
+  <div class="card basic">
+    <div class="card-body basic">
+      <h6 class="card-subtitle mb-2 text-muted">
+  severep_exac</h6>
+  <p class="card-text"></p>
+</div></div></div>
+
+    </div>
+    </div>
+    <div class="col-3">
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="list-age-1-exac" role="tabpanel"
+    aria-labelledby="list-age-1-exac-list">
+    <div class="card basic">
+      <div class="card-body basic">
+        <h6 class="card-subtitle mb-2 text-muted">
+    _by_age</h6>
+    <p class="card-text">Age in years; rows = age</p>
+</div></div></div>
+
+    <div class="tab-pane fade" id="list-time-1-exac" role="tabpanel"
+    aria-labelledby="list-time-1-exac-list">
+    <div class="card basic">
+          <div class="card-body basic">
+            <h6 class="card-subtitle mb-2 text-muted">
+        _by_ctime</h6>
+        <p class="card-text">Time of simulation in years; rows = time</p>
+    </div></div></div>
+
+    <div class="tab-pane fade" id="list-sex-1-exac" role="tabpanel"
+    aria-labelledby="list-sex-1-exac-list">
+    <div class="card basic">
+          <div class="card-body basic">
+            <h6 class="card-subtitle mb-2 text-muted">
+        _by_sex</h6>
+        <p class="card-text">Sex of agent, either "male" or "female"; rows = sex</p>
+    </div></div></div>
+
+  </div>
+  </div>
+          <div class="col-3">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-age-2-exac" role="tabpanel"
+      aria-labelledby="list-age-2-exac-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_age</h6>
+            <p class="card-text">Age in years; columns = age</p>
+    </div></div></div>
+
+      <div class="tab-pane fade" id="list-time-2-exac" role="tabpanel"
+      aria-labelledby="list-time-2-exac-list">
+      <div class="card basic">
+        <div class="card-body basic">
+          <h6 class="card-subtitle mb-2 text-muted">_ctime</h6>
+          <p class="card-text">Time of simulation in years; columns = time</p>
+    </div></div></div>
+    <div class="tab-pane fade" id="list-sex-2-exac" role="tabpanel"
+    aria-labelledby="list-sex-2-exac-list">
+    <div class="card basic">
+      <div class="card-body basic">
+        <h6 class="card-subtitle mb-2 text-muted">_sex</h6>
+        <p class="card-text">Sex of agent, either "male" or "female"; columns = sex</p>
+  </div></div></div>
+  <div class="tab-pane fade" id="list-severity" role="tabpanel"
+  aria-labelledby="list-severity-list">
+  <div class="card basic">
+    <div class="card-body basic">
+      <h6 class="card-subtitle mb-2 text-muted">_severity</h6>
+      <p class="card-text">Severity of exacerbation; columns = severity</p>
+</div></div></div>
+
+    </div>
+    </div>
+    </div>
+    <br>
