@@ -168,7 +168,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-api-in-rjavascriptpythonbash"><i class="fa fa-check"></i><b>5.2</b> API in R/Javascript/Python/Bash</a><ul>
 <li class="chapter" data-level="" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-setting-the-input"><i class="fa fa-check"></i>Setting the Input</a></li>
-<li class="chapter" data-level="" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-post"><i class="fa fa-check"></i>POST</a></li>
+<li class="chapter" data-level="" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-running-the-model-2"><i class="fa fa-check"></i>Running the Model</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="section-appendix1.html"><a href="section-appendix1.html"><i class="fa fa-check"></i><b>6</b> Appendix 1: Installing R</a><ul>
@@ -310,6 +310,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Mohsen Sadatsafavi: <a href="mailto:mohsen.sadatsafavi@ubc.ca" class="email">mohsen.sadatsafavi@ubc.ca</a></p>
 <div id="section-setting-the-input" class="section level3 unnumbered">
 <h3>Setting the Input</h3>
+<p>To run the model, you can either use the default input, or set your own input. To see what the default input is, you can use the following <code>POST</code> call:</p>
 <code-chunk>
   <div slot="code">
     <div class="code-chunk">
@@ -331,7 +332,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       request = new XMLHttpRequest(); <br>
       request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json'); <br>
       request.setRequestHeader('Content-Type', 'application/json'); <br>
-      request.send(arguments);
+      request.send(arguments); <br>
       let results = request.response;
     </code>
     <code class="code r active">
@@ -353,8 +354,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div></div></code-chunk>
 <br>
 </div>
-<div id="section-post" class="section level3 unnumbered">
-<h3>POST</h3>
+<div id="section-running-the-model-2" class="section level3 unnumbered">
+<h3>Running the Model</h3>
+<p>To run the model with the default input, you can use the following <code>POST</code> call:</p>
 <code-chunk>
   <div slot="code">
     <div class="code-chunk">

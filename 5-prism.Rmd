@@ -76,10 +76,15 @@ rawHTML <- paste(readLines("get-default-input.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
-### POST {-}
+
+### Running the Model {-}
+
+To run the model with the default input, you can use the following `POST` call:
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
 rawHTML <- paste(readLines("post-prism.html"), collapse="\n")
 HTML(rawHTML)
 ```
+
+
