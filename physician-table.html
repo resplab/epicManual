@@ -1,0 +1,58 @@
+<div>
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr>
+  <td class="td-col-2" style="text-align: left;"><b>Parameters</b></td>
+  <td class="td-col-5"><b>Description</b></td>
+  <td class="td-col-2"><b>Values</b></td>
+  <td class="td-col-3"><b>References</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    GP Visits Rate
+  </td>
+  <td style="text-align: left;">
+    Rate of General Practitioner (GP) visits for COPD and non-COPD patients
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#physicianMath-1" aria-expanded="false" aria-controls="physicianMath-1">
+    Show Math
+  </button>
+  </td>
+  <td>
+  Regression on <a href="#">COLD data</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="physicianMath-1">
+    \begin{equation}
+    \text{sex} =
+    \begin{cases}
+    1,& \text{male } \\
+    0,              & \text{female}
+    \end{cases}
+    \\
+    \text{cough/dyspnea/wheeze/phlegm} =
+    \begin{cases}
+    1,& \text{patient has cough/dyspnea/wheeze/phlegm } \\
+    0,              & \text{otherwise}
+    \end{cases}
+    \\
+    k =
+    \begin{cases}
+    0,& \text{patient has COPD, male } \\
+    1,& \text{patient has COPD, female } \\
+    2,& \text{patient does not have COPD, male } \\
+    3,              & \text{patient does not have COPD, female}
+    \end{cases}
+      \\ \log(rate) = \beta_{0}^{(k)} +
+      \beta_{1}^{(k)} * age + \beta_{2}^{(k)} * smoking
+      + \beta_{3}^{(k)} * FEV_1 +
+      \\ + \beta_{4}^{(k)} * cough + \beta_{5}^{(k)} * phlegm +
+      \beta_{6}^{(k)} * dyspnea + \beta_{7}^{(k)} * wheeze
+      \end{equation}
+  </div>
+  </td>
+</tr>
+</tbody>
+</table></div>

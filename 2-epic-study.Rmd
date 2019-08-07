@@ -130,7 +130,35 @@ rawHTML <- paste(readLines("payoff-table.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
-<!-- Chronic Obstructive Pulmonary Disease (COPD) affects 300 million people worldwide. Patients with COPD often experience what is called an **acute exacerbation**. -->
+### Symptoms Module {-#symptoms}
+
+#### Study Summary {-}
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("symptoms-table.html"), collapse="\n")
+HTML(rawHTML)
+```
+
+### Diagnosis Module {-#diagnosis}
+
+#### Study Summary {-}
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("diagnosis-table.html"), collapse="\n")
+HTML(rawHTML)
+```
+
+### Physician Module {-#gp}
+
+#### Study Summary {-}
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+rawHTML <- paste(readLines("physician-table.html"), collapse="\n")
+HTML(rawHTML)
+```
 
 
 

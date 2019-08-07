@@ -1,0 +1,194 @@
+<div>
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr>
+  <td class="td-col-2" style="text-align: left;"><b>Parameters</b></td>
+  <td class="td-col-5"><b>Description</b></td>
+  <td class="td-col-2"><b>Values</b></td>
+  <td class="td-col-3"><b>References</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Cough
+  </td>
+  <td style="text-align: left;">
+    Probability of a patient presenting with a cough given that the patient has/has not been
+    diagnosed with COPD
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#symptomsMath-1" aria-expanded="false" aria-controls="symptomsMath-1">
+    Show Math
+  </button>
+  </td>
+  <td>
+  Regression on <a href="#">COLD data</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="symptomsMath-1">
+    \begin{equation}
+    \text{sex} =
+    \begin{cases}
+    1,& \text{male } \\
+    0,              & \text{female}
+    \end{cases}
+    \text{COPD} =
+    \begin{cases}
+    1,& \text{patient has COPD } \\
+    0,              & \text{patient does not have COPD}
+    \end{cases}
+    \\
+    k =
+    \begin{cases}
+    0,& \text{patient has COPD, male } \\
+    1,& \text{patient has COPD, female } \\
+    2,& \text{patient does not have COPD, male } \\
+    3,              & \text{patient does not have COPD, female}
+    \end{cases}
+      \\ logit(p | sex, COPD) = \beta_{0}^{(k)} +
+      \beta_{1}^{(k)} * age + \beta_{2}^{(k)} * smoking
+      + \beta_{3}^{(k)} * FEV_1
+      \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Phlegm
+  </td>
+  <td style="text-align: left;">
+    Probability of a patient presenting with phlegm given that the patient has/has not been
+    diagnosed with COPD
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#symptomsMath-2" aria-expanded="false" aria-controls="symptomsMath-2">
+    Show Math
+  </button>
+  </td>
+<td>
+  Regression on <a href="#">COLD data</a>
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="symptomsMath-2">
+    \begin{equation}
+    \text{sex} =
+    \begin{cases}
+    1,& \text{male } \\
+    0,              & \text{female}
+    \end{cases}
+    \text{COPD} =
+    \begin{cases}
+    1,& \text{patient has COPD } \\
+    0,              & \text{patient does not have COPD}
+    \end{cases}
+    \\
+    k =
+    \begin{cases}
+    0,& \text{patient has COPD, male } \\
+    1,& \text{patient has COPD, female } \\
+    2,& \text{patient does not have COPD, male } \\
+    3,              & \text{patient does not have COPD, female}
+    \end{cases}
+      \\ logit(p | sex, COPD) = \beta_{0}^{(k)} +
+      \beta_{1}^{(k)} * age + \beta_{2}^{(k)} * smoking
+      + \beta_{3}^{(k)} * FEV_1
+      \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Dyspnea
+  </td>
+  <td style="text-align: left;">
+    Probability of a patient presenting with dyspnea given that the patient has/has not been
+    diagnosed with COPD
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#symptomsMath-3" aria-expanded="false" aria-controls="symptomsMath-3">
+    Show Math
+  </button>
+  </td>
+<td>
+  Regression on <a href="#">COLD data</a>
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="symptomsMath-3">
+    \begin{equation}
+    \text{sex} =
+    \begin{cases}
+    1,& \text{male } \\
+    0,              & \text{female}
+    \end{cases}
+    \text{COPD} =
+    \begin{cases}
+    1,& \text{patient has COPD } \\
+    0,              & \text{patient does not have COPD}
+    \end{cases}
+    \\
+    k =
+    \begin{cases}
+    0,& \text{patient has COPD, male } \\
+    1,& \text{patient has COPD, female } \\
+    2,& \text{patient does not have COPD, male } \\
+    3,              & \text{patient does not have COPD, female}
+    \end{cases}
+      \\ logit(p | sex, COPD) = \beta_{0}^{(k)} +
+      \beta_{1}^{(k)} * age + \beta_{2}^{(k)} * smoking
+      + \beta_{3}^{(k)} * FEV_1
+      \end{equation}
+  </div>
+  </td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    Wheeze
+  </td>
+  <td style="text-align: left;">
+    Probability of a patient presenting with a wheeze given that the patient has/has not been
+    diagnosed with COPD
+  </td>
+    <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#symptomsMath-4" aria-expanded="false" aria-controls="symptomsMath-4">
+    Show Math
+  </button>
+  </td>
+<td>
+  Regression on <a href="#">COLD data</a>
+</td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="symptomsMath-4">
+    \begin{equation}
+    \text{sex} =
+    \begin{cases}
+    1,& \text{male } \\
+    0,              & \text{female}
+    \end{cases}
+    \text{COPD} =
+    \begin{cases}
+    1,& \text{patient has COPD } \\
+    0,              & \text{patient does not have COPD}
+    \end{cases}
+    \\
+    k =
+    \begin{cases}
+    0,& \text{patient has COPD, male } \\
+    1,& \text{patient has COPD, female } \\
+    2,& \text{patient does not have COPD, male } \\
+    3,              & \text{patient does not have COPD, female}
+    \end{cases}
+      \\ logit(p | sex, COPD) = \beta_{0}^{(k)} +
+      \beta_{1}^{(k)} * age + \beta_{2}^{(k)} * smoking
+      + \beta_{3}^{(k)} * FEV_1
+      \end{equation}
+  </div>
+  </td>
+</tr>
+</tbody>
+</table></div>

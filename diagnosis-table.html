@@ -1,0 +1,59 @@
+<div>
+<table cellpadding="1" cellspacing="0" border="1">
+<tbody><tr>
+  <td class="td-col-2" style="text-align: left;"><b>Parameters</b></td>
+  <td class="td-col-5"><b>Description</b></td>
+  <td class="td-col-2"><b>Values</b></td>
+  <td class="td-col-3"><b>References</b></td>
+</tr>
+<tr>
+  <td style="text-align: left;">
+    COPD Diagnosis
+  </td>
+  <td style="text-align: left;">
+    Probability of a patient being diagnosed with COPD.
+  </td>
+  <td>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#diagnosisMath-1" aria-expanded="false" aria-controls="diagnosisMath-1">
+    Show Math
+  </button>
+  </td>
+  <td>
+  Regression on <a href="#">COLD data</a>
+  </td>
+</tr>
+<tr>
+  <td colspan="4">
+  <div class="collapse" id="diagnosisMath-1">
+    \begin{equation}
+    \text{sex} =
+    \begin{cases}
+    1,& \text{male } \\
+    0,              & \text{female}
+    \end{cases}
+    \\
+    \text{cough/dyspnea/wheeze/phlegm} =
+    \begin{cases}
+    1,& \text{patient has cough/dyspnea/wheeze/phlegm } \\
+    0,              & \text{otherwise}
+    \end{cases}
+    \\
+    \text{gp} = \text{number of visits to GP in a year}
+    \\
+    k =
+    \begin{cases}
+    0,& \text{female } \\
+    1,              & \text{male}
+    \end{cases}
+      \\ logit(p | sex) = \beta_{0}^{(k)} +
+      \beta_{1}^{(k)} * age + \beta_{2}^{(k)} * smoking
+      + \beta_{3}^{(k)} * FEV_1 + \beta_4^{(k)}* gp
+      \\ + \beta_{5}^{(k)} * cough + \beta_{6}^{(k)} * phlegm +
+      \beta_{7}^{(k)} * dyspnea + \beta_{8}^{(k)} * wheeze +
+      \beta_{9}^{(k)} * case
+      \end{equation}
+  </div>
+  </td>
+</tr>
+</tbody>
+</table></div>
