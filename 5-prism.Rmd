@@ -66,11 +66,13 @@ Amin Adibi: amin.adibi@ubc.ca
 
 Mohsen Sadatsafavi: mohsen.sadatsafavi@ubc.ca
 
-### GET {-}
+### Setting the Input {-}
+
+To run the model, you can either use the default input, or set your own input. To see what the default input is, you can use the following `POST` call:
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("get-prism.html"), collapse="\n")
+rawHTML <- paste(readLines("get-default-input.html"), collapse="\n")
 HTML(rawHTML)
 ```
 

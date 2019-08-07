@@ -17,9 +17,7 @@
     <code class="code r active">
       library(prism) <br>
       <span class="hljs-function">connect_to_model</span>('epicPrism', api_key = YOUR_API_KEY) <br>
-      patient1 = accept::samplePatients[1,] <br>
-      model_run(patient1) <br>
-      res = as.data.frame(model_run(patient1))
+      input = get_default_input() <br>
     </code>
     <code class="code python">
       import json <br>

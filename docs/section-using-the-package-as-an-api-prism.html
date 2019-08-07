@@ -167,7 +167,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-results"><i class="fa fa-check"></i>Results</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-api-in-rjavascriptpythonbash"><i class="fa fa-check"></i><b>5.2</b> API in R/Javascript/Python/Bash</a><ul>
-<li class="chapter" data-level="" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-get"><i class="fa fa-check"></i>GET</a></li>
+<li class="chapter" data-level="" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-setting-the-input"><i class="fa fa-check"></i>Setting the Input</a></li>
 <li class="chapter" data-level="" data-path="section-using-the-package-as-an-api-prism.html"><a href="section-using-the-package-as-an-api-prism.html#section-post"><i class="fa fa-check"></i>POST</a></li>
 </ul></li>
 </ul></li>
@@ -214,10 +214,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>You can click on the <strong>Intro</strong> tab for more information on how to use the Excel API.</p>
 <p>The <strong>Settings</strong> tab you don’t need to use.</p>
 <p>There are 2 input tabs. Click on <strong>Input - Main Parameters</strong>. The first table contains global parameters. You may change these if you like, or leave the default values:</p>
-<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <div class="row">
   <div class="col-4">
@@ -278,11 +277,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="section-api-in-rjavascriptpythonbash" class="section level2">
 <h2><span class="header-section-number">5.2</span> API in R/Javascript/Python/Bash</h2>
 <p>To get started, you will need to install a few packages:</p>
-<head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="js/code-chunk-component.js"></script>
-</head>
-
 <code-chunk>
   <div slot="code">
     <div class="code-chunk">
@@ -313,35 +308,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The next step is to get an API key. For now, we will be giving out API keys on a case-by-case basis, so please email either:</p>
 <p>Amin Adibi: <a href="mailto:amin.adibi@ubc.ca" class="email">amin.adibi@ubc.ca</a></p>
 <p>Mohsen Sadatsafavi: <a href="mailto:mohsen.sadatsafavi@ubc.ca" class="email">mohsen.sadatsafavi@ubc.ca</a></p>
-<div id="section-get" class="section level3 unnumbered">
-<h3>GET</h3>
+<div id="section-setting-the-input" class="section level3 unnumbered">
+<h3>Setting the Input</h3>
 <code-chunk>
   <div slot="code">
     <div class="code-chunk">
     <code class="code mac">
-      curl -X GET http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/samplePatients/json </code>
+      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["get_default_input"]}'
+      http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json </code>
       <code class="code linux">
-      curl -X GET http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/samplePatients/json
+        curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["get_default_input"]}'
+        http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json
       </code>
         <code class="code windows">
 
         </code>
     <code class="code js">
+      let arguments = JSON.stringify({
+        api_key: 'YOUR_API_KEY',
+        func: ["get_default_input"]
+      }); <br>
       request = new XMLHttpRequest(); <br>
-      request.open('GET', 'http://prism.resp.core.ubc.ca/ocpu/library/acceptPrism/R/samplePatients/json'       ); <br>
-      request.send();
+      request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json'); <br>
+      request.setRequestHeader('Content-Type', 'application/json'); <br>
+      request.send(arguments);
+      let results = request.response;
     </code>
     <code class="code r active">
       library(prism) <br>
       <span class="hljs-function">connect_to_model</span>('epicPrism', api_key = YOUR_API_KEY) <br>
-      patient1 = accept::samplePatients[1,] <br>
-      model_run(patient1) <br>
-      res = as.data.frame(model_run(patient1))
+      input = get_default_input() <br>
     </code>
     <code class="code python">
       import json <br>
       import requests <br>
-    response = requests.get("http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/samplePatients/json")
+      api_key = 'YOUR_API_KEY' <br>
+      response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json",
+        json = {"api_key":[api_key],
+        "func": ["get_default_input"]}) <br>
+      print(response) <br>
+      results = json.loads(response.text) <br>
+      print(results)
     </code>
 </div></div></code-chunk>
 <br>
@@ -352,28 +359,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <div slot="code">
     <div class="code-chunk">
     <code class="code mac">
-      curl -X POST -H "Content-Type: application/json" -d '{"api_key":[YOUR_API_KEY],"func":["prism_model_run"],
-"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json </code>
+      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],
+"model_input":[{}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json </code>
       <code class="code linux">
-      curl -X POST -H "Content-Type: application/json" -d '{"api_key":[YOUR_API_KEY],"func":["prism_model_run"],
-"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json
+      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],
+"model_input":[{}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json
       </code>
         <code class="code windows">
-          curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{"ID":"10001","male":1,"age":70,"smoker":1,"FEV1":2.5,"height":1.68,"weight":65}]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json -Headers @{"Content-type"="application/json"}
+          curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{}]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json -Headers @{"Content-type"="application/json"}
         </code>
     <code class="code js">
       let patient = JSON.stringify({
   api_key: 'YOUR_API_KEY',
   func: ["prism_model_run"],
-  model_input: [{
-    ID: 10001,
-    male: 1,
-    age: 70,
-    smoker: 1,
-    FEV1: 2.5,
-    height: 1.68,
-    weight: 65
-  }]
+  model_input: [{}]
 });
 request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json');
 request.setRequestHeader('Content-Type', 'application/json');
@@ -383,23 +382,14 @@ let results = request.response;
     <code class="code r active">
       library(prism) <br>
       <span class="hljs-function">connect_to_model</span>('epicPrism', api_key = YOUR_API_KEY) <br>
-      patient1 = epic::samplePatients[1,] <br>
-      model_run(patient1) <br>
-      res = as.data.frame(model_run(patient1))
+      results = model_run() <br>
     </code>
     <code class="code python">
       api_key = 'YOUR_API_KEY' <br>
-patientInput = [{
-"ID":"10001",
-"male":1,
-"age":70,
-"smoker":1,
-"FEV1":2.5,
-"height":1.68,
-"weight":65
-}] <br>
-response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json",
-  json = {"api_key":[api_key],
+      patientInput = [{
+      }] <br>
+      response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json",
+      json = {"api_key":[api_key],
   "func": ["prism_model_run"],
   "model_input": patientInput}) <br>
 print(response) <br>

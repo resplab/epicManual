@@ -1,0 +1,42 @@
+<code-chunk>
+  <div slot="code">
+    <div class="code-chunk">
+    <code class="code mac">
+      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["get_default_input"]}'
+      http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json </code>
+      <code class="code linux">
+        curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["get_default_input"]}'
+        http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json
+      </code>
+        <code class="code windows">
+
+        </code>
+    <code class="code js">
+      let arguments = JSON.stringify({
+        api_key: 'YOUR_API_KEY',
+        func: ["get_default_input"]
+      }); <br>
+      request = new XMLHttpRequest(); <br>
+      request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json'); <br>
+      request.setRequestHeader('Content-Type', 'application/json'); <br>
+      request.send(arguments);
+      let results = request.response;
+    </code>
+    <code class="code r active">
+      library(prism) <br>
+      <span class="hljs-function">connect_to_model</span>('epicPrism', api_key = YOUR_API_KEY) <br>
+      input = get_default_input() <br>
+    </code>
+    <code class="code python">
+      import json <br>
+      import requests <br>
+      api_key = 'YOUR_API_KEY' <br>
+      response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json",
+        json = {"api_key":[api_key],
+        "func": ["get_default_input"]}) <br>
+      print(response) <br>
+      results = json.loads(response.text) <br>
+      print(results)
+    </code>
+</div></div></code-chunk>
+<br>
