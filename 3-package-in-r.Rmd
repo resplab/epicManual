@@ -293,7 +293,7 @@ HTML(rawHTML)
 We can look at total number of exacerbations by age group:
 
 ```{r, eval=TRUE, echo=TRUE}
-plotExacerbations(nPatients = 1e4,
+epicR::plotExacerbations(nPatients = 1e4,
                   argX = "year",
                   argY = "number_of_exacerbations",
                   groupBy = "age",
@@ -304,7 +304,7 @@ plotExacerbations(nPatients = 1e4,
 We can also look at the exacerbation rate by sex:
 
 ```{r, eval=TRUE, echo=TRUE}
-plotExacerbations(nPatients = 1e4,
+epicR::plotExacerbations(nPatients = 1e4,
                   argX = "year",
                   argY = "exacerbation_rate",
                   groupBy = "sex",
@@ -313,7 +313,7 @@ plotExacerbations(nPatients = 1e4,
 ```
 
 ```{r, eval=TRUE, echo=TRUE}
-plotExacerbations(nPatients = 1e4,
+epicR::plotExacerbations(nPatients = 1e4,
                   argX = "year",
                   argY = "exacerbation_rate",
                   groupBy = "sex",

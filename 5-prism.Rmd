@@ -56,7 +56,10 @@ To get started, you will need to install a few packages:
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("install.html"), collapse="\n")
+source("FormatCode.R")
+htmlLines = readLines("install.html")
+newLines = addBreaks(htmlLines)
+rawHTML <- paste(newLines, collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -72,7 +75,9 @@ To run the model, you can either use the default input, or set your own input. T
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("get-default-input.html"), collapse="\n")
+htmlLines = readLines("get-default-input.html")
+newLines = addBreaks(htmlLines)
+rawHTML <- paste(newLines, collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -83,7 +88,9 @@ To run the model with the default input, you can use the following `POST` call:
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("post-prism.html"), collapse="\n")
+htmlLines = readLines("post-prism.html")
+newLines = addBreaks(htmlLines)
+rawHTML <- paste(newLines, collapse="\n")
 HTML(rawHTML)
 ```
 

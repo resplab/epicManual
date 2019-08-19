@@ -286,16 +286,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <code class="code linux">
       sudo apt install curl</code>
         <code class="code windows">
-
+<br>
         </code>
     <code class="code js">
     </code>
     <code class="code r active">
-      install.packages("devtools") <br>
-      devtools::install_github("resplab/prism")
+      install.packages("devtools") <br><br>
+      devtools::install_github("resplab/prism")<br>
     </code>
     <code class="code python">
-      pip3 install requests
+      pip3 install requests<br>
     </code></div>
   </div>
 </code-chunk>
@@ -315,41 +315,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <div slot="code">
     <div class="code-chunk">
     <code class="code mac">
-      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["get_default_input"]}'
+      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["get_default_input"]}'<br>
       http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json </code>
       <code class="code linux">
-        curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["get_default_input"]}'
-        http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json
+        curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["get_default_input"]}'<br>
+        http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json<br>
       </code>
         <code class="code windows">
-
+<br>
         </code>
     <code class="code js">
-      let arguments = JSON.stringify({
-        api_key: 'YOUR_API_KEY',
-        func: ["get_default_input"]
-      }); <br>
-      request = new XMLHttpRequest(); <br>
-      request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json'); <br>
-      request.setRequestHeader('Content-Type', 'application/json'); <br>
-      request.send(arguments); <br>
-      let results = request.response;
+      let arguments = JSON.stringify({<br>
+        api_key: 'YOUR_API_KEY',<br>
+        func: ["get_default_input"]<br>
+      }); <br><br>
+      request = new XMLHttpRequest(); <br><br>
+      request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json'); <br><br>
+      request.setRequestHeader('Content-Type', 'application/json'); <br><br>
+      request.send(arguments); <br><br>
+      let results = request.response;<br>
     </code>
     <code class="code r active">
-      library(prism) <br>
-      <span class="hljs-function">connect_to_model</span>('epicPrism', api_key = YOUR_API_KEY) <br>
-      input = get_default_input() <br>
+      library(prism) <br><br>
+      <span class="hljs-function">connect_to_model</span>('epicPrism', api_key = YOUR_API_KEY) <br><br>
+      input = get_default_input() <br><br>
     </code>
     <code class="code python">
-      import json <br>
-      import requests <br>
-      api_key = 'YOUR_API_KEY' <br>
-      response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json",
-        json = {"api_key":[api_key],
-        "func": ["get_default_input"]}) <br>
-      print(response) <br>
-      results = json.loads(response.text) <br>
-      print(results)
+      import json <br><br>
+      import requests <br><br>
+      api_key = 'YOUR_API_KEY' <br><br>
+      response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json",<br>
+        json = {"api_key":[api_key],<br>
+        "func": ["get_default_input"]}) <br><br>
+      print(response) <br><br>
+      results = json.loads(response.text) <br><br>
+      print(results)<br>
     </code>
 </div></div></code-chunk>
 <br>
@@ -361,46 +361,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <div slot="code">
     <div class="code-chunk">
     <code class="code mac">
-      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],
+      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],<br>
 "model_input":[{}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json </code>
       <code class="code linux">
-      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],
-"model_input":[{}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json
+      curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],<br>
+"model_input":[{}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json<br>
       </code>
         <code class="code windows">
-          curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{}]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json -Headers @{"Content-type"="application/json"}
+          curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{}]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json -Headers @{"Content-type"="application/json"}<br>
         </code>
     <code class="code js">
-      let patient = JSON.stringify({
-  api_key: 'YOUR_API_KEY',
-  func: ["prism_model_run"],
-  model_input: [{}]
-});
-request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json');
-request.setRequestHeader('Content-Type', 'application/json');
-request.send(patient);
-let results = request.response;
+      let patient = JSON.stringify({<br>
+  api_key: 'YOUR_API_KEY',<br>
+  func: ["prism_model_run"],<br>
+  model_input: [{}]<br>
+});<br>
+request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json');<br>
+request.setRequestHeader('Content-Type', 'application/json');<br>
+request.send(patient);<br>
+let results = request.response;<br>
     </code>
     <code class="code r active">
-      library(prism) <br>
-      <span class="hljs-function">connect_to_model</span>('epicPrism', api_key = YOUR_API_KEY) <br>
-      results = model_run() <br>
+      library(prism)<br>
+      connect_to_model('epicPrism', api_key = YOUR_API_KEY)<br>
+      results = model_run()<br>
     </code>
     <code class="code python">
-      api_key = 'YOUR_API_KEY' <br>
-      patientInput = [{
-      }] <br>
-      response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json",
-      json = {"api_key":[api_key],
-  "func": ["prism_model_run"],
-  "model_input": patientInput}) <br>
-print(response) <br>
-results = json.loads(response.text) <br>
-print(results)
+      api_key = 'YOUR_API_KEY'<br>
+      patientInput = [{<br>
+      }]<br>
+      response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json",<br>
+      json = {"api_key":[api_key],<br>
+  "func": ["prism_model_run"],<br>
+  "model_input": patientInput})<br>
+print(response)<br>
+results = json.loads(response.text)<br>
+print(results)<br>
     </code>
 </div>
 </div>
 </code-chunk>
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+
+  <script src="js/highlight.js"></script>
+  <script>
+    /*
+Applies highlighting to all <pre><code>..</code></pre> blocks on a page.
+*/
+hljs.configure({useBR: true});
+$("code-chunk code").each(function (i, e) {
+    hljs.highlightBlock(e);
+});
+/*hljs.initHighlightingOnLoad();*/
+  </script>
 
 </div>
 </div>
