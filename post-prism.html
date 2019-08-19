@@ -23,22 +23,37 @@ request.send(patient);
 let results = request.response;
     </code>
     <code class="code r active">
-      library(prism) <br>
-      <span class="hljs-function">connect_to_model</span>('epicPrism', api_key = YOUR_API_KEY) <br>
-      results = model_run() <br>
+      library(prism)
+      connect_to_model('epicPrism', api_key = YOUR_API_KEY)
+      results = model_run()
     </code>
     <code class="code python">
-      api_key = 'YOUR_API_KEY' <br>
+      api_key = 'YOUR_API_KEY'
       patientInput = [{
-      }] <br>
+      }]
       response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json",
       json = {"api_key":[api_key],
   "func": ["prism_model_run"],
-  "model_input": patientInput}) <br>
-print(response) <br>
-results = json.loads(response.text) <br>
+  "model_input": patientInput})
+print(response)
+results = json.loads(response.text)
 print(results)
     </code>
 </div>
 </div>
 </code-chunk>
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+
+  <script src="js/highlight.js"></script>
+  <script>
+    /*
+Applies highlighting to all <pre><code>..</code></pre> blocks on a page.
+*/
+hljs.configure({useBR: true});
+$("code-chunk code").each(function (i, e) {
+    hljs.highlightBlock(e);
+});
+/*hljs.initHighlightingOnLoad();*/
+  </script>
