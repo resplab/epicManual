@@ -311,20 +311,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="section-setting-the-input" class="section level3 unnumbered">
 <h3>Setting the Input</h3>
 <p>To run the model, you can either use the default input, or set your own input. To see what the default input is, you can use the following <code>POST</code> call:</p>
+<head><link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/github.min.css">
+      </head>
 <code-chunk>
   <div slot="code">
     <div class="code-chunk">
-    <code class="code mac">
+    <code class="code mac bash">
       curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["get_default_input"]}'<br>
       http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json </code>
-      <code class="code linux">
+      <code class="code linux bash">
         curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["get_default_input"]}'<br>
         http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json<br>
       </code>
-        <code class="code windows">
+        <code class="code windows bash">
 <br>
         </code>
-    <code class="code js">
+    <code class="code js javascript">
       let arguments = JSON.stringify({<br>
         api_key: 'YOUR_API_KEY',<br>
         func: ["get_default_input"]<br>
@@ -336,9 +339,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       let results = request.response;<br>
     </code>
     <code class="code r active">
-      library(prism) <br><br>
-      <span class="hljs-function">connect_to_model</span>('epicPrism', api_key = YOUR_API_KEY) <br><br>
-      input = get_default_input() <br><br>
+      library(prism)<br>
+      connect_to_model('epicPrism', api_key = YOUR_API_KEY)<br>
+      input = get_default_input()<br>
     </code>
     <code class="code python">
       import json <br><br>
@@ -360,17 +363,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <code-chunk>
   <div slot="code">
     <div class="code-chunk">
-    <code class="code mac">
+    <code class="code mac bash">
       curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],<br>
 "model_input":[{}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json </code>
-      <code class="code linux">
+      <code class="code linux bash">
       curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],<br>
 "model_input":[{}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json<br>
       </code>
-        <code class="code windows">
+        <code class="code windows bash">
           curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{}]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json -Headers @{"Content-type"="application/json"}<br>
         </code>
-    <code class="code js">
+    <code class="code js javascript">
       let patient = JSON.stringify({<br>
   api_key: 'YOUR_API_KEY',<br>
   func: ["prism_model_run"],<br>
@@ -381,7 +384,7 @@ request.setRequestHeader('Content-Type', 'application/json');<br>
 request.send(patient);<br>
 let results = request.response;<br>
     </code>
-    <code class="code r active">
+    <code class="code r hljs active">
       library(prism)<br>
       connect_to_model('epicPrism', api_key = YOUR_API_KEY)<br>
       results = model_run()<br>
@@ -401,8 +404,129 @@ print(results)<br>
 </div>
 </div>
 </code-chunk>
+<br>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+
+  <script src="js/highlight.js"></script>
+  <script>
+    /*
+Applies highlighting to all <pre><code>..</code></pre> blocks on a page.
+*/
+hljs.configure({useBR: true});
+$("code-chunk code").each(function (i, e) {
+    hljs.highlightBlock(e);
+});
+/*hljs.initHighlightingOnLoad();*/
+  </script>
+<p>Now, the input for the <code>epicR</code> package is quite large, so we won’t print all the input options here. You may change as many of the default inputs as you like. I have highlighted below a few of the more common input parameters you might want to adjust:</p>
+<code-chunk>
+  <div slot="code">
+    <div class="code-chunk">
+    <code class="code mac">
+      curl -X POST -H "Content-Type: application/json" -d '{<br>
+        "api_key":["YOUR_API_KEY"],<br>
+        "func":["prism_model_run"],<br>
+        "model_input":[{<br>
+          "global_parameters":{<br>
+            "time_horizon":2,<br>
+            "age0":50,<br>
+            "discount_cost":0.03,<br>
+            "discount_qaly":0.03<br>
+          },<br>
+          "agent":{<br>
+            "p_female":0.46<br>
+          }<br>
+}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json </code>
+      <code class="code linux">
+      curl -X POST -H "Content-Type: application/json" -d '{<br>
+        "api_key":["YOUR_API_KEY"],<br>
+        "func":["prism_model_run"],<br>
+        "model_input":[{<br>
+          "global_parameters":{<br>
+            "time_horizon":2,<br>
+            "age0":50,<br>
+            "discount_cost":0.03,<br>
+            "discount_qaly":0.03<br>
+          },<br>
+          "agent":{<br>
+            "p_female":0.46<br>
+          }<br>
+}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json<br>
+      </code>
+        <code class="code windows">
+          curl -Body '{<br>
+            "api_key":["YOUR_API_KEY"],<br>
+            "func":["prism_model_run"],<br>
+            "model_input":[{<br>
+              "global_parameters":{<br>
+                "time_horizon":2,<br>
+                "age0":50,<br>
+                "discount_cost":0.03,<br>
+                "discount_qaly":0.03<br>
+              },<br>
+              "agent":{<br>
+                "p_female":0.46<br>
+              }<br>
+    }]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json -Headers @{"Content-type"="application/json"}<br>
+        </code>
+    <code class="code js">
+      let patient = JSON.stringify({<br>
+  api_key: 'YOUR_API_KEY',<br>
+  func: ["prism_model_run"],<br>
+  model_input: [{<br>
+    "global_parameters":{<br>
+      "time_horizon":2,<br>
+      "age0":50,<br>
+      "discount_cost":0.03,<br>
+      "discount_qaly":0.03<br>
+    },<br>
+    "agent":{<br>
+      "p_female":0.46<br>
+    }<br>
+}]<br>
+});<br>
+request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json');<br>
+request.setRequestHeader('Content-Type', 'application/json');<br>
+request.send(patient);<br>
+let results = request.response;<br>
+    </code>
+    <code class="code r active">
+      library(prism)<br>
+      connect_to_model('epicPrism', api_key = YOUR_API_KEY)<br>
+      input = list(<br>
+      global_parameters = list(time_horizon = 2,<br>
+      age0 = 50,<br>
+      discount_cost = 0.03,<br>
+      discount_qaly = 0.03),<br>
+      agent = list(p_female = 0.46))<br>
+      results = model_run(input)<br>
+    </code>
+    <code class="code python">
+      api_key = 'YOUR_API_KEY'<br>
+      patientInput = [{<br>
+        "global_parameters":{<br>
+          "time_horizon":2,<br>
+          "age0":50,<br>
+          "discount_cost":0.03,<br>
+          "discount_qaly":0.03<br>
+        },<br>
+        "agent":{<br>
+          "p_female":0.46<br>
+        }<br>
+}]<br>
+      response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json",<br>
+      json = {"api_key":[api_key],<br>
+      "func": ["prism_model_run"],<br>
+      "model_input": patientInput})<br>
+print(response)<br>
+results = json.loads(response.text)<br>
+print(results)<br>
+    </code>
+</div>
+</div>
+</code-chunk>
 <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/github.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
 
   <script src="js/highlight.js"></script>

@@ -1,0 +1,121 @@
+<code-chunk>
+  <div slot="code">
+    <div class="code-chunk">
+    <code class="code mac">
+      curl -X POST -H "Content-Type: application/json" -d '{
+        "api_key":["YOUR_API_KEY"],
+        "func":["prism_model_run"],
+        "model_input":[{
+          "global_parameters":{
+            "time_horizon":2,
+            "age0":50,
+            "discount_cost":0.03,
+            "discount_qaly":0.03
+          },
+          "agent":{
+            "p_female":0.46
+          }
+}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json </code>
+      <code class="code linux">
+      curl -X POST -H "Content-Type: application/json" -d '{
+        "api_key":["YOUR_API_KEY"],
+        "func":["prism_model_run"],
+        "model_input":[{
+          "global_parameters":{
+            "time_horizon":2,
+            "age0":50,
+            "discount_cost":0.03,
+            "discount_qaly":0.03
+          },
+          "agent":{
+            "p_female":0.46
+          }
+}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json
+      </code>
+        <code class="code windows">
+          curl -Body '{
+            "api_key":["YOUR_API_KEY"],
+            "func":["prism_model_run"],
+            "model_input":[{
+              "global_parameters":{
+                "time_horizon":2,
+                "age0":50,
+                "discount_cost":0.03,
+                "discount_qaly":0.03
+              },
+              "agent":{
+                "p_female":0.46
+              }
+    }]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json -Headers @{"Content-type"="application/json"}
+        </code>
+    <code class="code js">
+      let patient = JSON.stringify({
+  api_key: 'YOUR_API_KEY',
+  func: ["prism_model_run"],
+  model_input: [{
+    "global_parameters":{
+      "time_horizon":2,
+      "age0":50,
+      "discount_cost":0.03,
+      "discount_qaly":0.03
+    },
+    "agent":{
+      "p_female":0.46
+    }
+}]
+});
+request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json');
+request.setRequestHeader('Content-Type', 'application/json');
+request.send(patient);
+let results = request.response;
+    </code>
+    <code class="code r active">
+      library(prism)
+      connect_to_model('epicPrism', api_key = YOUR_API_KEY)
+      input = list(
+      global_parameters = list(time_horizon = 2,
+      age0 = 50,
+      discount_cost = 0.03,
+      discount_qaly = 0.03),
+      agent = list(p_female = 0.46))
+      results = model_run(input)
+    </code>
+    <code class="code python">
+      api_key = 'YOUR_API_KEY'
+      patientInput = [{
+        "global_parameters":{
+          "time_horizon":2,
+          "age0":50,
+          "discount_cost":0.03,
+          "discount_qaly":0.03
+        },
+        "agent":{
+          "p_female":0.46
+        }
+}]
+      response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json",
+      json = {"api_key":[api_key],
+      "func": ["prism_model_run"],
+      "model_input": patientInput})
+print(response)
+results = json.loads(response.text)
+print(results)
+    </code>
+</div>
+</div>
+</code-chunk>
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+
+  <script src="js/highlight.js"></script>
+  <script>
+    /*
+Applies highlighting to all <pre><code>..</code></pre> blocks on a page.
+*/
+hljs.configure({useBR: true});
+$("code-chunk code").each(function (i, e) {
+    hljs.highlightBlock(e);
+});
+/*hljs.initHighlightingOnLoad();*/
+  </script>

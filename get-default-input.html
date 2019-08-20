@@ -1,17 +1,20 @@
+<head><link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/github.min.css">
+      </head>
 <code-chunk>
   <div slot="code">
     <div class="code-chunk">
-    <code class="code mac">
+    <code class="code mac bash">
       curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["get_default_input"]}'
       http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json </code>
-      <code class="code linux">
+      <code class="code linux bash">
         curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["get_default_input"]}'
         http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json
       </code>
-        <code class="code windows">
+        <code class="code windows bash">
 
         </code>
-    <code class="code js">
+    <code class="code js javascript">
       let arguments = JSON.stringify({
         api_key: 'YOUR_API_KEY',
         func: ["get_default_input"]
@@ -23,9 +26,9 @@
       let results = request.response;
     </code>
     <code class="code r active">
-      library(prism) <br>
-      <span class="hljs-function">connect_to_model</span>('epicPrism', api_key = YOUR_API_KEY) <br>
-      input = get_default_input() <br>
+      library(prism)
+      connect_to_model('epicPrism', api_key = YOUR_API_KEY)
+      input = get_default_input()
     </code>
     <code class="code python">
       import json <br>

@@ -94,4 +94,13 @@ rawHTML <- paste(newLines, collapse="\n")
 HTML(rawHTML)
 ```
 
+Now, the input for the `epicR` package is quite large, so we won't print all the input options here. You may change as many of the default inputs as you like. I have highlighted below a few of the more common input parameters you might want to adjust:
+
+```{r, eval=TRUE, echo=FALSE}
+library(htmltools)
+htmlLines = readLines("post-prism2.html")
+newLines = addBreaks(htmlLines)
+rawHTML <- paste(newLines, collapse="\n")
+HTML(rawHTML)
+```
 

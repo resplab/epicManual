@@ -1,17 +1,17 @@
 <code-chunk>
   <div slot="code">
     <div class="code-chunk">
-    <code class="code mac">
+    <code class="code mac bash">
       curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],
 "model_input":[{}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json </code>
-      <code class="code linux">
+      <code class="code linux bash">
       curl -X POST -H "Content-Type: application/json" -d '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],
 "model_input":[{}]}' http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json
       </code>
-        <code class="code windows">
+        <code class="code windows bash">
           curl -Body '{"api_key":["YOUR_API_KEY"],"func":["prism_model_run"],"model_input":[{}]}' -Method POST -uri http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json -Headers @{"Content-type"="application/json"}
         </code>
-    <code class="code js">
+    <code class="code js javascript">
       let patient = JSON.stringify({
   api_key: 'YOUR_API_KEY',
   func: ["prism_model_run"],
@@ -22,7 +22,7 @@ request.setRequestHeader('Content-Type', 'application/json');
 request.send(patient);
 let results = request.response;
     </code>
-    <code class="code r active">
+    <code class="code r hljs active">
       library(prism)
       connect_to_model('epicPrism', api_key = YOUR_API_KEY)
       results = model_run()
@@ -42,8 +42,7 @@ print(results)
 </div>
 </div>
 </code-chunk>
-<link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+<br>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
 
   <script src="js/highlight.js"></script>
