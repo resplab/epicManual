@@ -32,16 +32,16 @@ The folder `img` contains all the image files used in the documentation.
 
 ## Use of HTML in BookDown
 
-In the Rmd files, you will see code chunks that incorporate raw HTML. For example, in `3-package-in-r.Rmd`:
+In the Rmd files, you will see code chunks that incorporate raw HTML. I created a function in the file `R/addHTML.R` called `addHTML`, which takes the file name and section number, and creates the HTML. For example, in `3-package-in-r.Rmd`:
 
 ```
-library(htmltools)
-rawHTML <- paste(readLines("html/section-3/extended-results-cardio.html"), collapse="\n")
-HTML(rawHTML)
+source("R/addHTML.R")
+addHTML("extended-results-cardio.html", section = 3, codeChunk = FALSE)
 ```
 
 Basically this allows me to write some parts in HTML/CSS/Javascript, and BookDown will incorporate it inline. All the `.html` files are in the `html` folder, which is divided into folders for each Section (each Rmd file is a section).
 
+The `codeChunk` argument is whether or not the raw HTML is a `code-chunk` component (explained in more detail below). Default is `FALSE`. The only difference is that if the HTML is a `code-chunk` component, we need to add line breaks in order to use the Highlight.js functions for syntax highlighting. 
 
 ## Creating HTML Elements from ROxygen
 
@@ -52,11 +52,10 @@ In the file `R/readArguments.R`, you can call the function `getItemizeDocs`. Thi
 An example of the `getItemizeDocs()` function:
 
 ```
-library(htmltools)
 source("R/readArguments.R")
+source("R/addHTML.R")
 getItemizeDocs("plotExacerbations", section = 3)
-rawHTML <- paste(readLines("html/section-3/plotExacerbations-arguments.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("plotExacerbations-arguments.html", section = 3, codeChunk = FALSE)
 ```
 
 If the documentation for `epicR` is updated, you may need to replace the `man` folder with the new one.

@@ -176,11 +176,10 @@ If you want to set your own input parameters, I will explain how to do so in thi
 The default input values are created in the file **input.R**. To set your own input values, you can use the function `createInput()` in the file **createInput.R**. Below is a list of the parameters you can set:
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
 source("R/readArguments.R")
+source("R/addHTML.R")
 getItemizeDocs("createInput", section = 3, first = TRUE)
-rawHTML <- paste(readLines("html/section-3/createInput-arguments.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("createInput-arguments.html", section = 3, codeChunk = FALSE)
 ```
 
 To create the inputs:
@@ -222,19 +221,15 @@ eventsMatrix = get_all_events()
 The other two functions are  `getExResults()` and `getMainResults()`. The `getMainResults()` shows some of the overall results:
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
 getItemizeDocs("getMainResults", section = 3, keyword="describe")
-rawHTML <- paste(readLines("html/section-3/getMainResults-describe.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("getMainResults-describe.html", section = 3, codeChunk = FALSE)
 ```
 
 The `getExResults()` returns a very large list of results:
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
 getItemizeDocs("getExResults", section = 3, keyword="describe", maxSize = 8)
-rawHTML <- paste(readLines("html/section-3/getExResults-describe.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("getExResults-describe.html", section = 3, codeChunk = FALSE)
 ```
 
 As the `getExResults()` function returns a very large list, we have broken them down into the different modules.
@@ -242,25 +237,19 @@ As the `getExResults()` function returns a very large list, we have broken them 
 #### Cardiovascular Module {-}
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("html/section-3/extended-results-cardio.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("extended-results-cardio.html", section = 3, codeChunk = FALSE)
 ```
 
 #### Physician Module {-}
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("html/section-3/extended-results-gp.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("extended-results-gp.html", section = 3, codeChunk = FALSE)
 ```
 
 #### Exacerbation Module {-}
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("html/section-3/extended-results-exacerbation.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("extended-results-exacerbation.html", section = 3, codeChunk = FALSE)
 ```
 
 ```{r, eval=FALSE, echo=TRUE}
@@ -271,8 +260,8 @@ mainResults = getMainResults()
 Both functions return quite a long list of results, and as this package is in continuous development, I will refer you to the documentation in the R package for more details of how these functions work:
 
 ```{r, eval=FALSE, echo=TRUE}
-??getExResults
-??getMainResults
+?getExResults
+?getMainResults
 ```
 
 ## Figures
@@ -284,10 +273,8 @@ We have created some figures and charts for users, although they are not exhaust
 To look at total number of exacerbations and exacerbation rate, we have the function `plotExacerbations()`.
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
 getItemizeDocs("plotExacerbations", section = 3)
-rawHTML <- paste(readLines("html/section-3/plotExacerbations-arguments.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("plotExacerbations-arguments.html", section = 3, codeChunk = FALSE)
 ```
 
 We can look at total number of exacerbations by age group:
@@ -326,10 +313,8 @@ epicR::plotExacerbations(nPatients = 1e4,
 To look at COPD incidence and prevalence, we have the function `plotCOPD()`.
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
 getItemizeDocs("plotCOPD", section = 3)
-rawHTML <- paste(readLines("html/section-3/plotCOPD-arguments.html"), collapse="\n")
-HTML(rawHTML)
+addHTML("plotCOPD-arguments.html", section = 3, codeChunk = FALSE)
 ```
 
 We can look at COPD incidence by age:

@@ -30,9 +30,8 @@ The **Settings** tab you don't need to use.
 There are 2 input tabs. Click on **Input - Main Parameters**. The first table contains global parameters. You may change these if you like, or leave the default values:
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-rawHTML <- paste(readLines("html/section-5/excel-input1.html"), collapse="\n")
-HTML(rawHTML)
+source("R/addHTML.R")
+addHTML("excel-input1.html", section = 5, codeChunk = FALSE)
 ```
 
 The second table contains the parameters for the Payoff Module.
@@ -55,12 +54,7 @@ Once you have run the model, there are 3 sheets with charts to look at the resul
 To get started, you will need to install a few packages:
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-source("R/FormatCode.R")
-htmlLines = readLines("html/section-5/install.html")
-newLines = addBreaks(htmlLines)
-rawHTML <- paste(newLines, collapse="\n")
-HTML(rawHTML)
+addHTML("install.html", section = 5, codeChunk = TRUE)
 ```
 
 The next step is to get an API key. For now, we will be giving out API keys on a case-by-case basis, so please email either:
@@ -74,11 +68,7 @@ Mohsen Sadatsafavi: mohsen.sadatsafavi@ubc.ca
 To run the model, you can either use the default input, or set your own input. To see what the default input is, you can use the following `POST` call:
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-htmlLines = readLines("html/section-5/get-default-input.html")
-newLines = addBreaks(htmlLines)
-rawHTML <- paste(newLines, collapse="\n")
-HTML(rawHTML)
+addHTML("get-default-input.html", section = 5, codeChunk = TRUE)
 ```
 
 
@@ -87,19 +77,11 @@ HTML(rawHTML)
 To run the model with the default input, you can use the following `POST` call:
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-htmlLines = readLines("html/section-5/post-prism.html")
-newLines = addBreaks(htmlLines)
-rawHTML <- paste(newLines, collapse="\n")
-HTML(rawHTML)
+addHTML("post-prism.html", section = 5, codeChunk = TRUE)
 ```
 
 Now, the input for the `epicR` package is quite large, so we won't print all the input options here. You may change as many of the default inputs as you like. I have highlighted below a few of the more common input parameters you might want to adjust:
 
 ```{r, eval=TRUE, echo=FALSE}
-library(htmltools)
-htmlLines = readLines("html/section-5/post-prism2.html")
-newLines = addBreaks(htmlLines)
-rawHTML <- paste(newLines, collapse="\n")
-HTML(rawHTML)
+addHTML("post-prism2.html", section = 5, codeChunk = TRUE)
 ```
