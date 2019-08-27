@@ -1,14 +1,26 @@
-# epicManual
+# User Manual for epicR
 
-# Notes to add to documentation
+The purpose of this package is to create documentation for the `epicR` package. To view the documentation on GitHub Pages, got to: https://resplab.github.io/epicManual/
 
-If you want to compile the BookDown yourself/add new documentation:
+# Editing the Documentation
+
+If you want to compile the BookDown yourself/add new documentation, you can download this package in R:
+
+```
+devtools::install_github("resplab/epicManual.git")
+```
+Once you have downloaded the package, you need to set the working directory to the package folder. For example, if I installed the `epicManual` package in my `Coding` folder, I would change the directory as follows:
+
+```
+setwd("~/Coding/epicManual")
+```
+Once you have made the changes you want, you can recompile the BookDown files as follows:
 
 ```
 bookdown::render_book("1-epic.Rmd", "bookdown::gitbook", output_dir="docs")
 ```
 
-The output_dir must be "docs" in order to work with Github Pages. 
+The output_dir must be "docs" in order to work with Github Pages. Also, the `index.html` file is necessary for GitHub Pages.
 
 ## Use of HTML in BookDown
 
@@ -21,6 +33,10 @@ HTML(rawHTML)
 ```
 
 Basically this allows me to write some parts in HTML/CSS/Javascript, and BookDown will incorporate it inline. All the `.html` files are in the `html` folder, which is divided into folders for each Section (each Rmd file is a section).
+
+## CSS Files
+
+The CSS files are in the `css` folder. The BookDown package comes with its own set of CSS files, but I added some of my own to incorporate Bootstrap elements, etc. Most of the CSS used is in `main-bookdown-styles.css`. The `python.css` file contains some additional styling for Python code highlighting in code chunks. The `shadow.css` file contains styles for the Shadow DOM elements. 
 
 ## Creating HTML Elements from ROxygen
 
