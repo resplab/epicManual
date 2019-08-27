@@ -16,7 +16,7 @@ As with any real population, the simulated population is constantly changing. We
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("event-table.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-2/event-table.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -25,7 +25,7 @@ We combined 12 different studies to look at 6 different aspects of COPD:
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("link-buttons.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-2/link-buttons.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -37,7 +37,7 @@ The Demographic and Risk Factor Module is based on the results from [POHEM](http
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("demographic-table.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-2/demographic-table.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -49,7 +49,7 @@ We used data from the Canadian Cohort of Obstructive Lung Disease (COLD) to assi
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("occurrence-table.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-2/occurrence-table.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -59,7 +59,7 @@ HTML(rawHTML)
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("lungfunction-table.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-2/lungfunction-table.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -81,7 +81,7 @@ In COPD, patients can sometimes experience what are called exacerbations.
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("exacerbation-severity.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-2/exacerbation-severity.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -89,7 +89,7 @@ HTML(rawHTML)
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("exacerbation-table.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-2/exacerbation-table.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -107,7 +107,7 @@ We categorized death into two categories: death from COPD, and death not from CO
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("mortality-table.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-2/mortality-table.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -117,7 +117,7 @@ Like any disease, COPD costs money to treat, and is a cost on the healthcare sys
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("payoff-breakdown.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-2/payoff-breakdown.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -126,7 +126,7 @@ HTML(rawHTML)
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("payoff-table.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-2/payoff-table.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -136,7 +136,7 @@ HTML(rawHTML)
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("symptoms-table.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-2/symptoms-table.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -146,7 +146,7 @@ HTML(rawHTML)
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("diagnosis-table.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-2/diagnosis-table.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -156,7 +156,7 @@ HTML(rawHTML)
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("physician-table.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-2/physician-table.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -359,15 +359,7 @@ HTML(rawHTML)
 <!-- HTML(rawHTML) -->
 <!-- ``` -->
 
-<!-- ### Secondary Metrics {-} -->
 
-<!-- ```{r, eval=TRUE, echo=FALSE} -->
-<!-- library(htmltools) -->
-<!-- rawHTML <- paste(readLines("secondary-metrics.html"), collapse="\n") -->
-<!-- HTML(rawHTML) -->
-<!-- ``` -->
-
-<!-- ## Validation -->
 
 
 

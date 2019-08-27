@@ -1,9 +1,9 @@
 
-getItemizeDocs = function(functionName, keyword = "arguments", first = FALSE, maxSize = 12) {
+getItemizeDocs = function(functionName, section, keyword = "arguments", first = FALSE, maxSize = 12) {
   wd = getwd()
   fileName = paste0(wd, "/man/", functionName, ".Rd")
   arguments = readItems(fileName, keyword)
-  htmlFile = paste0(functionName, "-", keyword, ".html")
+  htmlFile = paste0("html/section-", section, "/", functionName, "-", keyword, ".html")
   argumentsToHtml(arguments, htmlFile, functionName, first, maxSize)
 }
 

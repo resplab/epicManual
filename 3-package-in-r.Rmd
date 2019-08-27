@@ -8,7 +8,7 @@ If you do not have R installed on your computer, please go to [Appendix 1](#appe
 ### Windows 7 or Later {-}
 1. Download and Install the latest version of R from [https://cran.r-project.org/bin/windows/base/](https://cran.r-project.org/bin/windows/base/)
 2. Download and Install R Studio from [https://www.rstudio.com/products/rstudio/download/](https://www.rstudio.com/products/rstudio/download/)
-3. Download and Install the latest version of Rtools from [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/) 
+3. Download and Install the latest version of Rtools from [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/)
 4. Using either an R session in Terminal or in R Studio, install the package `devtools`:
 
 ```{r, eval=FALSE, echo=TRUE}
@@ -33,18 +33,18 @@ Note: `Xcode` is quite a large file, and needs about 20 GB of storage space to i
 ```{bash, eval=FALSE, echo=TRUE}
 brew install llvm
 ```
-  
+
 5. Add the following to your `~/.bash_profile`:
 
 ```{bash, eval=FALSE, echo=TRUE}
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 ```
-  
+
   And this to your `~/.Rprofile`:
 ```{bash, eval=FALSE, echo=TRUE}
 Sys.setenv(PATH=paste("/usr/local/opt/llvm/bin", Sys.getenv("PATH"), sep=":"))
 ```
-  
+
 6. Using either an R session in Terminal or in R Studio, install the package `devtools`:
 
 ```{r, eval=FALSE, echo=TRUE}
@@ -79,7 +79,7 @@ The first number is {YOUR_GCC_MAIN_VERSION}, and the whole name is {YOUR_GCC_FUL
 You will also need the folder name for your gcc, which you will need to log in as sudo to do:
 
 ```{bash, eval=FALSE, echo=TRUE}
-sudo cd 
+sudo cd
 ```
 
 ```{bash, eval=FALSE, echo=TRUE}
@@ -104,7 +104,7 @@ This may open a blank file, or it might have some content already. Somewhere in 
 ```
 CC = gcc-{YOUR_GCC_MAIN_VERSION}
 CXX = g++-{YOUR_GCC_MAIN_VERSION}
-FLIBS = -L/usr/local/lib/gcc/{YOUR_GCC_MAIN_VERSION}/gcc/{YOUR_GCC_TARGET}/{YOUR_GCC_FULL_VERSION} 
+FLIBS = -L/usr/local/lib/gcc/{YOUR_GCC_MAIN_VERSION}/gcc/{YOUR_GCC_TARGET}/{YOUR_GCC_FULL_VERSION}
 -L/usr/local/lib/gcc/{YOUR_GCC_MAIN_VERSION} -lgfortran -lquadmath -lm
 ```
 
@@ -125,7 +125,7 @@ Once you have done this, save the file and close the text editor. You may need t
 1. Install R if you don't have it installed already. See [Appendix 1](#appendix1) for installation guide.
 
 2. Download and Install R Studio from [https://www.rstudio.com/products/rstudio/download/](https://www.rstudio.com/products/rstudio/download/)
-3. Install `libcurl` from Terminal: 
+3. Install `libcurl` from Terminal:
 ```{bash, eval=FALSE, echo=TRUE}
 sudo apt-get install libcurl4-openssl-dev libssl-dev
 ```
@@ -178,8 +178,8 @@ The default input values are created in the file **input.R**. To set your own in
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
 source("R/readArguments.R")
-getItemizeDocs("createInput", TRUE)
-rawHTML <- paste(readLines("createInput-arguments.html"), collapse="\n")
+getItemizeDocs("createInput", section = 3, first = TRUE)
+rawHTML <- paste(readLines("html/section-3/createInput-arguments.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -223,8 +223,8 @@ The other two functions are  `getExResults()` and `getMainResults()`. The `getMa
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-getItemizeDocs("getMainResults", keyword="describe")
-rawHTML <- paste(readLines("getMainResults-describe.html"), collapse="\n")
+getItemizeDocs("getMainResults", section = 3, keyword="describe")
+rawHTML <- paste(readLines("html/section-3/getMainResults-describe.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -232,18 +232,18 @@ The `getExResults()` returns a very large list of results:
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-getItemizeDocs("getExResults", keyword="describe", maxSize = 8)
-rawHTML <- paste(readLines("getExResults-describe.html"), collapse="\n")
+getItemizeDocs("getExResults", section = 3, keyword="describe", maxSize = 8)
+rawHTML <- paste(readLines("html/section-3/getExResults-describe.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
-As the `getExResults()` function returns a very large list, we have broken them down into the different modules. 
+As the `getExResults()` function returns a very large list, we have broken them down into the different modules.
 
 #### Cardiovascular Module {-}
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("extended-results-cardio.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-3/extended-results-cardio.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -251,7 +251,7 @@ HTML(rawHTML)
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("extended-results-gp.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-3/extended-results-gp.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -259,7 +259,7 @@ HTML(rawHTML)
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("extended-results-exacerbation.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-3/extended-results-exacerbation.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -277,7 +277,7 @@ Both functions return quite a long list of results, and as this package is in co
 
 ## Figures
 
-We have created some figures and charts for users, although they are not exhaustive, so you may want to create your own figures as well. 
+We have created some figures and charts for users, although they are not exhaustive, so you may want to create your own figures as well.
 
 ### Exacerbation Charts {-}
 
@@ -285,8 +285,8 @@ To look at total number of exacerbations and exacerbation rate, we have the func
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-getItemizeDocs("plotExacerbations")
-rawHTML <- paste(readLines("plotExacerbations-arguments.html"), collapse="\n")
+getItemizeDocs("plotExacerbations", section = 3)
+rawHTML <- paste(readLines("html/section-3/plotExacerbations-arguments.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
@@ -297,7 +297,7 @@ epicR::plotExacerbations(nPatients = 1e4,
                   argX = "year",
                   argY = "number_of_exacerbations",
                   groupBy = "age",
-                  exacType = "all", 
+                  exacType = "all",
                   perCapita = NULL)
 ```
 
@@ -308,7 +308,7 @@ epicR::plotExacerbations(nPatients = 1e4,
                   argX = "year",
                   argY = "exacerbation_rate",
                   groupBy = "sex",
-                  exacType = "all", 
+                  exacType = "all",
                   perCapita = NULL)
 ```
 
@@ -317,7 +317,7 @@ epicR::plotExacerbations(nPatients = 1e4,
                   argX = "year",
                   argY = "exacerbation_rate",
                   groupBy = "sex",
-                  exacType = "severe", 
+                  exacType = "severe",
                   perCapita = NULL)
 ```
 
@@ -327,8 +327,8 @@ To look at COPD incidence and prevalence, we have the function `plotCOPD()`.
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-getItemizeDocs("plotCOPD")
-rawHTML <- paste(readLines("plotCOPD-arguments.html"), collapse="\n")
+getItemizeDocs("plotCOPD", section = 3)
+rawHTML <- paste(readLines("html/section-3/plotCOPD-arguments.html"), collapse="\n")
 HTML(rawHTML)
 ```
 

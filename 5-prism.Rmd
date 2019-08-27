@@ -7,48 +7,48 @@ For more information, the PRISM package can be found on GitHub at [PRISM on  Git
 
 ## PRISM API in Excel {#api-in-excel}
 
-One of the primary goals of PRISM is making prediction models accessible to a wide range of audiences, including those with less programming experience. The Excel API is targetted towards users who are less familiar with programming, or users who are familiar with programming and would like an easy way to extract the data quickly. 
+One of the primary goals of PRISM is making prediction models accessible to a wide range of audiences, including those with less programming experience. The Excel API is targetted towards users who are less familiar with programming, or users who are familiar with programming and would like an easy way to extract the data quickly.
 
 To use the model, you will need to have Excel installed on your computer. Currently, the Excel API only works in Windows (PC), although we are working on developing a version for Mac (OS X) as well.
 
 ### Downloading the Spreadsheet {-}
 
-To get started, you will need to go to: 
+To get started, you will need to go to:
 
-[PRISM Model Repository](http://resp.core.ubc.ca/ipress/prism). 
+[PRISM Model Repository](http://resp.core.ubc.ca/ipress/prism).
 
-In the row that has the **EPIC** model, go to the column labelled **Excel Interface** and click on the link **EPIC Excel (PC)**. This will download the Excel Interface for the **EPIC** model. 
+In the row that has the **EPIC** model, go to the column labelled **Excel Interface** and click on the link **EPIC Excel (PC)**. This will download the Excel Interface for the **EPIC** model.
 
 ### Setting the Inputs {-}
 
-Once you have downloaded the Excel Interface, you can open it in Excel. You will notice there are 7 sheets, labelled **Intro**, **Settings**, **Input - Main Parameters**, **Input - Agent Characteristics**, **Output - Main Outcomes **, **Output - Exacerbations**, and **Output - Severity**. 
+Once you have downloaded the Excel Interface, you can open it in Excel. You will notice there are 7 sheets, labelled **Intro**, **Settings**, **Input - Main Parameters**, **Input - Agent Characteristics**, **Output - Main Outcomes **, **Output - Exacerbations**, and **Output - Severity**.
 
 You can click on the **Intro** tab for more information on how to use the Excel API.
 
 The **Settings** tab you don't need to use.
 
-There are 2 input tabs. Click on **Input - Main Parameters**. The first table contains global parameters. You may change these if you like, or leave the default values: 
+There are 2 input tabs. Click on **Input - Main Parameters**. The first table contains global parameters. You may change these if you like, or leave the default values:
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-rawHTML <- paste(readLines("excel-input1.html"), collapse="\n")
+rawHTML <- paste(readLines("html/section-5/excel-input1.html"), collapse="\n")
 HTML(rawHTML)
 ```
 
-The second table contains the parameters for the Payoff Module. 
+The second table contains the parameters for the Payoff Module.
 
 ### Running the Model {-}
 
-To run the model, you need to connect to the model first. 
+To run the model, you need to connect to the model first.
 
-1. Click on the **Output - Main Outcomes** sheet. 
+1. Click on the **Output - Main Outcomes** sheet.
 2. There is a button at the top of the page which says **Connect to Model**. Click on that button. On the bottom left of the Excel window, you should see the text "Connecting to model..."
 3. Click on the **Run** button.
 4. Click on the **Disconnect from Model** button once it has finished running.
 
 ### Results {-}
 
-Once you have run the model, there are 3 sheets with charts to look at the results: **Output - Main Outcomes**, **Output - Exacerbations**, and **Output - Severity**. 
+Once you have run the model, there are 3 sheets with charts to look at the results: **Output - Main Outcomes**, **Output - Exacerbations**, and **Output - Severity**.
 
 ## API in R/Javascript/Python/Bash
 
@@ -57,7 +57,7 @@ To get started, you will need to install a few packages:
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
 source("R/FormatCode.R")
-htmlLines = readLines("install.html")
+htmlLines = readLines("html/section-5/install.html")
 newLines = addBreaks(htmlLines)
 rawHTML <- paste(newLines, collapse="\n")
 HTML(rawHTML)
@@ -65,7 +65,7 @@ HTML(rawHTML)
 
 The next step is to get an API key. For now, we will be giving out API keys on a case-by-case basis, so please email either:
 
-Amin Adibi: amin.adibi@ubc.ca 
+Amin Adibi: amin.adibi@ubc.ca
 
 Mohsen Sadatsafavi: mohsen.sadatsafavi@ubc.ca
 
@@ -75,7 +75,7 @@ To run the model, you can either use the default input, or set your own input. T
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-htmlLines = readLines("get-default-input.html")
+htmlLines = readLines("html/section-5/get-default-input.html")
 newLines = addBreaks(htmlLines)
 rawHTML <- paste(newLines, collapse="\n")
 HTML(rawHTML)
@@ -88,7 +88,7 @@ To run the model with the default input, you can use the following `POST` call:
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-htmlLines = readLines("post-prism.html")
+htmlLines = readLines("html/section-5/post-prism.html")
 newLines = addBreaks(htmlLines)
 rawHTML <- paste(newLines, collapse="\n")
 HTML(rawHTML)
@@ -98,9 +98,8 @@ Now, the input for the `epicR` package is quite large, so we won't print all the
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-htmlLines = readLines("post-prism2.html")
+htmlLines = readLines("html/section-5/post-prism2.html")
 newLines = addBreaks(htmlLines)
 rawHTML <- paste(newLines, collapse="\n")
 HTML(rawHTML)
 ```
-
