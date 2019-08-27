@@ -18,11 +18,11 @@
       let arguments = JSON.stringify({
         api_key: 'YOUR_API_KEY',
         func: ["get_default_input"]
-      }); <br>
-      request = new XMLHttpRequest(); <br>
-      request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json'); <br>
-      request.setRequestHeader('Content-Type', 'application/json'); <br>
-      request.send(arguments); <br>
+      });
+      request = new XMLHttpRequest();
+      request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json');
+      request.setRequestHeader('Content-Type', 'application/json');
+      request.send(arguments);
       let results = request.response;
     </code>
     <code class="code r active">
@@ -31,14 +31,14 @@
       input = get_default_input()
     </code>
     <code class="code python">
-      import json <br>
-      import requests <br>
-      api_key = 'YOUR_API_KEY' <br>
+      import json
+      import requests
+      api_key = 'YOUR_API_KEY'
       response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json",
         json = {"api_key":[api_key],
-        "func": ["get_default_input"]}) <br>
-      print(response) <br>
-      results = json.loads(response.text) <br>
+        "func": ["get_default_input"]})
+      print(response)
+      results = json.loads(response.text) 
       print(results)
     </code>
 </div></div></code-chunk>

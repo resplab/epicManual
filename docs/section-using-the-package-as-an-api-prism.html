@@ -109,10 +109,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="pretty-styles.css" type="text/css" />
-<link rel="stylesheet" href="cayman.css" type="text/css" />
-<link rel="stylesheet" href="python.css" type="text/css" />
-<link rel="stylesheet" href="shadow.css" type="text/css" />
+<link rel="stylesheet" href="css/pretty-styles.css" type="text/css" />
+<link rel="stylesheet" href="css/cayman.css" type="text/css" />
+<link rel="stylesheet" href="css/python.css" type="text/css" />
+<link rel="stylesheet" href="css/shadow.css" type="text/css" />
 <link rel="stylesheet" href="index.html" type="text/css" />
 </head>
 
@@ -331,11 +331,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       let arguments = JSON.stringify({<br>
         api_key: 'YOUR_API_KEY',<br>
         func: ["get_default_input"]<br>
-      }); <br><br>
-      request = new XMLHttpRequest(); <br><br>
-      request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json'); <br><br>
-      request.setRequestHeader('Content-Type', 'application/json'); <br><br>
-      request.send(arguments); <br><br>
+      });<br>
+      request = new XMLHttpRequest();<br>
+      request.open('POST', 'http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json');<br>
+      request.setRequestHeader('Content-Type', 'application/json');<br>
+      request.send(arguments);<br>
       let results = request.response;<br>
     </code>
     <code class="code r active">
@@ -344,14 +344,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       input = get_default_input()<br>
     </code>
     <code class="code python">
-      import json <br><br>
-      import requests <br><br>
-      api_key = 'YOUR_API_KEY' <br><br>
+      import json<br>
+      import requests<br>
+      api_key = 'YOUR_API_KEY'<br>
       response = requests.post("http://prism.resp.core.ubc.ca/ocpu/library/epicPrism/R/gateway/json",<br>
         json = {"api_key":[api_key],<br>
-        "func": ["get_default_input"]}) <br><br>
-      print(response) <br><br>
-      results = json.loads(response.text) <br><br>
+        "func": ["get_default_input"]})<br>
+      print(response)<br>
+      results = json.loads(response.text) <br>
       print(results)<br>
     </code>
 </div></div></code-chunk>
@@ -405,19 +405,6 @@ print(results)<br>
 </div>
 </code-chunk>
 <br>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
-
-  <script src="js/highlight.js"></script>
-  <script>
-    /*
-Applies highlighting to all <pre><code>..</code></pre> blocks on a page.
-*/
-hljs.configure({useBR: true});
-$("code-chunk code").each(function (i, e) {
-    hljs.highlightBlock(e);
-});
-/*hljs.initHighlightingOnLoad();*/
-  </script>
 <p>Now, the input for the <code>epicR</code> package is quite large, so we won’t print all the input options here. You may change as many of the default inputs as you like. I have highlighted below a few of the more common input parameters you might want to adjust:</p>
 <code-chunk>
   <div slot="code">
@@ -526,10 +513,10 @@ print(results)<br>
 </div>
 </code-chunk>
 <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/github.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
-
-  <script src="js/highlight.js"></script>
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+<link rel="stylesheet"
+            href="highlightjs/styles/default.css">
+<script src="js/highlight.pack.js"></script>
   <script>
     /*
 Applies highlighting to all <pre><code>..</code></pre> blocks on a page.

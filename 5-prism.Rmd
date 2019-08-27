@@ -56,7 +56,7 @@ To get started, you will need to install a few packages:
 
 ```{r, eval=TRUE, echo=FALSE}
 library(htmltools)
-source("FormatCode.R")
+source("R/FormatCode.R")
 htmlLines = readLines("install.html")
 newLines = addBreaks(htmlLines)
 rawHTML <- paste(newLines, collapse="\n")
