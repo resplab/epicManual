@@ -5,7 +5,7 @@ runtime: "shiny"
 output:
   bookdown::gitbook:
     lib_dir: "book_assets"
-    delete_merged_file: TRUE
+    delete_merged_file: yes
     table_css: FALSE
     output_dir: "docs"
     css: ["css/pretty-styles.css", "css/main-bookdown-styles.css", "css/python.css","css/shadow.css",  "index.html"]
